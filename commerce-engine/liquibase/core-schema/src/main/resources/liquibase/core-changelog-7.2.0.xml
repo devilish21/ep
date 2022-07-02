@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (c) Elastic Path Software Inc., 2017
+  -->
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+				   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd"
+				   logicalFilePath="com/elasticpath/core/db/core-changelog-7.2.0.xml"
+				   objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
+
+	<changeSet id="7.2.0-add-creation-date-to-customer-profile-value-table" author="elasticpath">
+		<validCheckSum>8:2301b2d086ddcc15924e1c81f52b9549</validCheckSum>
+
+		<comment>[PB-3410] Add Created Date to Customer Profile Value</comment>
+
+		<addColumn tableName="TCUSTOMERPROFILEVALUE">
+			<column name="CREATION_DATE" defaultValueDate="CURRENT_TIMESTAMP" type="TIMESTAMP">
+				<constraints nullable="false"/>
+			</column>
+		</addColumn>
+
+		<!-- UPDATE...JOIN performs much better on large datasets than an inner SELECT in MySql at least, but is only supported by MySql, so use it for MySql databases only -->
+		<sql dbms="mysql">
+			UPDATE TCUSTOMERPROFILEVALUE JOIN TCUSTOMER ON TCUSTOMERPROFILEVALUE.CUSTOMER_UID = TCUSTOMER.UIDPK SET TCUSTOMERPROFILEVALUE.CREATION_DATE = TCUSTOMER.CREATION_DATE;
+		</sql>
+
+		<!-- And fallback to the non-performant UPDATE with inner SELECT for the other databases as no choice -->
+		<sql dbms="h2, hsqldb, oracle,postgresql">
+			UPDATE TCUSTOMERPROFILEVALUE
+			   SET CREATION_DATE = (SELECT CREATION_DATE FROM TCUSTOMER cust WHERE cust.UIDPK = CUSTOMER_UID)
+			   WHERE EXISTS (SELECT * FROM TCUSTOMER cust WHERE cust.UIDPK = CUSTOMER_UID);
+		</sql>
+	</changeSet>
+
+	<changeSet id="7.2.0-add-data-policy-related-tables" author="elasticpath">
+		<validCheckSum>8:1191f6e2dd7b2b8e8eef5b1ded2f126c</validCheckSum>
+		<comment>[PB-3414] Data Policy Domain and Service support</comment>
+
+		<createTable tableName="TDATAPOINT">
+			<column name="UIDPK" type="BIGINT">
+				<constraints primaryKey="true"/>
+			</column>
+			<column name="GUID" type="VARCHAR(255)">
+				<constraints nullable="false" unique="true"/>
+			</column>
+			<column name="NAME" type="VARCHAR(255)">
+				<constraints nullable="false"  unique="true"/>
+			</column>
+			<column name="DATA_LOCATION" type="VARCHAR(255)">
+				<constraints nullable="false"/>
+			</column>
+			<column name="DATA_KEY" type="VARCHAR(255)">
+				<constraints nullable="false"/>
+			</column>
+			<column name="DESCRIPTION_KEY" type="VARCHAR(255)">
+				<constraints nullable="false"/>
+			</column>
+			<column name="REMOVABLE" type="BOOLEAN">
+				<constraints nullable="false"/>
+			</column>
+		</createTable>
+
+		<addUniqueConstraint tableName="TDATAPOINT" columnNames="DATA_LOCATION,DATA_KEY"/>
+
+		<insert tableName="JPA_GENERATED_KEYS">
+			<column name="ID" value="TDATAPOINT"/>
+			<column name="LAST_VALUE" valueNumeric="100000"/>
+		</insert>
+
+		<createTable tableName="TDATAPOLICY">
+			<column name="UIDPK" type="BIGINT">
+				<constraints primaryKey="true"/>
+			</column>
+			<column name="GUID" type="VARCHAR(255)">
+				<constraints nullable="false" unique="true"/>
+			</column>
+			<column name="POLICY_NAME" type="VARCHAR(255)">
+				<constraints nullable="false"/>
+			</column>
+			<column name="RETENTION_PERIOD" type="INT">
+				<constraints nullable="false"/>
+			</column>
+			<column name="RETENTION_TYPE" type="INT">
+				<constraints nullable="false"/>
+			</column>
+			<column name="START_DATE" defaultValueDate="CURRENT_TIMESTAMP" type="TIMESTAMP">
+				<constraints nullable="false"/>
+			</column>
+			<column name="END_DATE" type="TIMESTAMP"/>
+			<column name="STATE" type="INT">
+				<constraints nullable="false"/>
+			</column>
+			<column name="DESCRIPTION" type="VARCHAR(255)"/>
+			<column name="REFERENCE_KEY" type="VARCHAR(255)">
+				<constraints nullable="false"/>
+			</column>
+		</createTable>
+
+		<insert tableName="JPA_GENERATED_KEYS">
+			<column name="ID" value="TDATAPOLICY"/>
+			<column name="LAST_VALUE" valueNumeric="100000"/>
+		</insert>
+
+		<createTable tableName="TDATAPOLICYDATAPOINT">
+			<column name="DATAPOLICY_UID" type="BIGINT">
+				<constraints nullable="false"/>
+			</column>
+			<column name="DATAPOINT_UID" type="BIGINT">
+				<constraints nullable="false"/>
+			</column>
+		</createTable>
+
+		<addForeignKeyConstraint constraintName="TDATAPOLICYDATAPOINT_IBFK_1" baseTableName="TDATAPOLICYDATAPOINT" baseColumnNames="DATAPOLICY_UID"
+								 referencedTableName="TDATAPOLICY" referencedColumnNames="UIDPK"/>
+
+		<addForeignKeyConstraint constraintName="TDATAPOLICYDATAPOINT_IBFK_2" baseTableName="TDATAPOLICYDATAPOINT" baseColumnNames="DATAPOINT_UID"
+								 referencedTableName="TDATAPOINT" referencedColumnNames="UIDPK"/>
+
+		<addUniqueConstraint tableName="TDATAPOLICYDATAPOINT" columnNames="DATAPOLICY_UID,DATAPOINT_UID"/>
+
+		<createTable tableName="TCUSTOMERCONSENT">
+			<column name="UIDPK" type="BIGINT">
+				<constraints primaryKey="true"/>
+			</column>
+			<column name="GUID" type="VARCHAR(255)">
+				<constraints nullable="false" unique="true"/>
+			</column>
+			<column name="DATAPOLICY_UID" type="BIGINT">
+				<constraints nullable="false"/>
+			</column>
+			<column name="CUSTOMER_GUID" type="VARCHAR(64)">
+				<constraints nullable="false"/>
+			</column>
+			<column name="CONSENT_DATE" defaultValueDate="CURRENT_TIMESTAMP" type="TIMESTAMP">
+				<constraints nullable="false"/>
+			</column>
+			<column name="ACTION" type="INT">
+				<constraints nullable="false"/>
+			</column>
+		</createTable>
+
+		<addForeignKeyConstraint constraintName="TCUSTOMERCONSENT_IBFK_1" baseTableName="TCUSTOMERCONSENT" baseColumnNames="DATAPOLICY_UID"
+								 referencedTableName="TDATAPOLICY" referencedColumnNames="UIDPK"/>
+
+		<addForeignKeyConstraint constraintName="TCUSTOMERCONSENT_IBFK_2" baseTableName="TCUSTOMERCONSENT" baseColumnNames="CUSTOMER_GUID"
+								 referencedTableName="TCUSTOMER" referencedColumnNames="GUID"/>
+
+		<insert tableName="JPA_GENERATED_KEYS">
+			<column name="ID" value="TCUSTOMERCONSENT"/>
+			<column name="LAST_VALUE" valueNumeric="100000"/>
+		</insert>
+
+	</changeSet>
+
+	<changeSet id="7.2.0-add-creation-date-to-address-tables" author="elasticpath" context="expand">
+		<validCheckSum>8:f7e0e37185aeae2b4e2fc7e8c8ca96ad</validCheckSum>
+
+		<comment>[PB-3411] Add Created and Updated Dates to Address</comment>
+
+		<addColumn tableName="TADDRESS">
+			<column name="LAST_MODIFIED_DATE" defaultValueDate="CURRENT_TIMESTAMP" type="TIMESTAMP">
+				<constraints nullable="false"/>
+			</column>
+			<column name="CREATION_DATE" defaultValueDate="CURRENT_TIMESTAMP" type="TIMESTAMP">
+				<constraints nullable="false"/>
+			</column>
+		</addColumn>
+
+		<addColumn tableName="TORDERADDRESS">
+			<column name="LAST_MODIFIED_DATE" defaultValueDate="CURRENT_TIMESTAMP" type="TIMESTAMP">
+				<constraints nullable="false"/>
+			</column>
+			<column name="CREATION_DATE" defaultValueDate="CURRENT_TIMESTAMP" type="TIMESTAMP">
+				<constraints nullable="false"/>
+			</column>
+		</addColumn>
+
+		<!-- UPDATE...JOIN performs much better on large datasets than an inner SELECT in MySql at least, but is only supported by MySql, so use it for MySql databases only -->
+		<sql dbms="mysql">
+			UPDATE TADDRESS JOIN TCUSTOMER ON TADDRESS.CUSTOMER_UID = TCUSTOMER.UIDPK SET TADDRESS.CREATION_DATE = TCUSTOMER.CREATION_DATE;
+			UPDATE TORDERADDRESS JOIN TORDER ON TORDERADDRESS.UIDPK = TORDER.ORDER_BILLING_ADDRESS_UID SET TORDERADDRESS.CREATION_DATE = TORDER.CREATED_DATE;
+		</sql>
+
+		<!-- And fallback to the non-performant UPDATE with inner SELECT for the other databases as no choice -->
+		<sql dbms="h2, hsqldb, oracle,postgresql">
+				UPDATE TADDRESS
+				   SET CREATION_DATE = (SELECT CREATION_DATE FROM TCUSTOMER cust WHERE cust.UIDPK = CUSTOMER_UID)
+					 WHERE EXISTS (SELECT * FROM TCUSTOMER cust WHERE cust.UIDPK = CUSTOMER_UID);
+				UPDATE TORDERADDRESS
+				   SET CREATION_DATE = (SELECT CREATED_DATE FROM TORDER ord WHERE ord.ORDER_BILLING_ADDRESS_UID = UIDPK)
+					 WHERE EXISTS (SELECT * FROM TORDER ord WHERE ord.ORDER_BILLING_ADDRESS_UID = UIDPK);
+		</sql>
+
+	</changeSet>
+
+	<changeSet id="7.2.0-add-creation-date-to-cart-item-and-order-data" author="elasticpath" context="expand">
+		<validCheckSum>8:bd5ddc146d22a89f0415748d32e03ccc</validCheckSum>
+
+		<comment>[PB-3411] Add Created and Updated dates to OrderData and CartItem</comment>
+
+		<addColumn tableName="TORDERDATA">
+			<column name="LAST_MODIFIED_DATE" defaultValueDate="CURRENT_TIMESTAMP" type="TIMESTAMP">
+				<constraints nullable="false"/>
+			</column>
+			<column name="CREATION_DATE" defaultValueDate="CURRENT_TIMESTAMP" type="TIMESTAMP">
+				<constraints nullable="false"/>
+			</column>
+		</addColumn>
+
+		<addColumn tableName="TCARTITEM">
+			<column name="CREATION_DATE" defaultValueDate="CURRENT_TIMESTAMP" type="TIMESTAMP">
+				<constraints nullable="false"/>
+			</column>
+		</addColumn>
+
+		<!-- UPDATE...JOIN performs much better on large datasets than an inner SELECT in MySql at least, but is only supported by MySql, so use it for MySql databases only -->
+		<sql dbms="mysql">
+			UPDATE TORDERDATA JOIN TORDER ON TORDERDATA.ORDER_UID = TORDER.UIDPK SET TORDERDATA.CREATION_DATE = TORDER.CREATED_DATE;
+			UPDATE TORDERDATA JOIN TORDER ON TORDERDATA.ORDER_UID = TORDER.UIDPK SET TORDERDATA.LAST_MODIFIED_DATE = TORDER.LAST_MODIFIED_DATE;
+		</sql>
+
+		<!-- And fallback to the non-performant UPDATE with inner SELECT for the other databases as no choice -->
+		<sql dbms="h2, hsqldb, oracle,postgresql">
+			UPDATE TORDERDATA
+			   SET CREATION_DATE = (SELECT CREATED_DATE FROM TORDER o WHERE o.UIDPK = ORDER_UID)
+			   WHERE EXISTS (SELECT * FROM TORDER o WHERE o.UIDPK = TORDERDATA.ORDER_UID);
+			UPDATE TORDERDATA
+			   SET LAST_MODIFIED_DATE = (SELECT LAST_MODIFIED_DATE FROM TORDER o WHERE o.UIDPK = ORDER_UID)
+				 WHERE EXISTS (SELECT * FROM TORDER o WHERE o.UIDPK = TORDERDATA.ORDER_UID);
+		</sql>
+
+		<sql>
+			UPDATE TCARTITEM SET CREATION_DATE = LAST_MODIFIED_DATE;
+		</sql>
+
+	</changeSet>
+
+	<changeSet id="7.2.0-add-creation-date-to-shopping-item-data" author="elasticpath" context="expand">
+		<validCheckSum>8:3c067af93797654866f69a951370c1f7</validCheckSum>
+
+		<comment>[PB-3411] Add Created and Updated dates to Shopping Item Data</comment>
+
+		<addColumn tableName="TSHOPPINGITEMDATA">
+			<column name="LAST_MODIFIED_DATE" defaultValueDate="CURRENT_TIMESTAMP" type="TIMESTAMP">
+				<constraints nullable="false"/>
+			</column>
+			<column name="CREATION_DATE" defaultValueDate="CURRENT_TIMESTAMP" type="TIMESTAMP">
+				<constraints nullable="false"/>
+			</column>
+		</addColumn>
+
+		<!-- UPDATE...JOIN performs much better on large datasets than an inner SELECT in MySql at least, but is only supported by MySql, so use it for MySql databases only -->
+		<sql dbms="mysql">
+			UPDATE TSHOPPINGITEMDATA JOIN TCARTITEM ON TSHOPPINGITEMDATA.CARTITEM_UID = TCARTITEM.UIDPK SET TSHOPPINGITEMDATA.CREATION_DATE = TCARTITEM.CREATION_DATE;
+			UPDATE TSHOPPINGITEMDATA JOIN TCARTITEM ON TSHOPPINGITEMDATA.CARTITEM_UID = TCARTITEM.UIDPK SET TSHOPPINGITEMDATA.LAST_MODIFIED_DATE = TCARTITEM.LAST_MODIFIED_DATE;
+		</sql>
+
+		<!-- And fallback to the non-performant UPDATE with inner SELECT for the other databases as no choice -->
+		<sql dbms="h2, hsqldb, oracle,postgresql">
+			UPDATE TSHOPPINGITEMDATA
+			   SET CREATION_DATE = (SELECT CREATION_DATE FROM TCARTITEM i WHERE i.UIDPK = CARTITEM_UID)
+				 WHERE EXISTS (SELECT * FROM TCARTITEM i WHERE i.UIDPK = TSHOPPINGITEMDATA.CARTITEM_UID);
+			UPDATE TSHOPPINGITEMDATA
+			   SET LAST_MODIFIED_DATE = (SELECT LAST_MODIFIED_DATE FROM TCARTITEM i WHERE i.UIDPK = CARTITEM_UID)
+				 WHERE EXISTS (SELECT * FROM TCARTITEM i WHERE i.UIDPK = TSHOPPINGITEMDATA.CARTITEM_UID);
+		</sql>
+
+	</changeSet>
+
+	<changeSet id="7.2.0-add-table-and-map-data-policies-to-data-policy-segments" author="elasticpath" context="expand">
+
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="TDATAPOLICYSEGMENTS"/>
+			</not>
+		</preConditions>
+
+		<comment>[PB-3414] Map data policies to data policy segments</comment>
+
+		<createTable tableName="TDATAPOLICYSEGMENTS">
+			<column name="DATAPOLICY_UID" type="BIGINT">
+				<constraints nullable="false"/>
+			</column>
+			<column name="SEGMENT_NAME" type="VARCHAR(255)">
+				<constraints nullable="false"/>
+			</column>
+		</createTable>
+
+		<addForeignKeyConstraint constraintName="FK_DP_POLICY"
+								 baseTableName="TDATAPOLICYSEGMENTS"
+								 baseColumnNames="DATAPOLICY_UID"
+								 referencedTableName="TDATAPOLICY"
+								 referencedColumnNames="UIDPK"/>
+
+		<addUniqueConstraint tableName="TDATAPOLICYSEGMENTS" columnNames="DATAPOLICY_UID,SEGMENT_NAME"/>
+
+	</changeSet>
+	<changeSet id="7.2.0-add-data-policy-activities-table" author="elasticpath" context="expand">
+
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="TDATAPOLICYACTIVITIES"/>
+			</not>
+		</preConditions>
+
+		<comment>[PB-3552] Add data policy activities table and association</comment>
+
+		<createTable tableName="TDATAPOLICYACTIVITIES">
+			<column name="DATAPOLICY_UID" type="BIGINT">
+				<constraints nullable="false"/>
+			</column>
+			<column name="ACTIVITY" type="VARCHAR(255)">
+				<constraints nullable="false"/>
+			</column>
+		</createTable>
+
+		<addForeignKeyConstraint constraintName="FK_POLICY"
+								 baseTableName="TDATAPOLICYACTIVITIES"
+								 baseColumnNames="DATAPOLICY_UID"
+								 referencedTableName="TDATAPOLICY"
+								 referencedColumnNames="UIDPK"/>
+
+		<addUniqueConstraint tableName="TDATAPOLICYACTIVITIES" columnNames="DATAPOLICY_UID,ACTIVITY"/>
+
+	</changeSet>
+
+	<changeSet id="7.2.0-add-TSETTINGDEFINITION-setting-for-enable-data-policies" author="elasticpath" context="expand">
+		<comment>[PB-3460] Store setting to enable Data Policies</comment>
+		<insert tableName="TSETTINGDEFINITION">
+			<column name="UIDPK" valueNumeric="137" />
+			<column name="PATH" value="COMMERCE/STORE/enableDataPolicies" />
+			<column name="DEFAULT_VALUE" value="false" />
+			<column name="VALUE_TYPE" value="boolean" />
+			<column name="DESCRIPTION" value="Set to true if data policies are enabled for the store." />
+			<column name="MAX_OVERRIDE_VALUES" valueNumeric="-1" />
+		</insert>
+
+		<insert tableName="TSETTINGMETADATA">
+			<column name="UIDPK" valueNumeric="1362" />
+			<column name="SETTING_DEFINITION_UID" valueNumeric="137" />
+			<column name="METADATA_KEY" value="environmentSpecific" />
+			<column name="VALUE" value="false" />
+		</insert>
+
+		<insert tableName="TSETTINGMETADATA">
+			<column name="UIDPK" valueNumeric="1363" />
+			<column name="SETTING_DEFINITION_UID" valueNumeric="137" />
+			<column name="METADATA_KEY" value="apiRefreshStrategy" />
+			<column name="VALUE" value="application" />
+		</insert>
+	</changeSet>
+
+	<changeSet id="7.2.0-add-dates-to-order-item-data" author="elasticpath" context="expand">
+		<validCheckSum>8:92387c3c3927ccb9ab43c0e8cf2cad98</validCheckSum>
+
+		<comment>[PB-3630] Add Created and Last Modified dates to Order Item Data table</comment>
+
+		<addColumn tableName="TORDERITEMDATA">
+			<column name="LAST_MODIFIED_DATE" defaultValueDate="CURRENT_TIMESTAMP" type="TIMESTAMP">
+				<constraints nullable="false"/>
+			</column>
+			<column name="CREATION_DATE" defaultValueDate="CURRENT_TIMESTAMP" type="TIMESTAMP">
+				<constraints nullable="false"/>
+			</column>
+		</addColumn>
+
+		<!-- UPDATE...JOIN performs much better on large datasets than an inner SELECT in MySql at least, but is only supported by MySql, so use it for MySql databases only -->
+		<sql dbms="mysql">
+			UPDATE TORDERITEMDATA JOIN TORDERSKU ON TORDERITEMDATA.ORDERSKU_UID = TORDERSKU.UIDPK SET TORDERITEMDATA.CREATION_DATE = TORDERSKU.CREATED_DATE;
+			UPDATE TORDERITEMDATA JOIN TORDERSKU ON TORDERITEMDATA.ORDERSKU_UID = TORDERSKU.UIDPK SET TORDERITEMDATA.LAST_MODIFIED_DATE = TORDERSKU.LAST_MODIFIED_DATE;
+		</sql>
+
+		<!-- And fallback to the non-performant UPDATE with inner SELECT for the other databases as no choice -->
+		<sql dbms="h2, hsqldb, oracle,postgresql">
+			UPDATE TORDERITEMDATA
+			   SET CREATION_DATE = (SELECT CREATED_DATE FROM TORDERSKU sku WHERE sku.UIDPK = ORDERSKU_UID)
+				 WHERE EXISTS (SELECT * FROM TORDERSKU sku WHERE sku.UIDPK = ORDERSKU_UID);
+
+			UPDATE TORDERITEMDATA
+			   SET LAST_MODIFIED_DATE = (SELECT LAST_MODIFIED_DATE FROM TORDERSKU sku WHERE sku.UIDPK = ORDERSKU_UID)
+				 WHERE EXISTS (SELECT * FROM TORDERSKU sku WHERE sku.UIDPK = ORDERSKU_UID)
+		</sql>
+	</changeSet>
+</databaseChangeLog>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+		xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+		">
+
+	<bean id="storeCartTypeEhCache"
+		  class="com.elasticpath.commons.beanframework.EhCacheDefaultConfigurationFactoryBean">
+		<property name="name" value="storeCartTypeCache"/>
+		<property name="cacheManager" ref="epEhcacheManager"/>
+		<property name="timeToLive" value="600"/>
+		<property name="timeToIdle" value="600"/>
+	</bean>
+
+	<bean id="storeCartTypeCache"
+		  factory-bean="localCacheFactory" factory-method="createCache"
+		  depends-on="storeCartTypeEhCache">
+		<constructor-arg value="storeCartTypeCache"/>
+	</bean>
+
+	<bean id="enabledStoreLocaleEhCache"
+		  class="com.elasticpath.commons.beanframework.EhCacheDefaultConfigurationFactoryBean">
+		<property name="name" value="enabledStoreLocaleCache"/>
+		<property name="cacheManager" ref="epEhcacheManager"/>
+		<property name="timeToLive" value="600"/>
+		<property name="timeToIdle" value="600"/>
+	</bean>
+
+	<bean id="enabledStoreLocaleCache"
+		  factory-bean="localCacheFactory" factory-method="createCache"
+		  depends-on="enabledStoreLocaleEhCache">
+		<constructor-arg value="enabledStoreLocaleCache"/>
+	</bean>
+
+	<bean id="cachingStoreService" class="com.elasticpath.caching.core.CachingStoreServiceImpl">
+		<property name="storeCache" ref="cachingStoreRetrieveStrategy"/>
+		<property name="fallbackStoreService" ref="nonCachingStoreService"/>
+		<property name="storeCartTypeCache" ref="storeCartTypeCache" />
+		<property name="enabledStoreLocaleCache" ref="enabledStoreLocaleCache" />
+	</bean>
+
+	<bean id="storeCache" parent="abstractCacheBean">
+		<property name="timeToLive" value="3600"/>
+		<property name="timeToIdle" value="3600"/>
+	</bean>
+
+	<bean id="cachingStoreRetrieveStrategy" class="com.elasticpath.caching.core.EhCacheStoreRetrieveStrategyImpl">
+		<property name="storeCache" ref="storeCache" />
+	</bean>
+
+	<bean id="defaultCacheManagerWrapper" class="com.elasticpath.caching.core.impl.CacheManagerWrapperImpl">
+		<constructor-arg ref="epEhcacheManager"/>
+	</bean>
+</beans>

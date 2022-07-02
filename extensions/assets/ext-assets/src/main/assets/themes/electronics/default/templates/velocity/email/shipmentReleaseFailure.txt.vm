@@ -1,0 +1,17 @@
+#emailInit()
+
+#set ($order = $shipment.getOrder())
+
+#emailMessage("email.failedRelease.message")
+
+#emailMessage("email.failedRelease.message2"):
+
+#emailMessage("email.failedRelease.store"): $order.getStore().getName()
+#emailMessage("email.failedRelease.orderNumber"): $!order.getOrderNumber()
+#emailMessage("email.failedRelease.shipmentNumber"): $!shipment.getShipmentNumber()
+#emailMessage("email.failedRelease.createdDate"): $!shipment.createdDate
+
+#emailMessage("email.failedRelease.reason"):
+$errorMessage
+
+------------------------------------------------------------------------------#**#

@@ -1,0 +1,739 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (c) Elastic Path Software Inc., 2020
+  -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.elasticpath</groupId>
+		<artifactId>grandparent</artifactId>
+		<version>124</version>
+		<relativePath/>
+	</parent>
+
+	<groupId>com.elasticpath</groupId>
+	<artifactId>commerce-parent</artifactId>
+	<packaging>pom</packaging>
+
+	<name>Commerce Parent POM</name>
+	<version>0.0.0-SNAPSHOT</version>
+
+	<properties>
+		<!-- Elastic Path release version -->
+		<ep.release.version>8.3.0</ep.release.version>
+		<!-- Elastic Path dependency versions -->
+		<api-platform.version>1.46.0.2d06f00d07</api-platform.version>
+		<cmclient.version>0.0.0-SNAPSHOT</cmclient.version>
+		<cortex.ep.integration.version>0.0.0-SNAPSHOT</cortex.ep.integration.version>
+		<dce.version>0.0.0-SNAPSHOT</dce.version>
+		<ep.commerce.data.version>0.0.0-SNAPSHOT</ep.commerce.data.version>
+		<ep.data.population.version>0.0.0-SNAPSHOT</ep.data.population.version>
+		<!-- Third-party dependency versions (sorted alphabetically) -->
+		<com.h2database.version>1.4.200</com.h2database.version>
+		<commons.pool.version>1.6</commons.pool.version>
+		<cucable-plugin.version>1.8.0</cucable-plugin.version>
+		<cucumber-groovy.version>2.0.1</cucumber-groovy.version>
+		<felix.shell.remote.version>1.1.2</felix.shell.remote.version>
+		<felix.shell.version>1.4.3</felix.shell.version>
+		<groovy.eclipse.batch.version>2.4.21-01</groovy.eclipse.batch.version>
+		<groovy.eclipse.compiler.version>2.9.2-01</groovy.eclipse.compiler.version>
+		<hamcrest.version>1.3</hamcrest.version>
+		<hawtbuf.version>1.9</hawtbuf.version>
+		<io.cucumber.version>2.4.0</io.cucumber.version>
+		<jaxb.version>2.3.0</jaxb.version>
+		<log4j.version>2.13.3</log4j.version>
+		<org.apache.ant.version>1.7.1</org.apache.ant.version>
+		<org.apache.camel.version>2.23.4</org.apache.camel.version>
+		<org.apache.commons.pool2.version>2.4.2</org.apache.commons.pool2.version>
+		<org.apache.openjpa.version>2.4.0-ep2.4</org.apache.openjpa.version>
+		<org.liquibase.version>3.10.3</org.liquibase.version>
+		<slf4j.version>1.7.26</slf4j.version>
+		<tomcatLogging.version>9.0.0.M6</tomcatLogging.version>
+
+		<!-- Third-party plugin versions (sorted alphabetically) -->
+		<cargo.plugin.version>1.6.8</cargo.plugin.version>
+		<gmaven.plugin.version>1.5</gmaven.plugin.version>
+		<jacoco-plugin.version>0.7.5.201505241946</jacoco-plugin.version>
+		<keytool.maven.plugin.version>1.0</keytool.maven.plugin.version>
+		<lifecycle-mapping-plugin.version>1.0.0</lifecycle-mapping-plugin.version>
+		<maven-assembly-plugin.version>2.5.5</maven-assembly-plugin.version>
+		<maven-replacer-plugin.version>1.4.1</maven-replacer-plugin.version>
+		<maven-resources-plugin.version>2.6</maven-resources-plugin.version>
+		<maven-sling-plugin.version>2.1.0</maven-sling-plugin.version>
+		<!-- DONT upgrade to 2.8.2 which will fail deploy -->
+		<maven.deploy.plugin.version>2.8</maven.deploy.plugin.version>
+		<maven.invoker.plugin.version>3.2.1</maven.invoker.plugin.version>
+		<maven.release.plugin.version>2.4</maven.release.plugin.version>
+		<maven.shade.plugin.version>3.2.1</maven.shade.plugin.version>
+		<org.apache.activemq.version>5.16.1</org.apache.activemq.version>
+		<ph.javacc.maven.plugin.version>4.1.4</ph.javacc.maven.plugin.version>
+		<properties.plugin.version>1.0-alpha-2</properties.plugin.version>
+		<tomcat.maven.plugin.version>3.0.ep1.2</tomcat.maven.plugin.version>
+		<tycho.version>1.0.0</tycho.version>
+		<maven.plugin.plugin.version>3.5</maven.plugin.plugin.version>
+
+		<!-- Default webapp ports when deployed in a single Tomcat container -->
+		<!-- NOTE: Deprecated because webapps are more stable if deployed in separate Tomcat containers -->
+		<!--       Use port assignments from ep-developer profile instead for development -->
+		<ep.cm.tomcat.port.http>8080</ep.cm.tomcat.port.http>
+		<ep.cm.tomcat.port.https>8443</ep.cm.tomcat.port.https>
+		<ep.search.tomcat.port.http>8080</ep.search.tomcat.port.http>
+		<ep.integration.tomcat.port.http>8080</ep.integration.tomcat.port.http>
+		<ep.integration.tomcat.port.https>8443</ep.integration.tomcat.port.https>
+		<ep.datasync.tomcat.port.http>8080</ep.datasync.tomcat.port.http>
+		<ep.datasync.tomcat.port.https>8443</ep.datasync.tomcat.port.https>
+		<ep.batch.tomcat.port.http>8080</ep.batch.tomcat.port.http>
+		<ep.cortex.tomcat.port.http>8080</ep.cortex.tomcat.port.http>
+		<ep.studio.tomcat.port.http>8080</ep.studio.tomcat.port.http>
+		<ep.mock.tomcat.port.http>8080</ep.mock.tomcat.port.http>
+
+		<!--Jacoco-->
+		<jacoco.instruction.covered-ratio>0</jacoco.instruction.covered-ratio>
+		<jacoco.branch.covered-ratio>0</jacoco.branch.covered-ratio>
+		<jacoco.line.covered-ratio>0</jacoco.line.covered-ratio>
+		<jacoco.complexity.covered-ratio>0</jacoco.complexity.covered-ratio>
+		<jacoco.method.covered-ratio>0</jacoco.method.covered-ratio>
+		<jacoco.class.covered-ratio>0</jacoco.class.covered-ratio>
+
+		<!-- Properties from commerce engine module which is shared with extensions -->
+		<java.version>1.8</java.version>
+
+		<!-- Control whether Java compilation warnings are reported as errors. -->
+		<javac.werror>-Werror</javac.werror>
+
+		<!-- If you are going to overwrite some values with your .m2 settings file or change these values in the grandparent (or any other method you have for modifying these properties) you'll have to call mvn -f stores/snapitup-populate-database/pom.xml
+					process-resources -P update-settings because some settings like the port numbers are stored within your database and you'll have to update them for the changes to be picked up. -->
+
+		<!-- CM Settings -->
+		<ep.cm.context>/cm</ep.cm.context>
+
+		<!-- Search Server Settings -->
+		<ep.search.host>localhost</ep.search.host>
+		<ep.search.contextUrl>/searchserver</ep.search.contextUrl>
+		<ep.search.url>http://${ep.search.host}:${ep.search.port.http}${ep.search.contextUrl}</ep.search.url>
+
+		<!-- Integration Server Settings -->
+		<ep.integration.host>localhost</ep.integration.host>
+		<ep.integration.context>/integration</ep.integration.context>
+		<ep.integration.url>http://${ep.integration.host}:${ep.integration.port.http}${ep.integration.context}</ep.integration.url>
+
+		<!-- Batch Server Settings -->
+		<ep.batch.host>localhost</ep.batch.host>
+		<ep.batch.context>/batch</ep.batch.context>
+		<ep.batch.url>http://${ep.batch.host}:${ep.batch.port.http}${ep.batch.context}</ep.batch.url>
+
+		<!-- Data Sync Server Settings -->
+		<ep.datasync.context>/datasync</ep.datasync.context>
+
+		<!-- Wiremock Server Settings -->
+		<ep.mock.context>/mock</ep.mock.context>
+
+		<!-- Where your assets are located on your machine during development. -->
+		<!-- This setting it put into your configured database by the snapitup-data artifact. -->
+		<ep.local.asset.path>${user.home}/ep-assets</ep.local.asset.path>
+
+		<ep.velocity.cache.seconds>-1</ep.velocity.cache.seconds>
+		<ep.velocity.library.autoreload>false</ep.velocity.library.autoreload>
+		<ep.product.attribute.filter.enable>true</ep.product.attribute.filter.enable>
+		<ep.localeUrlTool.localeControllerUrl>locale.ep</ep.localeUrlTool.localeControllerUrl>
+
+		<!--DCAPI settings -->
+		<ep.cortex.contextUrl>/cortex</ep.cortex.contextUrl>
+		<ep.studio.contextUrl>/studio</ep.studio.contextUrl>
+		<ep.cortex.uri.prefix /> <!-- empty by default -->
+
+		<!-- Logging properties -->
+		<ep.log.to><![CDATA[<AppenderRef ref="CONSOLE" /><AppenderRef ref="FILE" />]]></ep.log.to> <!-- log4j2 -->
+		<ep.log.to.logback><![CDATA[<appender-ref ref="CONSOLE" /><appender-ref ref="FILE" />]]></ep.log.to.logback> <!-- logback -->
+		<ep.log.level>INFO</ep.log.level>
+		<!-- ep.log.dir is relative to where appserver is started -->
+		<ep.log.dir>target/logs</ep.log.dir>
+
+		<!-- Quartz Jobs -->
+		<ep.cm.triggers.topseller>
+			topSellerSchedulingTriggers<!-- disabled -->
+		</ep.cm.triggers.topseller>
+		<ep.cm.triggers.productrecommendation>
+			productRecommendationScheduling<!-- disabled -->
+		</ep.cm.triggers.productrecommendation>
+		<ep.cm.triggers.auto.shipmentrelease>
+			releaseShipmentSchedulingTriggers<!-- disabled -->
+		</ep.cm.triggers.auto.shipmentrelease>
+		<ep.search.triggers.index>
+			indexBuildTriggers<!-- disabled -->
+		</ep.search.triggers.index>
+		<ep.search.triggers.rulecompile>
+			ruleCompileTriggers<!-- disabled -->
+		</ep.search.triggers.rulecompile>
+		<ep.cm.triggers.searchterms.aggregator>
+			disabled<!-- searchTermsAggregatorTriggers -->
+		</ep.cm.triggers.searchterms.aggregator>
+
+		<ep.cm.topseller.delay>30000</ep.cm.topseller.delay>
+		<ep.cm.topseller.interval>30000</ep.cm.topseller.interval>
+		<ep.cm.productrecommendation.delay>30000</ep.cm.productrecommendation.delay>
+		<ep.cm.productrecommendation.interval>30000</ep.cm.productrecommendation.interval>
+		<ep.cm.searchterms.aggregator.delay>30000</ep.cm.searchterms.aggregator.delay>
+		<ep.cm.searchterms.aggregator.interval>30000</ep.cm.searchterms.aggregator.interval>
+
+		<!-- Required for newer versions of maven when OSGi is involved -->
+		<maven.build.timestamp.format>yyyyMMdd-HHmm</maven.build.timestamp.format>
+
+		<!-- Health Monitor Properties -->
+		<ep.health.monitoring.context>/healthcheck</ep.health.monitoring.context>
+		<m2eclipse.wtp.contextRoot>${ep.health.monitoring.context}</m2eclipse.wtp.contextRoot>
+		<!--Webapp ports for tomcat-->
+		<ep.health.monitoring.tomcat.port.http>8080</ep.health.monitoring.tomcat.port.http>
+		<ep.health.monitoring.tomcat.port.https>8443</ep.health.monitoring.tomcat.port.https>
+
+		<!-- db properties -->
+		<epdb.validation.interval>60000</epdb.validation.interval>
+
+		<dependency.directory>lib</dependency.directory>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<checkstyle.ruleset>rulesets/checkstyle-elasticpath-rules.xml</checkstyle.ruleset>
+		<checkstyle.itest.ruleset>rulesets/checkstyle-elasticpath-itest-rules.xml</checkstyle.itest.ruleset>
+		<pmd.ruleset>rulesets/pmd-elasticpath-rules.xml</pmd.ruleset>
+		<pmd.itest.ruleset>rulesets/pmd-elasticpath-itest-rules.xml</pmd.itest.ruleset>
+		<banned.dependencies.enforcer.skip>true</banned.dependencies.enforcer.skip>
+	</properties>
+
+	<modules>
+		<module>bill-of-materials</module>
+		<module>commerce-data</module>
+		<module>commerce-engine</module>
+		<module>cortex-resources</module>
+		<module>commerce-manager</module>
+		<module>extensions</module>
+		<module>health-monitoring</module>
+		<module>test-tools</module>
+		<module>operational-insights</module>
+	</modules>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.elasticpath</groupId>
+				<artifactId>bill-of-materials</artifactId>
+				<version>0.0.0-SNAPSHOT</version>
+				<scope>import</scope>
+				<type>pom</type>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<distributionManagement>
+		<repository>
+			<id>ep-releases</id>
+			<url>${ep.releases.repository.url}</url>
+		</repository>
+		<snapshotRepository>
+			<id>ep-snapshots</id>
+			<url>${ep.snapshots.repository.url}</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+	<profiles>
+		<profile>
+			<id>activeInIdea</id>
+			<activation>
+				<property>
+					<name>idea.maven.embedder.version</name>
+				</property>
+			</activation>
+			<properties>
+				<!-- Disable -Werror when using within intellij -->
+				<javac.werror></javac.werror>
+			</properties>
+		</profile>
+		<profile>
+			<id>ep-developer</id>
+			<properties>
+
+				<!-- Enable velocity template reloading in dev. -->
+				<ep.velocity.cache.seconds>3</ep.velocity.cache.seconds>
+				<ep.velocity.library.autoreload>true</ep.velocity.library.autoreload>
+
+				<!-- Disable some triggers in dev, to speed things up a bit. -->
+				<ep.cm.triggers.topseller><!-- topSellerSchedulingTriggers -->
+					disabled
+				</ep.cm.triggers.topseller>
+				<ep.cm.triggers.productrecommendation><!-- productRecommendationScheduling -->
+					disabled
+				</ep.cm.triggers.productrecommendation>
+
+				<!-- The default developer configuration is to run tomcat on different ports for each webapp, and no https (so no change of port needed) -->
+				<ep.cm.tomcat.port.http>8081</ep.cm.tomcat.port.http>
+				<ep.search.tomcat.port.http>8082</ep.search.tomcat.port.http>
+				<ep.integration.tomcat.port.http>8083</ep.integration.tomcat.port.http>
+				<ep.batch.tomcat.port.http>8084</ep.batch.tomcat.port.http>
+				<ep.datasync.tomcat.port.http>8085</ep.datasync.tomcat.port.http>
+				<ep.cortex.tomcat.port.http>9080</ep.cortex.tomcat.port.http>
+				<ep.studio.tomcat.port.http>9081</ep.studio.tomcat.port.http>
+				<ep.mock.tomcat.port.http>8086</ep.mock.tomcat.port.http>
+
+			</properties>
+		</profile>
+
+		<profile>
+			<id>ep-nightly</id>
+			<properties>
+				<!-- Using secure in nightly deploys causes problems for CMClient. -->
+				<!-- TODO update Jenkinks job -->
+			</properties>
+		</profile>
+
+		<profile>
+			<id>tomcat-developer</id>
+			<properties>
+				<ep.cm.port.http>${ep.cm.tomcat.port.http}</ep.cm.port.http>
+				<ep.cm.port.https>${ep.cm.tomcat.port.https}</ep.cm.port.https>
+				<ep.search.port.http>${ep.search.tomcat.port.http}</ep.search.port.http>
+				<ep.integration.port.http>${ep.integration.tomcat.port.http}</ep.integration.port.http>
+				<ep.integration.port.https>${ep.integration.tomcat.port.https}</ep.integration.port.https>
+				<ep.batch.port.http>${ep.batch.tomcat.port.http}</ep.batch.port.http>
+				<ep.datasync.port.http>${ep.datasync.tomcat.port.http}</ep.datasync.port.http>
+				<ep.cortex.port.http>${ep.cortex.tomcat.port.http}</ep.cortex.port.http>
+				<ep.studio.port.http>${ep.studio.tomcat.port.http}</ep.studio.port.http>
+				<ep.mock.port.http>${ep.mock.tomcat.port.http}</ep.mock.port.http>
+			</properties>
+		</profile>
+
+		<profile>
+			<id>activemq-dev-jms</id>
+			<properties>
+				<env>default</env>
+				<ep.jms.type>org.apache.activemq.pool.PooledConnectionFactory</ep.jms.type>
+				<ep.jms.factory>org.apache.activemq.jndi.JNDIReferenceFactory</ep.jms.factory>
+				<epdb.data.source.type>javax.sql.DataSource</epdb.data.source.type>
+				<epdb.data.source.factory>org.apache.tomcat.jdbc.pool.DataSourceFactory</epdb.data.source.factory>
+				<ep.jms.url>tcp://localhost:61616</ep.jms.url>
+				<ep.synctarget.jms.url>tcp://localhost:61616</ep.synctarget.jms.url>
+			</properties>
+		</profile>
+
+		<profile>
+			<id>activemq-local</id>
+			<properties>
+				<ep.activemq.port>61616</ep.activemq.port>
+				<ep.activemq.configUri>broker:(tcp://localhost:${ep.activemq.port})Jmx=true&amp;persistent=false</ep.activemq.configUri>
+				<ep.jms.url>tcp://localhost:${ep.activemq.port}</ep.jms.url>
+			</properties>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.activemq.tooling</groupId>
+						<artifactId>activemq-maven-plugin</artifactId>
+						<version>${org.apache.activemq.version}</version>
+						<executions>
+							<execution>
+								<id>activemq-embedded-tcp</id>
+								<phase>prepare-package</phase>
+								<goals>
+									<goal>run</goal>
+								</goals>
+								<configuration>
+									<fork>true</fork>
+									<configUri>${ep.activemq.configUri}</configUri>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
+			<id>mysql-dev-db</id>
+			<!-- This profile introduces configurations to DST target DB configuration.
+				  This is an example configuration and in project development this should be added to the relevant DB profile in settings.xml to
+				  avoid build contamination. DO NOT USE this configuration in production. -->
+			<properties>
+				<!-- The expected mysql db driver version. -->
+				<epdb.maven.version.overriding.for.mysql>8.0.25</epdb.maven.version.overriding.for.mysql>
+				<!-- Overriding the db version property -->
+				<epdb.maven.version>${epdb.maven.version.overriding.for.mysql}</epdb.maven.version>
+
+				<epdb.synctarget.jdbc.driver>com.mysql.cj.jdbc.Driver</epdb.synctarget.jdbc.driver>
+				<epdb.synctarget.host>127.0.0.1</epdb.synctarget.host>
+				<epdb.synctarget.port>3306</epdb.synctarget.port>
+				<epdb.synctarget.schemaname>COMMERCEDB_TARGET</epdb.synctarget.schemaname>
+				<epdb.synctarget.databasename>${epdb.synctarget.schemaname}</epdb.synctarget.databasename>
+				<epdb.synctarget.username>ep</epdb.synctarget.username>
+				<epdb.synctarget.password>ep</epdb.synctarget.password>
+				<epdb.synctarget.params>?characterEncoding=UTF-8</epdb.synctarget.params>
+				<epdb.synctarget.validation.query>/* ping */</epdb.synctarget.validation.query>
+				<epdb.synctarget.removeabandonedtimeout>86400</epdb.synctarget.removeabandonedtimeout>
+				<epdb.synctarget.url>
+					jdbc:mysql://${epdb.synctarget.host}:${epdb.synctarget.port}/${epdb.synctarget.databasename}${epdb.synctarget.params}
+				</epdb.synctarget.url>
+			</properties>
+		</profile>
+
+		<profile>
+			<id>oracle-dev-db</id>
+			<properties>
+				<!-- The oracle db driver version. -->
+				<epdb.maven.version.overriding.for.oracle>19.9.0.0</epdb.maven.version.overriding.for.oracle>
+				<!-- Override db related properties - groupId and artifactId change over time -->
+				<epdb.maven.groupId>com.oracle.database.jdbc</epdb.maven.groupId>
+				<epdb.maven.artifactId>ojdbc8</epdb.maven.artifactId>
+				<epdb.maven.version>${epdb.maven.version.overriding.for.oracle}</epdb.maven.version>
+			</properties>
+		</profile>
+		<profile>
+			<id>enable-banned-dependencies-enforcer</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<properties>
+				<banned.dependencies.enforcer.skip>false</banned.dependencies.enforcer.skip>
+			</properties>
+		</profile>
+	</profiles>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>properties-maven-plugin</artifactId>
+					<version>1.0-alpha-2</version>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.tomcat.maven</groupId>
+					<artifactId>tomcat8-maven-plugin</artifactId>
+					<version>${tomcat.maven.plugin.version}</version>
+					<configuration>
+						<uriEncoding>UTF-8</uriEncoding>
+					</configuration>
+				</plugin>
+
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>keytool-maven-plugin</artifactId>
+					<version>${keytool.maven.plugin.version}</version>
+				</plugin>
+
+				<plugin>
+					<groupId>com.elasticpath.tools</groupId>
+					<artifactId>ep-core-tool</artifactId>
+					<version>0.0.0-SNAPSHOT</version>
+					<dependencies>
+						<dependency>
+							<groupId>${epdb.maven.groupId}</groupId>
+							<artifactId>${epdb.maven.artifactId}</artifactId>
+							<version>${epdb.maven.version}</version>
+						</dependency>
+					</dependencies>
+				</plugin>
+				<plugin>
+					<groupId>com.elasticpath.tools</groupId>
+					<artifactId>ep-properties-plugin</artifactId>
+					<version>0.2.3</version>
+				</plugin>
+				<plugin>
+					<groupId>org.liquibase</groupId>
+					<artifactId>liquibase-maven-plugin</artifactId>
+					<version>${org.liquibase.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<configuration>
+						<source>${java.version}</source>
+						<target>${java.version}</target>
+						<fork>true</fork>
+						<compilerArgs combine.self="override">
+							<arg>${javac.werror}</arg>
+							<arg>-Xlint:all,-deprecation,-options,-path,-processing</arg>
+						</compilerArgs>
+						<showWarnings>true</showWarnings>
+						<showDeprecation>false</showDeprecation>
+					</configuration>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-shade-plugin</artifactId>
+					<version>${maven.shade.plugin.version}</version>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.openjpa</groupId>
+					<artifactId>openjpa-maven-plugin</artifactId>
+					<version>${org.apache.openjpa.version}</version>
+					<configuration>
+						<toolProperties>
+							<property>
+								<name>propertiesFile</name>
+								<value>${project.build.outputDirectory}/META-INF/jpa-persistence.xml</value>
+							</property>
+						</toolProperties>
+					</configuration>
+					<executions>
+						<execution>
+							<id>enhancer</id>
+							<phase>process-classes</phase>
+							<goals>
+								<goal>enhance</goal>
+							</goals>
+						</execution>
+					</executions>
+					<!-- Include the OpenJPA version you are actually using. -->
+					<dependencies>
+						<dependency>
+							<groupId>org.apache.openjpa</groupId>
+							<artifactId>openjpa</artifactId>
+							<version>${org.apache.openjpa.version}</version>
+							<exclusions>
+								<exclusion>
+									<groupId>junit</groupId>
+									<artifactId>junit</artifactId>
+								</exclusion>
+							</exclusions>
+						</dependency>
+						<dependency>
+							<groupId>org.slf4j</groupId>
+							<artifactId>slf4j-api</artifactId>
+							<version>${slf4j.version}</version>
+						</dependency>
+					</dependencies>
+				</plugin>
+				<plugin>
+					<groupId>org.codehaus.gmaven</groupId>
+					<artifactId>gmaven-plugin</artifactId>
+					<version>1.4</version>
+					<configuration>
+						<providerSelection>1.8</providerSelection>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>com.elasticpath.tools</groupId>
+					<artifactId>ep-symlink-plugin</artifactId>
+					<version>1.4</version>
+				</plugin>
+				<plugin>
+					<groupId>com.google.code.maven-replacer-plugin</groupId>
+					<artifactId>maven-replacer-plugin</artifactId>
+					<version>${maven-replacer-plugin.version}</version>
+					<executions>
+						<execution>
+							<id>suppress-warnings-in-generated-code</id>
+							<phase>process-sources</phase>
+							<goals>
+								<goal>replace</goal>
+							</goals>
+							<configuration>
+								<includes>
+									<include>target/generated-sources/**/*.java</include>
+								</includes>
+
+								<regex>true</regex>
+								<regexFlags>
+									<regexFlag>MULTILINE</regexFlag>
+								</regexFlags>
+
+								<replacements>
+									<replacement>
+										<!-- remove any generated SuppressWarning on class/interface -->
+										<token>(\n)(@SuppressWarnings [a-z\s(){}"]+)(\n)([a-z\s\n]+[\s\n]+(class|interface))</token>
+										<value>$1$3$4</value>
+									</replacement>
+									<replacement>
+										<!-- regex matches a type definition, eg.
+										  -
+										  - public static final class Foo
+										  -
+										  - or
+										  -
+										  - public
+										  - static
+										  - final
+										  - class Foo
+										  -
+										  - or
+										  -
+										  - public
+										  - abstract interface Bar
+										  -->
+										<token>(\n)([a-z\s\n]+[\s\n]+(class|interface))</token>
+										<value>$1@SuppressWarnings({"cast", "classfile", "deprecation", "dep-ann", "divzero",
+											"empty", "fallthrough", "finally", "options", "overrides",
+											"path", "processing", "rawtypes", "serial", "static",
+											"try", "unchecked", "varargs", "unused", "PMD"})$1$2</value>
+									</replacement>
+								</replacements>
+							</configuration>
+						</execution>
+					</executions>
+				</plugin>
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>${lifecycle-mapping-plugin.version}</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>com.google.code.maven-replacer-plugin</groupId>
+										<artifactId>maven-replacer-plugin</artifactId>
+										<versionRange>${maven-replacer-plugin.version}</versionRange>
+										<goals>
+											<goal>replace</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore/>
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+				<!-- Override the super-pom AND grandparent execution id which calls sources:jar goal. The sources:jar goal calls the "initialize" goal in the default lifecycle causing dependent builds on querylanguage to break due to HIVE-288 running the clean lifecycle on "initialize" which kills the source jars. -->
+				<plugin>
+					<artifactId>maven-source-plugin</artifactId>
+					<version>2.1.1</version>
+					<executions>
+						<execution>
+							<id>attach-sources</id>
+							<phase>none</phase>
+						</execution>
+					</executions>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-javadoc-plugin</artifactId>
+					<configuration>
+						<additionalparam>-Xdoclint:none</additionalparam>
+					</configuration>
+				</plugin>
+
+				<plugin>
+					<groupId>org.jacoco</groupId>
+					<artifactId>jacoco-maven-plugin</artifactId>
+					<version>${jacoco-plugin.version}</version>
+					<executions>
+						<execution>
+							<id>default-prepare-agent</id>
+							<goals>
+								<goal>prepare-agent</goal>
+							</goals>
+						</execution>
+						<execution>
+							<id>default-check</id>
+							<goals>
+								<goal>check</goal>
+							</goals>
+							<configuration>
+								<rules>
+									<rule>
+										<element>BUNDLE</element>
+										<limits>
+											<limit>
+												<counter>INSTRUCTION</counter>
+												<value>COVEREDRATIO</value>
+												<minimum>${jacoco.instruction.covered-ratio}</minimum>
+											</limit>
+											<limit>
+												<counter>BRANCH</counter>
+												<value>COVEREDRATIO</value>
+												<minimum>${jacoco.branch.covered-ratio}</minimum>
+											</limit>
+											<limit>
+												<counter>LINE</counter>
+												<value>COVEREDRATIO</value>
+												<minimum>${jacoco.line.covered-ratio}</minimum>
+											</limit>
+											<limit>
+												<counter>COMPLEXITY</counter>
+												<value>COVEREDRATIO</value>
+												<minimum>${jacoco.complexity.covered-ratio}</minimum>
+											</limit>
+											<limit>
+												<counter>METHOD</counter>
+												<value>COVEREDRATIO</value>
+												<minimum>${jacoco.method.covered-ratio}</minimum>
+											</limit>
+											<limit>
+												<counter>CLASS</counter>
+												<value>COVEREDRATIO</value>
+												<minimum>${jacoco.class.covered-ratio}</minimum>
+											</limit>
+										</limits>
+									</rule>
+								</rules>
+							</configuration>
+						</execution>
+						<execution>
+							<id>default-report</id>
+							<phase>prepare-package</phase>
+							<goals>
+								<goal>report</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+				<plugin>
+					<!--
+						Breaking down the large feature of cucumber testing into small pieces.
+						Providing finest granularity of cucumber testing to improve parallelization execution.
+					-->
+					<groupId>com.trivago.rta</groupId>
+					<artifactId>cucable-plugin</artifactId>
+					<version>${cucable-plugin.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.codehaus.cargo</groupId>
+					<artifactId>cargo-maven2-plugin</artifactId>
+					<version>${cargo.plugin.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-enforcer-plugin</artifactId>
+					<executions>
+						<execution>
+							<id>enforce-banned-dependencies</id>
+							<goals>
+								<goal>enforce</goal>
+							</goals>
+							<configuration>
+								<rules>
+									<bannedDependencies>
+										<excludes>
+											<exclude>log4j:log4j</exclude>
+										</excludes>
+										<searchTransitive>true</searchTransitive>
+									</bannedDependencies>
+								</rules>
+								<fail>true</fail>
+								<skip>${banned.dependencies.enforcer.skip}</skip>
+							</configuration>
+						</execution>
+						<execution>
+							<id>enforce-plugin-versions</id>
+							<goals>
+								<goal>enforce</goal>
+							</goals>
+							<configuration>
+								<rules>
+									<requirePluginVersions>
+										<message>All plugins must be pinned to an explicit version</message>
+										<unCheckedPluginList>com.elasticpath.tools:ep-core-tool,org.eclipse.tycho:tycho-p2-plugin,org.eclipse.tycho:tycho-compiler-plugin,org.eclipse.tycho:tycho-p2-repository-plugin,com.elasticpath.extensions:metabase-processor-plugin,com.elasticpath.extensions:ext-data-population-maven-plugin</unCheckedPluginList>
+									</requirePluginVersions>
+								</rules>
+							</configuration>
+						</execution>
+					</executions>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+</project>

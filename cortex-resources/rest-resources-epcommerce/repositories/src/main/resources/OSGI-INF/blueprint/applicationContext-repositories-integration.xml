@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+		xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:context="http://www.springframework.org/schema/context"
+		xmlns:util="http://www.springframework.org/schema/util"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans
+			http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+			http://www.springframework.org/schema/context
+			http://www.springframework.org/schema/context/spring-context-4.0.xsd
+			http://www.springframework.org/schema/util
+			http://www.springframework.org/schema/util/spring-util-4.0.xsd">
+
+	<import resource="structuredMessage.xml"/>
+
+	<bean id="globalMessageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<property name="basenames">
+			<list>
+				<value>org.springframework.security/messages</value>
+			</list>
+		</property>
+		<property name="defaultEncoding" value="UTF-8"/>
+	</bean>
+
+	<!-- Dependency injection of caching decorators into aspects -->
+	<bean class="com.elasticpath.rest.resource.integration.epcommerce.repository.CacheResultAspect" factory-method="aspectOf">
+		<property name="cacheResultDecorator" ref="cacheResultDecorator"/>
+	</bean>
+
+	<bean class="com.elasticpath.rest.resource.integration.epcommerce.repository.CacheRemoveAspect" factory-method="aspectOf">
+		<property name="cacheRemoveDecorator" ref="cacheRemoveDecorator"/>
+	</bean>
+
+	<bean name="epCustomerViolationsInterpreter"
+		  class="com.elasticpath.rest.resource.integration.epcommerce.common.validator.EpConstraintViolationsInterpreterImpl">
+		<constructor-arg>
+			<map>
+				<entry key="customerProfile.profileValueMap[CP_FIRST_NAME]" value="given-name"/>
+				<entry key="customerProfile.profileValueMap[CP_LAST_NAME]" value="family-name"/>
+				<entry key="customerProfile.profileValueMap[CP_EMAIL]" value="username"/>
+				<entry key="email" value="username"/>
+			</map>
+		</constructor-arg>
+	</bean>
+	
+	<!-- Note that this map is used in reverse in ProfileAttributeFieldTransformerImpl, so it is
+	critically important that the entry VALUES as well as the KEYS must be unique. -->
+	<util:map id="profileAttributeToFieldNameMap">
+		<entry key="CP_FIRST_NAME" value="given-name"/>
+		<entry key="CP_LAST_NAME" value="family-name"/>
+		<entry key="CP_EMAIL" value="email"/>
+		<entry key="CP_PREF_LOCALE" value="preferred-locale"/>
+		<entry key="CP_PREF_CURR" value="preferred-currency"/>
+		<entry key="CP_PHONE" value="phone"/>
+		<entry key="CP_FAX" value="fax"/>
+		<entry key="CP_COMPANY" value="company"/>
+		<entry key="CP_DOB" value="date-of-birth"/>
+		<entry key="CP_HTML_EMAIL" value="html-email"/>
+		<entry key="CP_BE_NOTIFIED" value="notification"/>
+		<entry key="CP_BUSINESS_NUMBER" value="business-number"/>
+		<entry key="CP_TAX_EXEMPTION_ID" value="tax-exemption-id"/>
+		<entry key="AP_NAME" value="account-business-name" />
+		<entry key="AP_BUSINESS_NUMBER" value="account-business-number" />
+		<entry key="AP_PHONE" value="account-phone" />
+		<entry key="AP_FAX" value="account-fax" />
+		<entry key="AP_TAX_EXEMPTION_ID" value="account-tax-exemption-id" />
+	</util:map>
+
+	<bean name="profileAttributeFieldTransformer"
+		  class="com.elasticpath.rest.resource.integration.epcommerce.repository.customer.impl.ProfileAttributeFieldTransformerImpl">
+		<!-- The transformer will automatically add mappings for reverse lookups. -->
+		<constructor-arg ref="profileAttributeToFieldNameMap"/>
+	</bean>
+
+
+	<util:list
+	id="multiCartResolutionStrategies" value-type="com.elasticpath.rest.resource.integration.epcommerce.repository.cartorder.MultiCartResolutionStrategy"
+	>
+		<ref bean="b2cMulticartStrategy"/>
+	</util:list>
+
+	<bean id="multicartResolutionStrategyListHolder"
+		  class="com.elasticpath.rest.resource.integration.epcommerce.repository.cartorder.MultiCartResolutionStrategyHolderImpl"
+		>
+		<property name="strategies" ref="multiCartResolutionStrategies" />
+	</bean>
+
+	<bean id="conversionServiceTemplate" class="org.springframework.context.support.ConversionServiceFactoryBean" abstract="true">
+		<property name="converters">
+			<set>
+				<ref bean="messageConverter"/>
+				<ref bean="totalEntityConverter"/>
+				<ref bean="shoppingCartConverter"/>
+				<ref bean="availabilityEntityConverter"/>
+				<ref bean="orderToTaxesEntityConverter"/>
+				<ref bean="shipmentToTaxesEntityConverter"/>
+				<ref bean="customerAddressConverter"/>
+				<ref bean="addressEntityConverter"/>
+				<ref bean="purchaseEntityConverter"/>
+				<ref bean="productSkuToItemDefinitionEntityConverter"/>
+				<ref bean="productToOfferDefinitionEntityConverter"/>
+				<ref bean="skuOptionValueToItemDefinitionOptionEntityConverter"/>
+				<ref bean="bundleConstituentToItemDefinitionComponentEntityConverter"/>
+				<ref bean="skuOptionValueToItemDefinitionOptionValueEntityConverter"/>
+				<ref bean="addressEntityToAddressDTOConverter"/>
+				<ref bean="customerAddressToAddressDTOConverter"/>
+			</set>
+		</property>
+	</bean>
+
+	<bean id="conversionService" parent="conversionServiceTemplate"/>
+
+	<bean id="controlledTraitsParent" class="com.elasticpath.commons.beanframework.config.ExtensibleListFactoryBean" abstract="true">
+		<property name="targetListClass">
+			<value>java.util.ArrayList</value>
+		</property>
+		<property name="sourceList">
+			<list merge="true" value-type="java.lang.String">
+				<value>SHOPPING_CONTEXT_DATE_OVERRIDE</value>
+			</list>
+		</property>
+	</bean>
+	<bean id="controlledTraits" parent="controlledTraitsParent"/>
+
+	<bean id="trustedTraitSettingProvider" class="com.elasticpath.settings.provider.impl.SettingValueProviderImpl">
+		<property name="path" value="COMMERCE/SYSTEM/API/enableTrustedTraits"/>
+		<property name="xpfExtensionLookup" ref="xpfExtensionLookup"/>
+		<property name="settingValueTypeConverter" ref="settingValueTypeConverter"/>
+	</bean>
+
+	<bean id="shoppingCartItemListTypeProvider" class="com.elasticpath.settings.provider.impl.SettingValueProviderImpl">
+		<property name="path" value="COMMERCE/STORE/shoppingCartItemListType"/>
+		<property name="xpfExtensionLookup" ref="xpfExtensionLookup"/>
+		<property name="settingValueTypeConverter" ref="settingValueTypeConverter"/>
+	</bean>
+
+	<bean id="multicartItemListTypeLocationProvider" class="com.elasticpath.service.shoppingcart.impl.MulticartItemListTypeLocationProviderImpl	" >
+		<property name="shoppingCartItemListTypeProvider" ref="shoppingCartItemListTypeProvider"/>
+	</bean>
+
+	<util:map id="accountStatusIdToAccountStatusMap">
+		<entry key="1" value="ACTIVE"/>
+		<entry key="2" value="DISABLED"/>
+		<entry key="4" value="SUSPENDED"/>
+	</util:map>
+
+	<bean id="accountStatusIdToAccountStatusMapHolder"
+		  class="com.elasticpath.rest.resource.integration.epcommerce.repository.accounts.repositories.AccountStatusIdToAccountStatusMapHolderImpl" >
+		<property name="accountStatusIdToAccountStatusMap" ref="accountStatusIdToAccountStatusMap" />
+	</bean>
+
+	<context:component-scan base-package="com.elasticpath.rest" scope-resolver="org.springframework.context.annotation.Jsr330ScopeMetadataResolver"/>
+</beans>

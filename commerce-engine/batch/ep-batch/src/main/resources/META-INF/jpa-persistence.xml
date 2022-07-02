@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+	<persistence-unit name="commerce-persistence-unit">
+	    <provider>org.apache.openjpa.persistence.PersistenceProviderImpl</provider>
+		<mapping-file>META-INF/search-query-orm.xml</mapping-file>
+		<mapping-file>META-INF/batch-release-shipments-job-queries-orm.xml</mapping-file>
+		<mapping-file>META-INF/batch-cleanup-inactive-and-abandoned-carts-job-queries-orm.xml</mapping-file>
+		<mapping-file>META-INF/batch-cleanup-anonymous-customers-job-queries-orm.xml</mapping-file>
+		<mapping-file>META-INF/batch-cleanup-expired-oauthtoken-job-orm.xml</mapping-file>
+		<mapping-file>META-INF/batch-cleanup-expired-failed-orders-job-queries-orm.xml</mapping-file>
+		<mapping-file>META-INF/relay-outbox-message-job-queries-orm.xml</mapping-file>
+
+		<validation-mode>NONE</validation-mode>
+	</persistence-unit>
+</persistence>

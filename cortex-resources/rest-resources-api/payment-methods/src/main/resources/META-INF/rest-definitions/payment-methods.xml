@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<!--
+  ~ Copyright (c) Elastic Path Software Inc., 2019
+  -->
+
+<definitions xmlns="http://www.elasticpath.com/schema/rest/0.5">
+
+	<family>
+		<name>paymentmethods</name>
+		<description>
+<![CDATA[
+The payment mechanism selected to create the customer's payment instrument, such as a credit card or PayPal.
+To submit a payment, create one or more payment instruments. Each payment instrument must correspond to a chosen payment method.
+]]>
+		</description>
+
+		<uri-part>
+			<name>payment-method-id</name>
+			<description><![CDATA[The payment method ID.]]></description>
+			<string/>
+		</uri-part>
+
+		<resource>
+			<name>profile-payment-methods</name>
+			<description><![CDATA[The payment methods resource for a profile.]]></description>
+			<uri>{base.family}/{profiles.profile}</uri>
+			<list-of>profile-payment-method</list-of>
+		</resource>
+
+		<resource>
+			<name>order-payment-methods</name>
+			<description><![CDATA[The payment methods resource for an order.]]></description>
+			<uri>{base.family}/{orders.order}</uri>
+			<list-of>order-payment-method</list-of>
+		</resource>
+
+		<resource>
+			<name>profile-payment-method</name>
+			<description>
+				<![CDATA[A payment method supported by the store, such as a credit card, debit, or cash and accessed through the profile.]]>
+			</description>
+			<uri>{profile-payment-methods}/{payment-method-id}</uri>
+			<entity>payment-method</entity>
+		</resource>
+
+		<resource>
+			<name>order-payment-method</name>
+			<description>
+				<![CDATA[A payment method supported by the store, such as a credit card, debit, or cash and accessed through the order.]]>
+			</description>
+			<uri>{order-payment-methods}/{payment-method-id}</uri>
+			<entity>payment-method</entity>
+		</resource>
+
+
+
+		<relationship>
+			<name>profile-payment-methods-for-profile-payment-method</name>
+			<description><![CDATA[Link from the profile payment methods resource to an individual payment method.]]></description>
+			<rel>paymentmethods</rel>
+			<from>profile-payment-method</from>
+			<to>profile-payment-methods</to>
+		</relationship>
+
+		<relationship>
+			<name>order-payment-methods-for-order-payment-method</name>
+			<description><![CDATA[Link from the order payment methods resource to an individual order payment method.]]></description>
+			<rel>paymentmethods</rel>
+			<from>order-payment-method</from>
+			<to>order-payment-methods</to>
+		</relationship>
+
+		<relationship>
+			<name>profile-payment-methods-for-profile</name>
+			<description><![CDATA[Link from a profile to the available payment methods for that scope and profile.]]></description>
+			<rel>paymentmethods</rel>
+			<rev>profile</rev>
+			<from>profiles.profile</from>
+			<to>profile-payment-methods</to>
+		</relationship>
+
+		<relationship>
+			<name>order-payment-methods-for-order</name>
+			<description><![CDATA[Link from an order to the available payment methods for that scope.]]></description>
+			<rel>paymentmethodinfo</rel>
+			<rev>order</rev>
+			<from>orders.order</from>
+			<to>order-payment-methods</to>
+		</relationship>
+
+		<entity>
+			<name>payment-method</name>
+			<description><![CDATA[Describes a payment method, such as a credit card, debit, or cash]]></description>
+			<property>
+				<name>name</name>
+				<description><![CDATA[The payment method name.]]></description>
+				<string/>
+			</property>
+			<property>
+				<name>display-name</name>
+				<description><![CDATA[The localized payment method name, intended for display in the client application.]]></description>
+				<string/>
+			</property>
+		</entity>
+	</family>
+</definitions>

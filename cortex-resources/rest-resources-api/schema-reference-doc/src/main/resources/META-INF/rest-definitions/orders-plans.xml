@@ -1,0 +1,176 @@
+<?xml version="1.0"?>
+<definitions xmlns="http://www.elasticpath.com/schema/rest/0.5">
+
+	<family>
+		<name>orders</name>
+		<plan>
+			<name>read-order</name>
+			<description>
+				<![CDATA[
+Retrieves the cart's order. An order may have Needinfos. Needinfos identify a condition that must be satisfied before a transaction can complete.
+Needinfos link to a selector where the customer can select the missing condition. After the Needinfos are
+satisfied, the order can be submitted to a purchase.
+For a list of messages that can appear on the order, see `needinfo-messages` in the [Structured Messages](../frontend-dev/api/structured-messages.md#needinfo-messages) topic.
+				]]>
+			</description>
+			<step>
+				<description><![CDATA[Read an order from a cart.]]></description>
+				<start>carts.cart</start>
+				<follow-link>order</follow-link>
+				<link-back>cart</link-back>
+				<result>order</result>
+			</step>
+		</plan>
+
+		<plan>
+			<name>read-order-email</name>
+			<description><![CDATA[Read email address associated with order.]]></description>
+			<step>
+				<description><![CDATA[Read emailinfo of the order.]]></description>
+				<start>order</start>
+				<follow-link>emailinfo</follow-link>
+				<link-back>order</link-back>
+				<result>email-info</result>
+			</step>
+			<step>
+				<description><![CDATA[Read email used for the order.]]></description>
+				<start>email-info</start>
+				<follow-link>email</follow-link>
+				<result>emails.email</result>
+			</step>
+		</plan>
+
+		<plan>
+			<name>add-email-from-order</name>
+			<description>Create an email address from the order.</description>
+			<step>
+				<description>Order to emailinfo.</description>
+				<start>order</start>
+				<follow-link>emailinfo</follow-link>
+				<result>email-info</result>
+			</step>
+			<step>
+				<description>Emailinfo to emailform</description>
+				<start>email-info</start>
+				<follow-link>emailform</follow-link>
+				<result>emails.add-email-form</result>
+			</step>
+			<step>
+				<description>Submit the form to create an email</description>
+				<start>emails.add-email-form</start>
+				<submit></submit>
+				<to>emails.add-email-form</to>
+				<via-link>createemailaction</via-link>
+				<result>emails.email</result>
+			</step>
+		</plan>
+		
+<!--		Billing Info-->
+		<plan>
+			<name>billingaddress-info-selector</name>
+			<description>
+				<![CDATA[
+Use a selector to select the billing address to use for the purchase. Follow the workflow to read the billing address info
+and then create a choice to select the billing address to use for the purchase.
+				]]>
+			</description>
+			<step>
+				<description><![CDATA[Retrieve the selector.]]></description>
+				<start>billingaddress-info</start>
+				<follow-link>selector</follow-link>
+				<link-back>billingaddressinfo</link-back>
+				<result>billingaddress-info-selector</result>
+			</step>
+			<step>
+				<description><![CDATA[Retrieve a choice.]]></description>
+				<start>billingaddress-info-selector</start>
+				<follow-link>choice</follow-link>
+				<link-back>selector</link-back>
+				<result>billingaddress-info-selector-choice</result>
+			</step>
+			<step>
+				<description><![CDATA[Retrieve a selected choice, if any.]]></description>
+				<start>billingaddress-info-selector</start>
+				<follow-link>chosen</follow-link>
+				<link-back>selector</link-back>
+				<result>billingaddress-info-selector-choice</result>
+			</step>
+			<step>
+				<description><![CDATA[Retrieve a choice's description.]]></description>
+				<start>billingaddress-info-selector-choice</start>
+				<follow-link>description</follow-link>
+				<result>addresses.address</result>
+			</step>
+			<step>
+				<description><![CDATA[Select a choice.]]></description>
+				<start>billingaddress-info-selector-choice</start>
+				<submit/>
+				<to>billingaddress-info-selector-choice</to>
+				<via-link>selectaction</via-link>
+				<result>addresses.address</result>
+			</step>
+		</plan>
+
+		<plan>
+			<name>read-billing-address</name>
+			<description><![CDATA[Read the currently selected billingaddress for the order.]]></description>
+			<step>
+				<description><![CDATA[Read billing address info from an order.]]></description>
+				<start>order</start>
+				<follow-link>billingaddressinfo</follow-link>
+				<link-back>order</link-back>
+				<result>billingaddress-info</result>
+			</step>
+			<step>
+				<description><![CDATA[Read address from billing address info.]]></description>
+				<start>billingaddress-info</start>
+				<follow-link>billingaddress</follow-link>
+				<result>addresses.address</result>
+			</step>
+		</plan>
+
+		<plan>
+			<name>add-billing-address-from-order</name>
+			<description>Create a billing address from the order.</description>
+			<step>
+				<description>Order to billingaddressinfo.</description>
+				<start>order</start>
+				<follow-link>billingaddressinfo</follow-link>
+				<result>billingaddress-info</result>
+			</step>
+			<step>
+				<description>Billingaddress to address form.</description>
+				<start>billingaddress-info</start>
+				<follow-link>addressform</follow-link>
+				<result>addresses.address-form</result>
+			</step>
+			<step>
+				<description>Submit the form to create an address</description>
+				<start>addresses.address-form</start>
+				<submit></submit>
+				<to>addresses.address-form</to>
+				<via-link>createaddressaction</via-link>
+				<result>addresses.address</result>
+			</step>
+		</plan>
+		
+<!--		Deliveries-->
+		<plan>
+			<name>read-order-delivery</name>
+			<description><![CDATA[Read a delivery from a list of deliveries]]></description>
+			<step>
+				<description><![CDATA[Order to a list of deliveries]]></description>
+				<start>order</start>
+				<follow-link>deliveries</follow-link>
+				<result>deliveries</result>
+			</step>
+			<step>
+				<description><![CDATA[List of deliveries to delivery]]></description>
+				<start>deliveries</start>
+				<follow-link>element</follow-link>
+				<result>delivery</result>
+			</step>
+		</plan>
+		
+	</family>
+</definitions>

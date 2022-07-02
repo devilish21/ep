@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+		xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:camel="http://camel.apache.org/schema/spring"
+		xmlns:settings="http://www.elasticpath.com/schema/settings"
+		xsi:schemaLocation="
+				http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+				http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd
+				http://www.elasticpath.com/schema/settings http://www.elasticpath.com/schema/settings/settings.xsd
+		">
+
+	<camel:camelContext id="ep-order-email-handler" xmlns="http://camel.apache.org/schema/spring">
+		<routeBuilder ref="orderConfirmationEmailHandlingRouteBuilder" />
+		<routeBuilder ref="orderShipmentShippedEmailHandlingRouteBuilder" />
+		<routeBuilder ref="orderShipmentReleaseFailedEmailHandlingRouteBuilder" />
+		<routeBuilder ref="returnExchangeEmailHandlingRouteBuilder" />
+		<routeBuilder ref="orderOnHoldEmailHandlingRouteBuilder" />
+		<routeBuilder ref="orderCancelledEmailHandlingRouteBuilder" />
+	</camel:camelContext>
+
+	<bean name="ep-order-email-handler:beanPostProcessor" class="com.elasticpath.messaging.impl.FastCamelBeanPostProcessor">
+		<property name="annotatedClassList" ref="camelAnnotatedClassList"/>
+		<property name="camelId" value="ep-order-email-handler"/>
+	</bean>
+
+	<bean id="orderConfirmationEmailProducerTemplate" class="com.elasticpath.email.handler.order.producer.impl.OrderConfirmationEmailProducer"
+		  abstract="true">
+		<property name="emailComposer" ref="emailComposer"/>
+		<property name="emailNotificationHelper" ref="emailNotificationHelper"/>
+	</bean>
+
+	<bean id="orderConfirmationEmailProducer" parent="orderConfirmationEmailProducerTemplate"/>
+
+	<bean id="orderConfirmationEmailHandlingRouteBuilderTemplate" parent="abstractEventMessageTriggeredEmailRouteBuilder"
+		  abstract="true">
+		<property name="routeId" value="orderConfirmationEmailHandler"/>
+		<property name="incomingEndpoint">
+			<bean parent="orderEventExternalEndpoint">
+				<property name="camelContextId" value="ep-order-email-handler"/>
+				<property name="context" value="orderConfirmationEmailHandler"/>
+			</bean>
+		</property>
+		<property name="outgoingEndpoint">
+			<bean parent="emailSendingEndpoint">
+				<property name="camelContextId" value="ep-order-email-handler"/>
+			</bean>
+		</property>
+		<property name="eventMessagePredicateFilter" ref="orderCreatedEventTypePredicate"/>
+		<property name="emailProducer" ref="orderConfirmationEmailProducer"/>
+	</bean>
+
+	<bean id="orderConfirmationEmailHandlingRouteBuilder" parent="orderConfirmationEmailHandlingRouteBuilderTemplate"/>
+
+	<bean id="emailNotificationHelper" class="com.elasticpath.email.handler.order.helper.impl.EmailNotificationHelperImpl">
+		<property name="orderService" ref="orderService" />
+		<property name="orderHoldService" ref="orderHoldService" />
+		<property name="beanFactory" ref="coreBeanFactory" />
+	</bean>
+
+	<bean id="emailPropertyHelperOrder" class="com.elasticpath.email.handler.order.helper.impl.OrderEmailPropertyHelperImpl">
+		<property name="orderPresentationHelper" ref="orderPresentationHelper" />
+		<property name="storeService" ref="storeService" />
+		<property name="beanFactory" ref="coreBeanFactory" />
+		<property name="emailAddressesExtractionStrategy" ref="customerAndUserEmailAddressesExtractionStrategy" />
+		<property name="orderHoldNotificationRecipient">
+			<settings:setting path="COMMERCE/SYSTEM/ONHOLD/holdNotificationRecipientEmail"/>
+		</property>
+	</bean>
+
+	<bean id="returnExchangeEmailPropertyHelper" class="com.elasticpath.email.handler.order.helper.impl.ReturnExchangeEmailPropertyHelperImpl">
+		<property name="beanFactory" ref="coreBeanFactory" />
+		<property name="emailAddressesExtractionStrategy" ref="customerAndUserEmailAddressesExtractionStrategy" />
+	</bean>
+
+	<import resource="classpath:/spring/order-email/order-shipment-shipped.xml" />
+	<import	resource="classpath:/spring/order-email/order-shipment-release-failed.xml" />
+	<import resource="classpath:/spring/order-email/return-exchange.xml" />
+	<import resource="classpath:/spring/order-email/order-on-hold.xml"/>
+	<import resource="classpath:/spring/order-email/order-cancelled.xml"/>
+
+</beans>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+		xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:context="http://www.springframework.org/schema/context"
+		xsi:schemaLocation="
+				http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+				http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		">
+
+	<context:annotation-config/>
+
+	<!-- This is marked abstract; child beans should supply a value for the 'camelContextId' field.
+
+	If this is not set, the endpoints are shared between Camel contexts, which is rarely the desired result.
+
+	Consider a case where one Camel context is responsible for publishing to an endpoint, and another (perhaps multiple) context(s)
+	consume from the same endpoint.  In this scenario, the publishing context would 'own' the endpoint, and would inherit the consumers' routes.
+	The routes will appear to function correctly, but will make testing very difficult (NotifyBuilders that inspect the endpoint will fail to
+	work, since they are bound to a particular context), and will result in confusing logging wherever the Camel context name is included in the log
+	message.
+	-->
+	<bean id="domainEventExternalEndpoint" class="com.elasticpath.messaging.camel.SettingValueBackedCamelEndpointFactoryBean" abstract="true">
+		<property name="path" value="COMMERCE/SYSTEM/MESSAGING/DOMAIN/channelUri"/>
+		<property name="settingsReader" ref="settingsReader"/>
+	</bean>
+
+	<bean id="domainEventTypeProvider" class="com.elasticpath.messaging.spi.impl.EventTypeProviderImpl">
+		<property name="eventTypeClass" value="com.elasticpath.core.messaging.domain.DomainEventType"/>
+		<property name="eventTypeLookup">
+			<bean class="com.elasticpath.core.messaging.domain.DomainEventType$DomainEventTypeLookup"/>
+		</property>
+	</bean>
+
+</beans>

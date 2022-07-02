@@ -1,0 +1,7 @@
+<customer guid="testGuid">
+	<status>0</status>
+	<first_time_buyer>false</first_time_buyer>
+	<addresses/>
+	<groups/>
+	<customer_profile/>
+</customer>

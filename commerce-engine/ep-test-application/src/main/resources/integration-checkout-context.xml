@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (c) Elastic Path Software Inc., 2019
+  -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+	">
+
+	<import resource="classpath:spring/service/checkout.xml"/>
+
+	<bean id="customerOrderingService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.elasticpath.service.impl.CustomerOrderingServiceImpl">
+				<property name="checkoutService" ref="checkoutService"/>
+				<property name="customerService" ref="customerService"/>
+				<property name="shippingOptionService" ref="shippingOptionService"/>
+				<property name="addressService" ref="addressService"/>
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="orderConfigurationService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.elasticpath.service.impl.OrderConfigurationServiceImpl">
+				<property name="customerAuthenticationService" ref="customerAuthenticationService"/>
+				<property name="customerOrderingService" ref="customerOrderingService"/>
+				<property name="shopperService" ref="shopperService"/>
+				<property name="cartDirector" ref="cartDirector"/>
+				<property name="shippingOptionService" ref="shippingOptionService"/>
+				<property name="addressService" ref="addressService" />
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="checkoutTestCartBuilder" class="com.elasticpath.domain.builder.checkout.CheckoutTestCartBuilder" scope="prototype"/>
+
+	<bean id="orderBuilder" class="com.elasticpath.domain.builder.OrderBuilder" scope="prototype"/>
+
+</beans>

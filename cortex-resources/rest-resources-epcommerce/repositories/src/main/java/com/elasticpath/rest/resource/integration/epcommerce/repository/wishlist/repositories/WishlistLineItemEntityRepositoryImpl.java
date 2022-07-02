@@ -1,0 +1,148 @@
+/*
+ * Copyright © 2016 Elastic Path Software Inc. All rights reserved.
+ */
+package com.elasticpath.rest.resource.integration.epcommerce.repository.wishlist.repositories;
+
+import java.util.List;
+import java.util.Map;
+
+import io.reactivex.Completable;
+import io.reactivex.Single;
+import io.reactivex.functions.Function;
+import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.Reference;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.elasticpath.domain.catalog.ProductSku;
+import com.elasticpath.domain.modifier.ModifierField;
+import com.elasticpath.domain.shoppingcart.ShoppingItem;
+import com.elasticpath.domain.shoppingcart.WishList;
+import com.elasticpath.repository.Repository;
+import com.elasticpath.rest.definition.carts.LineItemConfigurationEntity;
+import com.elasticpath.rest.definition.wishlists.WishlistIdentifier;
+import com.elasticpath.rest.definition.wishlists.WishlistLineItemEntity;
+import com.elasticpath.rest.definition.wishlists.WishlistLineItemIdentifier;
+import com.elasticpath.rest.form.SubmitResult;
+import com.elasticpath.rest.id.IdentifierPart;
+import com.elasticpath.rest.resource.integration.epcommerce.repository.cartorder.ModifiersRepository;
+import com.elasticpath.rest.resource.integration.epcommerce.repository.item.ItemRepository;
+import com.elasticpath.rest.resource.integration.epcommerce.repository.wishlist.WishlistRepository;
+
+/**
+ * Repository for Wishlist Line Item Entities.
+ *
+ * @param <E> the entity type
+ * @param <I> the identifier type
+ */
+@Component
+public class WishlistLineItemEntityRepositoryImpl<E extends WishlistLineItemEntity, I extends WishlistLineItemIdentifier>
+		implements Repository<WishlistLineItemEntity, WishlistLineItemIdentifier> {
+
+	private static final Logger LOG = LoggerFactory.getLogger(WishlistLineItemEntityRepositoryImpl.class);
+
+	private WishlistRepository wishlistRepository;
+	private ItemRepository itemRepository;
+	private ModifiersRepository modifiersRepository;
+
+	@Override
+	public Single<SubmitResult<WishlistLineItemIdentifier>> submit(final WishlistLineItemEntity entity, final IdentifierPart<String>
+			scope) {
+		LOG.trace("Adding item id {} to wishlist {}", entity.getItemId(), entity.getWishlistId());
+
+		String sku = entity.getItemId();
+
+		return wishlistRepository.getDefaultWishlistId(scope.getValue())
+				.flatMap(wishlistId -> wishlistRepository.addItemToWishlist(wishlistId, scope.getValue(), sku)
+						.flatMap(addToWishlistResult -> wishlistRepository.buildSubmitResult(scope.getValue(), wishlistId,
+								addToWishlistResult)));
+	}
+
+	@Override
+	public Single<WishlistLineItemEntity> findOne(final WishlistLineItemIdentifier identifier) {
+		WishlistIdentifier wishlistIdentifier = identifier.getWishlistLineItems().getWishlist();
+		String wishlistId = wishlistIdentifier.getWishlistId().getValue();
+		String lineItemGuid = identifier.getLineItemId().getValue();
+
+		return wishlistRepository.getWishlist(wishlistId)
+				.flatMap(toWishlistLineItemEntity(lineItemGuid));
+	}
+
+	/**
+	 * Get the wishlist line item entity.
+	 *
+	 * @param lineItemGuid the line item guid
+	 * @return function
+	 */
+	protected Function<WishList, Single<WishlistLineItemEntity>> toWishlistLineItemEntity(final String lineItemGuid) {
+		return wishList -> wishlistRepository.getShoppingItem(wishList, lineItemGuid)
+				.flatMap(shoppingItem -> wishlistRepository.getProductSku(wishList, lineItemGuid)
+						.flatMap(productSku ->
+								buildWishlistLineItemEntity(shoppingItem, productSku, itemRepository.getItemIdForSku(productSku),
+										lineItemGuid, wishList)));
+	}
+
+	/**
+	 * Build the wishlist line item entity.
+	 *
+	 * @param shoppingItem the shopping item
+	 * @param productSku   the product sku
+	 * @param itemId       item id
+	 * @param lineItemGuid line item guid
+	 * @param wishList     wishlist
+	 * @return wishlist line item entity
+	 */
+	protected Single<WishlistLineItemEntity> buildWishlistLineItemEntity(final ShoppingItem shoppingItem, final ProductSku
+			productSku, final String itemId, final String lineItemGuid, final WishList wishList) {
+		Map<String, String> fields = shoppingItem.getModifierFields().getMap();
+		Single<LineItemConfigurationEntity> lineItemConfigurationEntity;
+		if (fields == null) {
+			lineItemConfigurationEntity = Single.just(LineItemConfigurationEntity.builder().build());
+		} else {
+			lineItemConfigurationEntity = modifiersRepository.findModifiersByProduct(productSku.getProduct())
+					.map(modifierFields -> buildLineItemConfigurationEntity(fields, modifierFields));
+		}
+		return lineItemConfigurationEntity.map(configuration -> WishlistLineItemEntity.builder()
+				.withItemId(itemId)
+				.withLineItemId(lineItemGuid)
+				.withWishlistId(wishList.getGuid())
+				.withConfiguration(configuration)
+				.build());
+	}
+
+	/**
+	 * Build the line item configuration entity.
+	 *
+	 * @param fields                 shopping item configuration fields
+	 * @param modifierFields cart item modifier fields
+	 * @return line item configuration entity
+	 */
+	protected LineItemConfigurationEntity buildLineItemConfigurationEntity(final Map<String, String> fields,
+																		   final List<ModifierField> modifierFields) {
+		LineItemConfigurationEntity.Builder builder = LineItemConfigurationEntity.builder();
+		modifierFields.forEach(field -> builder.addingProperty(field.getCode(), fields.get(field.getCode())));
+		return builder.build();
+	}
+
+	@Override
+	public Completable delete(final WishlistLineItemIdentifier lineItemIdentifier) {
+		WishlistIdentifier wishlistIdentifier = lineItemIdentifier.getWishlistLineItems().getWishlist();
+		String wishlistId = wishlistIdentifier.getWishlistId().getValue();
+		return wishlistRepository.removeItemFromWishlist(wishlistId, lineItemIdentifier.getLineItemId().getValue());
+	}
+
+	@Reference
+	public void setWishlistRepository(final WishlistRepository wishlistRepository) {
+		this.wishlistRepository = wishlistRepository;
+	}
+
+	@Reference
+	public void setItemRepository(final ItemRepository itemRepository) {
+		this.itemRepository = itemRepository;
+	}
+
+	@Reference
+	public void setModifiersRepository(final ModifiersRepository modifiersRepository) {
+		this.modifiersRepository = modifiersRepository;
+	}
+}

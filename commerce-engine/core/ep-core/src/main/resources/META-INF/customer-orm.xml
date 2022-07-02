@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_2_0.xsd" version="2.0">
+
+    <!-- Named queries for CustomerGroupImpl -->
+        <named-query name="CUSTOMERGROUP_SELECT_ALL">
+			<query>
+				SELECT cg
+				FROM CustomerGroupImpl cg
+			</query>
+        </named-query>
+        <named-query name="CUSTOMERGROUP_FIND_BY_NAME">
+			<query>
+				SELECT cg
+				FROM CustomerGroupImpl cg
+				WHERE cg.name = ?1
+			</query>
+        </named-query>
+        <named-query name="CUSTOMERGROUP_FIND_BY_GUID">
+			<query>
+				SELECT cg
+				FROM CustomerGroupImpl cg
+				WHERE cg.guid = ?1
+			</query>
+        </named-query>
+
+    <!-- Named queries for CustomerAddressImpl -->
+		<named-query name="CUSTOMERGROUP_CHECK_IF_IN_USE">
+			<query>
+				SELECT count(c.uidPk)
+				FROM CustomerImpl c
+				INNER JOIN c.customerGroups cg
+				WHERE cg.uidPk = ?1
+			</query>
+		</named-query>
+        <named-query name="CUSTOMER_ADDRESS_FIND_BY_GUID">
+			<query>
+				SELECT c
+				FROM CustomerAddressImpl c
+				WHERE c.guid = ?1
+			</query>
+        </named-query>
+
+    <!-- Named Queries for CustomerImpl -->
+        <named-query name="CUSTOMER_FIND_BY_UIDS">
+			<query>
+				SELECT c
+				FROM CustomerImpl c
+				WHERE c.uidPk in (:list)
+			</query>
+        </named-query>
+        <named-query name="CUSTOMER_GUID_FILTER_BY_NONANONYMOUS">
+			<query>
+				SELECT c.guid
+				FROM CustomerImpl c
+				WHERE c.customerType &lt;&gt; 'SINGLE_SESSION_USER'
+				AND c.uidPk in (:list)
+			</query>
+        </named-query>
+        <named-query name="CUSTOMER_FIND_BY_GUID">
+			<query>
+				SELECT c
+				FROM CustomerImpl c
+				WHERE c.guid = ?1
+			</query>
+        </named-query>
+        <named-query name="CUSTOMER_EXISTS_BY_GUID">
+			<query>
+				SELECT 1
+				FROM CustomerImpl c
+				WHERE c.guid = ?1
+			</query>
+        </named-query>
+		<named-query name="CUSTOMER_TYPE_SELECT_BY_GUID">
+			<query>
+				SELECT c.customerType
+				FROM CustomerImpl as c
+				WHERE c.guid = ?1
+			</query>
+		</named-query>
+		<named-query name="CUSTOMER_FIND_BY_USERNAME_IN_STORES">
+			<query>
+				SELECT c
+				FROM CustomerImpl c, StoreImpl st
+				WHERE c.storeCode = st.code
+				AND c.customerAuthentication.username = ?1
+				AND st.uidPk IN (:list)
+			</query>
+		</named-query>
+		<named-query name="CUSTOMER_GUID_FIND_BY_USERNAME_IN_STORES">
+			<query>
+				SELECT c.guid
+				FROM CustomerImpl c, StoreImpl st
+				WHERE c.storeCode = st.code
+				AND c.customerAuthentication.username = ?1
+				AND (c.guid &lt;&gt; ?2)
+				AND st.uidPk IN (:list)
+			</query>
+		</named-query>
+        <named-query name="CUSTOMER_GUID_SELECT_BY_GUID">
+			<query>
+				SELECT c.guid
+				FROM CustomerImpl as c
+				WHERE c.guid = ?1
+			</query>
+        </named-query>
+        <named-query name="CUSTOMER_SELECT_ALL">
+			<query>
+				SELECT c
+				FROM CustomerImpl as c
+			</query>
+        </named-query>
+		<named-query name="FIND_UIDS_OF_INDEXABLE_CUSTOMERS">
+			<query>
+				SELECT c.uidPk
+				FROM CustomerImpl c
+				WHERE c.lastEditDate >= ?1
+				AND (c.customerType = 'ACCOUNT'
+					OR c.customerType = 'REGISTERED_USER'
+					OR (c.customerType = 'SINGLE_SESSION_USER'
+						AND c.uidPk IN (SELECT o.customerUID FROM OrderImpl o)
+					)
+				) ORDER BY c.uidPk ASC
+			</query>
+		</named-query>
+        <named-query name="CUSTOMER_STATUS_BY_UID">
+			<query>
+				SELECT c.status
+				FROM CustomerImpl as c
+				WHERE c.uidPk = ?1
+			</query>
+        </named-query>
+		<named-query name="CUSTOMER_FIND_BY_SHAREDID_AND_TYPE">
+		<query>
+			SELECT c
+			FROM CustomerImpl c
+			WHERE c.sharedId = ?1
+			AND c.customerType = ?2
+		</query>
+	</named-query>
+		<named-query name="CUSTOMER_GUID_SELECT_BY_SHAREDID">
+			<query>
+				SELECT c.guid
+				FROM CustomerImpl as c
+				WHERE c.sharedId = ?1
+			</query>
+		</named-query>
+		<named-query name="CUSTOMER_GUID_FIND_BY_SHAREDID_AND_CUSTOMER_TYPE">
+			<query>
+				SELECT c.guid
+				FROM CustomerImpl c
+				WHERE c.sharedId = ?1
+				AND c.customerType = ?2
+				AND c.guid &lt;&gt; ?3
+			</query>
+		</named-query>
+		<named-query name="CUSTOMER_COUNT_BY_PROFILEVALUE">
+			<query>
+				SELECT COUNT(cp.uidPk)
+				FROM CustomerProfileValueImpl cp
+				WHERE (cp.localizedAttributeKey = ?1 AND cp.shortTextValue = ?2)
+			</query>
+		</named-query>
+		<named-query name="CUSTOMER_FIND_BY_PROFILEVALUE">
+			<query>
+				SELECT c
+				FROM CustomerImpl c
+				INNER JOIN c.profileValueMap cp
+				WHERE (cp.localizedAttributeKey = ?1 AND cp.shortTextValue = ?2)
+			</query>
+		</named-query>
+		<named-query name="CUSTOMER_GUID_BY_PROFILEVALUE">
+			<query>
+				SELECT c.guid
+				FROM CustomerImpl c
+				INNER JOIN c.profileValueMap cp
+				WHERE (cp.localizedAttributeKey = ?1 AND cp.shortTextValue = ?2)
+			</query>
+		</named-query>
+        <named-query name="CUSTOMER_LAST_MODIFIED_DATE">
+        	<query>
+			SELECT c.lastEditDate
+			FROM CustomerImpl c
+        		WHERE c.guid = ?1
+        	</query>
+        </named-query>
+		<named-query name="FIND_CUSTOMERS_BY_CUSTOMER_GROUP">
+			<query>
+				SELECT c
+				FROM CustomerImpl c
+				INNER JOIN c.customerGroups cg
+				WHERE cg.name = ?1
+			</query>
+		</named-query>
+<!--	named queries for UserAccountAssociationServiceImpl -->
+	<named-query name="USER_ACCOUNT_ASSOCIATIONS_FOR_USER">
+		<query>
+			SELECT ua
+			FROM UserAccountAssociationImpl AS ua
+			WHERE ua.userGuid = ?1
+		</query>
+	</named-query>
+
+	<named-query name="USER_ACCOUNT_ASSOCIATIONS_FOR_ACCOUNT">
+		<query>
+			SELECT ua
+			FROM UserAccountAssociationImpl AS ua
+			WHERE ua.accountGuid = ?1
+		</query>
+	</named-query>
+
+	<named-query name="USER_ACCOUNT_ASSOCIATION_FOR_USER_AND_ACCOUNT">
+		<query>
+			SELECT ua
+			FROM UserAccountAssociationImpl AS ua
+			WHERE ua.userGuid = ?1
+			AND ua.accountGuid = ?2
+		</query>
+	</named-query>
+
+	<named-query name="USER_ACCOUNT_ASSOCIATION_UIDS_ALL">
+		<query>
+			SELECT ua.uidPk
+			FROM UserAccountAssociationImpl AS ua
+		</query>
+	</named-query>
+
+	<named-query name="DELETE_USER_ACCOUNT_ASSOCIATION_BY_USER_AND_ACCOUNT">
+		<query>
+			DELETE FROM UserAccountAssociationImpl AS ua
+			WHERE ua.userGuid = ?1
+			AND ua.accountGuid = ?2
+		</query>
+	</named-query>
+
+	<named-query name="USER_ACCOUNT_ASSOCIATIONS_BY_UIDS">
+		<query>
+			SELECT ua
+			FROM UserAccountAssociationImpl AS ua
+			WHERE ua.uidPk IN (:list)
+		</query>
+	</named-query>
+
+	<named-query name="USER_ACCOUNT_EXISTS_BY_ACCOUNT_AND_USER">
+		<query>
+			SELECT COUNT(ua.uidPk)
+			FROM UserAccountAssociationImpl AS ua
+			WHERE ua.accountGuid = ?1
+			AND ua.userGuid = ?2
+		</query>
+	</named-query>
+
+	<named-query name="USER_ACCOUNT_ASSOCIATIONS_BY_GUID">
+		<query>
+			SELECT ua
+			FROM UserAccountAssociationImpl AS ua
+			WHERE ua.guid = ?1
+		</query>
+	</named-query>
+
+	<named-query name="ACCOUNT_CHILDREN_GUIDS_BY_PARENT_GUIDS">
+		<query>
+			SELECT c.guid
+			FROM CustomerImpl AS c
+			WHERE c.parentGuid IN (:guidsThisLevel)
+			ORDER BY c.sharedId ASC
+		</query>
+	</named-query>
+
+	<named-query name="ACCOUNT_PARENT_GUID_BY_CHILD_GUID">
+		<query>
+			SELECT c.parentGuid
+			FROM CustomerImpl AS c
+			WHERE c.guid = ?1
+			AND c.parentGuid IS NOT NULL
+		</query>
+	</named-query>
+	<named-query name="CUSTOMER_FIND_BY_GUIDS">
+		<query>
+			SELECT c
+			FROM CustomerImpl c
+			WHERE c.guid IN (:list)
+		</query>
+	</named-query>
+
+
+	<named-query name="SELECT_CUSTOMER_CLOSURE_DEPTH">
+		<query>
+			SELECT MAX(cc.ancestorDepth) + 1
+			FROM CustomerClosureImpl AS cc
+			WHERE cc.descendantGuid = ?1
+		</query>
+	</named-query>
+
+	<named-query name="SELECT_DESCENDANT">
+		<query>
+			SELECT cc.descendantGuid
+			FROM CustomerClosureImpl as cc
+			WHERE cc.ancestorGuid = ?1
+		</query>
+	</named-query>
+	
+	<named-query name="SELECT_ANCESTOR">
+		<query>
+			SELECT cc.ancestorGuid
+			FROM CustomerClosureImpl as cc
+			WHERE cc.descendantGuid = ?1
+			ORDER BY cc.ancestorDepth
+		</query>
+	</named-query>
+	
+	<named-query name="SELECT_ACCOUNT_CLOSURE_DUPLICATE">
+		<query>
+			SELECT cc
+			FROM CustomerClosureImpl as cc
+			WHERE cc.descendantGuid = ?1
+		</query>
+	</named-query>
+
+	<named-query name="DELETE_ACCOUNT_CLOSURE_BY_DESCENDANT_GUID">
+		<query>
+			DELETE FROM CustomerClosureImpl AS cc
+			WHERE cc.descendantGuid = ?1
+		</query>
+	</named-query>
+</entity-mappings>
+

@@ -1,0 +1,1954 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<customers>
+<customer store_code="SNAPITUP" shared_id="SNAPITUP:alana.abercombie@elasticpath.com" guid="0A618B76-CDAA-B3F4-7F57-AA2773638240">
+	<customer_type>REGISTERED_USER</customer_type>
+    <status>1</status>
+    <first_time_buyer>false</first_time_buyer>
+    <creationDate>2010-06-16T00:00:00-07:00</creationDate>
+    <last_edited>2012-08-02T16:32:20-07:00</last_edited>
+	<username>alana.abercombie@elasticpath.com</username>
+    <password>$2a$08$wzWbPTI70/uA9LB/qAa9Q.YTut3tWOfZU9BC68oECDQESOsEz0V.K</password>
+    <salt/>
+    <addresses>
+        <address guid="2B057A60-C6C3-24B0-163F-20D8965E8A41">
+            <last_name>Abercombie</last_name>
+            <first_name>Alana</first_name>
+            <phone_number>4313895083</phone_number>
+            <street1>1020 Main Street</street1>
+            <street2></street2>
+            <city>Santa Cruz</city>
+            <subCountry>CA</subCountry>
+            <zip_postal_code>52844</zip_postal_code>
+            <country>US</country>
+            <commercial>false</commercial>
+        </address>
+    </addresses>
+    <groups>
+        <group>400</group>
+    </groups>
+    <preferred_shipping_address>2B057A60-C6C3-24B0-163F-20D8965E8A41</preferred_shipping_address>
+    <preferred_billing_address>2B057A60-C6C3-24B0-163F-20D8965E8A41</preferred_billing_address>
+    <customer_profile>
+        <profile_value type="AttributeType_ShortText" key="CP_EMAIL">alana.abercombie@elasticpath.com</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_FIRST_NAME">Alana</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PREF_LOCALE">en</profile_value>
+        <profile_value type="AttributeType_Date" key="CP_DOB">Sun Feb 23 00:00:00 1941</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PHONE">4313895083</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_LAST_NAME">Abercombie</profile_value>
+    </customer_profile>
+</customer>
+
+<customer store_code="SNAPITUP" shared_id="SNAPITUP:alejandra.abrahamian@elasticpath.com" guid="FF4BF52A-F025-430D-585F-D31474DB2962">
+	<customer_type>REGISTERED_USER</customer_type>
+    <status>1</status>
+    <first_time_buyer>false</first_time_buyer>
+    <creationDate>2010-06-16T00:00:00-07:00</creationDate>
+    <last_edited>2012-08-02T16:32:21-07:00</last_edited>
+	<username>alejandra.abrahamian@elasticpath.com</username>
+    <password>$2a$08$wzWbPTI70/uA9LB/qAa9Q.YTut3tWOfZU9BC68oECDQESOsEz0V.K</password>
+    <salt/>
+    <addresses>
+        <address guid="E5E4854E-EA58-B5A8-C0AA-8574446FDCAA">
+            <last_name>Abrahamian</last_name>
+            <first_name>Alejandra</first_name>
+            <phone_number>7832292671</phone_number>
+            <street1>1020 Main Street</street1>
+            <street2></street2>
+            <city>Point Mugu</city>
+            <subCountry>CA</subCountry>
+            <zip_postal_code>40303</zip_postal_code>
+            <country>US</country>
+            <commercial>false</commercial>
+        </address>
+    </addresses>
+    <groups>
+        <group>400</group>
+    </groups>
+    <preferred_shipping_address>E5E4854E-EA58-B5A8-C0AA-8574446FDCAA</preferred_shipping_address>
+    <preferred_billing_address>E5E4854E-EA58-B5A8-C0AA-8574446FDCAA</preferred_billing_address>
+    <customer_profile>
+        <profile_value type="AttributeType_ShortText" key="CP_EMAIL">alejandra.abrahamian@elasticpath.com</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_LAST_NAME">Abrahamian</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PHONE">7832292671</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PREF_LOCALE">en</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_FIRST_NAME">Alejandra</profile_value>
+        <profile_value type="AttributeType_Date" key="CP_DOB">Fri Jul 26 00:00:00 1946</profile_value>
+    </customer_profile>
+</customer>
+
+<customer store_code="SNAPITUP" shared_id="SNAPITUP:allie.agudelo@elasticpath.com" guid="69337D14-F336-039F-DEE8-456737EDD6C4">
+	<customer_type>REGISTERED_USER</customer_type>
+    <status>1</status>
+    <first_time_buyer>false</first_time_buyer>
+    <creationDate>2010-06-16T00:00:00-07:00</creationDate>
+    <last_edited>2012-08-02T16:32:21-07:00</last_edited>
+	<username>allie.agudelo@elasticpath.com</username>
+    <password>$2a$08$wzWbPTI70/uA9LB/qAa9Q.YTut3tWOfZU9BC68oECDQESOsEz0V.K</password>
+    <salt/>
+    <addresses>
+        <address guid="C49B4ED6-F146-AAFF-1A1F-134E8576F959">
+            <last_name>Agudelo</last_name>
+            <first_name>Allie</first_name>
+            <phone_number>7847772360</phone_number>
+            <street1>1020 Main Street</street1>
+            <street2></street2>
+            <city>Hermosa Beach</city>
+            <subCountry>CA</subCountry>
+            <zip_postal_code>70052</zip_postal_code>
+            <country>US</country>
+            <commercial>false</commercial>
+        </address>
+    </addresses>
+    <groups>
+        <group>400</group>
+    </groups>
+    <preferred_shipping_address>C49B4ED6-F146-AAFF-1A1F-134E8576F959</preferred_shipping_address>
+    <preferred_billing_address>C49B4ED6-F146-AAFF-1A1F-134E8576F959</preferred_billing_address>
+    <customer_profile>
+        <profile_value type="AttributeType_ShortText" key="CP_EMAIL">allie.agudelo@elasticpath.com</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_LAST_NAME">Agudelo</profile_value>
+        <profile_value type="AttributeType_Date" key="CP_DOB">Wed Nov 21 00:00:00 1956</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PREF_LOCALE">en</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_FIRST_NAME">Allie</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PHONE">7847772360</profile_value>
+    </customer_profile>
+</customer>
+
+<customer store_code="SNAPITUP" shared_id="SNAPITUP:allyson.akhand@elasticpath.com" guid="E4F9153D-8E69-6B4B-7EC6-7541119E102B">
+	<customer_type>REGISTERED_USER</customer_type>
+    <status>1</status>
+    <first_time_buyer>false</first_time_buyer>
+    <creationDate>2010-06-16T00:00:00-07:00</creationDate>
+    <last_edited>2012-08-02T16:32:21-07:00</last_edited>
+	<username>allyson.akhand@elasticpath.com</username>
+    <password>$2a$08$wzWbPTI70/uA9LB/qAa9Q.YTut3tWOfZU9BC68oECDQESOsEz0V.K</password>
+    <salt/>
+    <addresses>
+        <address guid="470FF5AE-7EF7-E380-4E1E-22A60A596C47">
+            <last_name>Akhand</last_name>
+            <first_name>Allyson</first_name>
+            <phone_number>8465744540</phone_number>
+            <street1>1020 Main Street</street1>
+            <street2></street2>
+            <city>Point Sur</city>
+            <subCountry>CA</subCountry>
+            <zip_postal_code>52460</zip_postal_code>
+            <country>US</country>
+            <commercial>false</commercial>
+        </address>
+    </addresses>
+    <groups>
+        <group>400</group>
+    </groups>
+    <preferred_shipping_address>470FF5AE-7EF7-E380-4E1E-22A60A596C47</preferred_shipping_address>
+    <preferred_billing_address>470FF5AE-7EF7-E380-4E1E-22A60A596C47</preferred_billing_address>
+    <customer_profile>
+        <profile_value type="AttributeType_ShortText" key="CP_FIRST_NAME">Allyson</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_LAST_NAME">Akhand</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PREF_LOCALE">en</profile_value>
+        <profile_value type="AttributeType_Date" key="CP_DOB">Tue Mar 10 00:00:00 1936</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PHONE">8465744540</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_EMAIL">allyson.akhand@elasticpath.com</profile_value>
+    </customer_profile>
+</customer>
+
+<customer store_code="SNAPITUP" shared_id="SNAPITUP:althea.albor@elasticpath.com" guid="AD0CFC8D-320E-5171-EC85-3BDF38FFE05B">
+	<customer_type>REGISTERED_USER</customer_type>
+    <status>1</status>
+    <first_time_buyer>false</first_time_buyer>
+    <creationDate>2010-06-16T00:00:00-07:00</creationDate>
+    <last_edited>2012-08-02T16:32:21-07:00</last_edited>
+	<username>althea.albor@elasticpath.com</username>
+    <password>$2a$08$wzWbPTI70/uA9LB/qAa9Q.YTut3tWOfZU9BC68oECDQESOsEz0V.K</password>
+    <salt/>
+    <addresses>
+        <address guid="3F6B5F63-8B94-C243-18A3-A324E1B4ECB1">
+            <last_name>Albor</last_name>
+            <first_name>Althea</first_name>
+            <phone_number>6295264061</phone_number>
+            <street1>1020 Main Street</street1>
+            <street2></street2>
+            <city>Guadalupe</city>
+            <subCountry>CA</subCountry>
+            <zip_postal_code>86145</zip_postal_code>
+            <country>US</country>
+            <commercial>false</commercial>
+        </address>
+    </addresses>
+    <groups>
+        <group>400</group>
+    </groups>
+    <preferred_shipping_address>3F6B5F63-8B94-C243-18A3-A324E1B4ECB1</preferred_shipping_address>
+    <preferred_billing_address>3F6B5F63-8B94-C243-18A3-A324E1B4ECB1</preferred_billing_address>
+    <customer_profile>
+        <profile_value type="AttributeType_ShortText" key="CP_EMAIL">althea.albor@elasticpath.com</profile_value>
+        <profile_value type="AttributeType_Date" key="CP_DOB">Mon Jul 29 00:00:00 1940</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_FIRST_NAME">Althea</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PREF_LOCALE">en</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PHONE">6295264061</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_LAST_NAME">Albor</profile_value>
+    </customer_profile>
+</customer>
+
+<customer store_code="SNAPITUP" shared_id="SNAPITUP:annabelle.alvirez@elasticpath.com" guid="F19844D9-887B-B464-03BF-91BBE0B78AE2">
+	<customer_type>REGISTERED_USER</customer_type>
+    <status>1</status>
+    <first_time_buyer>false</first_time_buyer>
+    <creationDate>2010-06-16T00:00:00-07:00</creationDate>
+    <last_edited>2012-08-02T16:32:21-07:00</last_edited>
+	<username>annabelle.alvirez@elasticpath.com</username>
+    <password>$2a$08$wzWbPTI70/uA9LB/qAa9Q.YTut3tWOfZU9BC68oECDQESOsEz0V.K</password>
+    <salt/>
+    <addresses>
+        <address guid="F5063907-0048-03FB-37F0-5C1E4DE82501">
+            <last_name>Alvirez</last_name>
+            <first_name>Annabelle</first_name>
+            <phone_number>7218783035</phone_number>
+            <street1>1020 Main Street</street1>
+            <street2></street2>
+            <city>Redondo Beach</city>
+            <subCountry>CA</subCountry>
+            <zip_postal_code>71521</zip_postal_code>
+            <country>US</country>
+            <commercial>false</commercial>
+        </address>
+    </addresses>
+    <groups>
+        <group>400</group>
+    </groups>
+    <preferred_shipping_address>F5063907-0048-03FB-37F0-5C1E4DE82501</preferred_shipping_address>
+    <preferred_billing_address>F5063907-0048-03FB-37F0-5C1E4DE82501</preferred_billing_address>
+    <customer_profile>
+        <profile_value type="AttributeType_ShortText" key="CP_PHONE">7218783035</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PREF_LOCALE">en</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_FIRST_NAME">Annabelle</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_EMAIL">annabelle.alvirez@elasticpath.com</profile_value>
+        <profile_value type="AttributeType_Date" key="CP_DOB">Mon Mar 28 00:00:00 1949</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_LAST_NAME">Alvirez</profile_value>
+    </customer_profile>
+</customer>
+
+<customer store_code="SNAPITUP" shared_id="SNAPITUP:avis.amous@elasticpath.com" guid="E82A33F5-9687-D617-FFA1-5E5766BF84A5">
+	<customer_type>REGISTERED_USER</customer_type>
+    <status>1</status>
+    <first_time_buyer>false</first_time_buyer>
+    <creationDate>2010-06-16T00:00:00-07:00</creationDate>
+    <last_edited>2012-08-02T16:32:21-07:00</last_edited>
+	<username>avis.amous@elasticpath.com</username>
+    <password>$2a$08$wzWbPTI70/uA9LB/qAa9Q.YTut3tWOfZU9BC68oECDQESOsEz0V.K</password>
+    <salt/>
+    <addresses>
+        <address guid="195A77BF-6099-A8D0-ADA0-66A9B7D4A49A">
+            <last_name>Amous</last_name>
+            <first_name>Avis</first_name>
+            <phone_number>9392207431</phone_number>
+            <street1>1020 Main Street</street1>
+            <street2></street2>
+            <city>Nepenthe</city>
+            <subCountry>CA</subCountry>
+            <zip_postal_code>10041</zip_postal_code>
+            <country>US</country>
+            <commercial>false</commercial>
+        </address>
+    </addresses>
+    <groups>
+        <group>400</group>
+    </groups>
+    <preferred_shipping_address>195A77BF-6099-A8D0-ADA0-66A9B7D4A49A</preferred_shipping_address>
+    <preferred_billing_address>195A77BF-6099-A8D0-ADA0-66A9B7D4A49A</preferred_billing_address>
+    <customer_profile>
+        <profile_value type="AttributeType_Date" key="CP_DOB">Fri Feb 05 00:00:00 1965</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PHONE">9392207431</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_FIRST_NAME">Avis</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PREF_LOCALE">en</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_EMAIL">avis.amous@elasticpath.com</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_LAST_NAME">Amous</profile_value>
+    </customer_profile>
+</customer>
+
+<customer store_code="SNAPITUP" shared_id="SNAPITUP:benita.aquirre@elasticpath.com" guid="345020D6-4F00-5A31-FBDA-45C74FAD2FCD">
+	<customer_type>REGISTERED_USER</customer_type>
+    <status>1</status>
+    <first_time_buyer>false</first_time_buyer>
+    <creationDate>2010-06-16T00:00:00-07:00</creationDate>
+    <last_edited>2012-08-02T16:32:21-07:00</last_edited>
+	<username>benita.aquirre@elasticpath.com</username>
+    <password>$2a$08$wzWbPTI70/uA9LB/qAa9Q.YTut3tWOfZU9BC68oECDQESOsEz0V.K</password>
+    <salt/>
+    <addresses>
+        <address guid="8CCB5FFE-5856-F4BE-53FE-51103CA1C13D">
+            <last_name>Aquirre</last_name>
+            <first_name>Benita</first_name>
+            <phone_number>8758267337</phone_number>
+            <street1>1020 Main Street</street1>
+            <street2></street2>
+            <city>Mission Beach</city>
+            <subCountry>CA</subCountry>
+            <zip_postal_code>48038</zip_postal_code>
+            <country>US</country>
+            <commercial>false</commercial>
+        </address>
+    </addresses>
+    <groups>
+        <group>400</group>
+    </groups>
+    <preferred_shipping_address>8CCB5FFE-5856-F4BE-53FE-51103CA1C13D</preferred_shipping_address>
+    <preferred_billing_address>8CCB5FFE-5856-F4BE-53FE-51103CA1C13D</preferred_billing_address>
+    <customer_profile>
+        <profile_value type="AttributeType_ShortText" key="CP_PHONE">8758267337</profile_value>
+        <profile_value type="AttributeType_Date" key="CP_DOB">Tue Mar 30 00:00:00 1993</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PREF_LOCALE">en</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_LAST_NAME">Aquirre</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_FIRST_NAME">Benita</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_EMAIL">benita.aquirre@elasticpath.com</profile_value>
+    </customer_profile>
+</customer>
+
+<customer store_code="SNAPITUP" shared_id="SNAPITUP:carmella.argulewicz@elasticpath.com" guid="E8E5D3ED-29D6-436D-0062-069CD31B1779">
+	<customer_type>REGISTERED_USER</customer_type>
+    <status>1</status>
+    <first_time_buyer>false</first_time_buyer>
+    <creationDate>2010-06-16T00:00:00-07:00</creationDate>
+    <last_edited>2012-08-02T16:32:21-07:00</last_edited>
+	<username>carmella.argulewicz@elasticpath.com</username>
+    <password>$2a$08$wzWbPTI70/uA9LB/qAa9Q.YTut3tWOfZU9BC68oECDQESOsEz0V.K</password>
+    <salt/>
+    <addresses>
+        <address guid="C6C0BCE7-2DD3-8F22-90D2-CEC77667A0CA">
+            <last_name>Argulewicz</last_name>
+            <first_name>Carmella</first_name>
+            <phone_number>344580598</phone_number>
+            <street1>1020 Main Street</street1>
+            <street2></street2>
+            <city>NULL</city>
+            <subCountry>CA</subCountry>
+            <zip_postal_code>85218</zip_postal_code>
+            <country>US</country>
+            <commercial>false</commercial>
+        </address>
+    </addresses>
+    <groups>
+        <group>400</group>
+    </groups>
+    <preferred_shipping_address>C6C0BCE7-2DD3-8F22-90D2-CEC77667A0CA</preferred_shipping_address>
+    <preferred_billing_address>C6C0BCE7-2DD3-8F22-90D2-CEC77667A0CA</preferred_billing_address>
+    <customer_profile>
+        <profile_value type="AttributeType_ShortText" key="CP_EMAIL">carmella.argulewicz@elasticpath.com</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PREF_LOCALE">en</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_FIRST_NAME">Carmella</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_LAST_NAME">Argulewicz</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PHONE">344580598</profile_value>
+        <profile_value type="AttributeType_Date" key="CP_DOB">Wed Jun 19 00:00:00 1968</profile_value>
+    </customer_profile>
+</customer>
+
+<customer store_code="SNAPITUP" shared_id="SNAPITUP:chandra.arroyano@elasticpath.com" guid="F36ACED6-A73C-25B2-29A6-AFA86F15D643">
+	<customer_type>REGISTERED_USER</customer_type>
+    <status>1</status>
+    <first_time_buyer>false</first_time_buyer>
+    <creationDate>2010-06-16T00:00:00-07:00</creationDate>
+    <last_edited>2012-08-02T16:32:21-07:00</last_edited>
+	<username>chandra.arroyano@elasticpath.com</username>
+    <password>$2a$08$wzWbPTI70/uA9LB/qAa9Q.YTut3tWOfZU9BC68oECDQESOsEz0V.K</password>
+    <salt/>
+    <addresses>
+        <address guid="83F7A126-787D-7C8F-E488-D7A0C2901BCF">
+            <last_name>Arroyano</last_name>
+            <first_name>Chandra</first_name>
+            <phone_number>853924638</phone_number>
+            <street1>1020 Main Street</street1>
+            <street2></street2>
+            <city>Lompoc</city>
+            <subCountry>CA</subCountry>
+            <zip_postal_code>22691</zip_postal_code>
+            <country>US</country>
+            <commercial>false</commercial>
+        </address>
+    </addresses>
+    <groups>
+        <group>400</group>
+    </groups>
+    <preferred_shipping_address>83F7A126-787D-7C8F-E488-D7A0C2901BCF</preferred_shipping_address>
+    <preferred_billing_address>83F7A126-787D-7C8F-E488-D7A0C2901BCF</preferred_billing_address>
+    <customer_profile>
+        <profile_value type="AttributeType_ShortText" key="CP_PREF_LOCALE">en</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_EMAIL">chandra.arroyano@elasticpath.com</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_LAST_NAME">Arroyano</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PHONE">853924638</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_FIRST_NAME">Chandra</profile_value>
+        <profile_value type="AttributeType_Date" key="CP_DOB">Tue Jul 22 00:00:00 1986</profile_value>
+    </customer_profile>
+</customer>
+
+<customer store_code="SNAPITUP" shared_id="SNAPITUP:clare.artez@elasticpath.com" guid="6500D6D6-C6BD-2A2C-6319-265D7B36F541">
+	<customer_type>REGISTERED_USER</customer_type>
+    <status>1</status>
+    <first_time_buyer>false</first_time_buyer>
+    <creationDate>2010-06-16T00:00:00-07:00</creationDate>
+    <last_edited>2012-08-02T16:32:21-07:00</last_edited>
+	<username>clare.artez@elasticpath.com</username>
+    <password>$2a$08$wzWbPTI70/uA9LB/qAa9Q.YTut3tWOfZU9BC68oECDQESOsEz0V.K</password>
+    <salt/>
+    <addresses>
+        <address guid="84F567E0-DBCB-2134-762E-78B6B9D89562">
+            <last_name>Artez</last_name>
+            <first_name>Clare</first_name>
+            <phone_number>9134222842</phone_number>
+            <street1>1020 Main Street</street1>
+            <street2></street2>
+            <city>Pismo Beach</city>
+            <subCountry>CA</subCountry>
+            <zip_postal_code>58710</zip_postal_code>
+            <country>US</country>
+            <commercial>false</commercial>
+        </address>
+    </addresses>
+    <groups>
+        <group>400</group>
+    </groups>
+    <preferred_shipping_address>84F567E0-DBCB-2134-762E-78B6B9D89562</preferred_shipping_address>
+    <preferred_billing_address>84F567E0-DBCB-2134-762E-78B6B9D89562</preferred_billing_address>
+    <customer_profile>
+        <profile_value type="AttributeType_ShortText" key="CP_EMAIL">clare.artez@elasticpath.com</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PREF_LOCALE">en</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_FIRST_NAME">Clare</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PHONE">9134222842</profile_value>
+        <profile_value type="AttributeType_Date" key="CP_DOB">Sat Jun 25 00:00:00 1983</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_LAST_NAME">Artez</profile_value>
+    </customer_profile>
+</customer>
+
+<customer store_code="SNAPITUP" shared_id="SNAPITUP:darcy.aubel@elasticpath.com" guid="2D9998E3-0E2B-9FB3-8373-5043168A5CD2">
+	<customer_type>REGISTERED_USER</customer_type>
+    <status>1</status>
+    <first_time_buyer>false</first_time_buyer>
+    <creationDate>2010-06-16T00:00:00-07:00</creationDate>
+    <last_edited>2012-08-02T16:32:21-07:00</last_edited>
+	<username>darcy.aubel@elasticpath.com</username>
+    <password>$2a$08$wzWbPTI70/uA9LB/qAa9Q.YTut3tWOfZU9BC68oECDQESOsEz0V.K</password>
+    <salt/>
+    <addresses>
+        <address guid="6A91524B-E865-DC3A-6038-5C4AE3A3A891">
+            <last_name>Aubel</last_name>
+            <first_name>Darcy</first_name>
+            <phone_number>7617502046</phone_number>
+            <street1>1020 Main Street</street1>
+            <street2></street2>
+            <city>Limekiln SP</city>
+            <subCountry>CA</subCountry>
+            <zip_postal_code>70293</zip_postal_code>
+            <country>US</country>
+            <commercial>false</commercial>
+        </address>
+    </addresses>
+    <groups>
+        <group>400</group>
+    </groups>
+    <preferred_shipping_address>6A91524B-E865-DC3A-6038-5C4AE3A3A891</preferred_shipping_address>
+    <preferred_billing_address>6A91524B-E865-DC3A-6038-5C4AE3A3A891</preferred_billing_address>
+    <customer_profile>
+        <profile_value type="AttributeType_ShortText" key="CP_FIRST_NAME">Darcy</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_EMAIL">darcy.aubel@elasticpath.com</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PREF_LOCALE">en</profile_value>
+        <profile_value type="AttributeType_Date" key="CP_DOB">Wed Oct 12 00:00:00 1955</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PHONE">7617502046</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_LAST_NAME">Aubel</profile_value>
+    </customer_profile>
+</customer>
+
+<customer store_code="SNAPITUP" shared_id="SNAPITUP:dona.bacman@elasticpath.com" guid="FA48D7A6-E159-19AE-2F62-D429A24CF898">
+	<customer_type>REGISTERED_USER</customer_type>
+    <status>1</status>
+    <first_time_buyer>false</first_time_buyer>
+    <creationDate>2010-06-16T00:00:00-07:00</creationDate>
+    <last_edited>2012-08-02T16:32:21-07:00</last_edited>
+	<username>dona.bacman@elasticpath.com</username>
+    <password>$2a$08$wzWbPTI70/uA9LB/qAa9Q.YTut3tWOfZU9BC68oECDQESOsEz0V.K</password>
+    <salt/>
+    <addresses>
+        <address guid="1814BD16-3053-5B34-7500-5D2F47F91A6C">
+            <last_name>Bacman</last_name>
+            <first_name>Dona</first_name>
+            <phone_number>6418304311</phone_number>
+            <street1>1020 Main Street</street1>
+            <street2></street2>
+            <city>Long Beach</city>
+            <subCountry>CA</subCountry>
+            <zip_postal_code>33782</zip_postal_code>
+            <country>US</country>
+            <commercial>false</commercial>
+        </address>
+    </addresses>
+    <groups>
+        <group>400</group>
+    </groups>
+    <preferred_shipping_address>1814BD16-3053-5B34-7500-5D2F47F91A6C</preferred_shipping_address>
+    <preferred_billing_address>1814BD16-3053-5B34-7500-5D2F47F91A6C</preferred_billing_address>
+    <customer_profile>
+        <profile_value type="AttributeType_ShortText" key="CP_FIRST_NAME">Dona</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_LAST_NAME">Bacman</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PREF_LOCALE">en</profile_value>
+        <profile_value type="AttributeType_Date" key="CP_DOB">Sat Jul 26 00:00:00 1930</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_EMAIL">dona.bacman@elasticpath.com</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PHONE">6418304311</profile_value>
+    </customer_profile>
+</customer>
+
+<customer store_code="SNAPITUP" shared_id="SNAPITUP:earlene.badertscher@elasticpath.com" guid="E6D44716-ED79-F736-5577-62345CA8E802">
+	<customer_type>REGISTERED_USER</customer_type>
+    <status>1</status>
+    <first_time_buyer>false</first_time_buyer>
+    <creationDate>2010-06-16T00:00:00-07:00</creationDate>
+    <last_edited>2012-08-02T16:32:21-07:00</last_edited>
+	<username>earlene.badertscher@elasticpath.com</username>
+    <password>$2a$08$wzWbPTI70/uA9LB/qAa9Q.YTut3tWOfZU9BC68oECDQESOsEz0V.K</password>
+    <salt/>
+    <addresses>
+        <address guid="06C2240B-4E0C-3F5A-14A3-3CE5F24D49B1">
+            <last_name>Badertscher</last_name>
+            <first_name>Earlene</first_name>
+            <phone_number>9561914705</phone_number>
+            <street1>1020 Main Street</street1>
+            <street2></street2>
+            <city>San Pedro</city>
+            <subCountry>CA</subCountry>
+            <zip_postal_code>32005</zip_postal_code>
+            <country>US</country>
+            <commercial>false</commercial>
+        </address>
+    </addresses>
+    <groups>
+        <group>400</group>
+    </groups>
+    <preferred_shipping_address>06C2240B-4E0C-3F5A-14A3-3CE5F24D49B1</preferred_shipping_address>
+    <preferred_billing_address>06C2240B-4E0C-3F5A-14A3-3CE5F24D49B1</preferred_billing_address>
+    <customer_profile>
+        <profile_value type="AttributeType_ShortText" key="CP_PHONE">9561914705</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_FIRST_NAME">Earlene</profile_value>
+        <profile_value type="AttributeType_Date" key="CP_DOB">Thu Jan 17 00:00:00 1946</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PREF_LOCALE">en</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_EMAIL">earlene.badertscher@elasticpath.com</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_LAST_NAME">Badertscher</profile_value>
+    </customer_profile>
+</customer>
+
+<customer store_code="SNAPITUP" shared_id="SNAPITUP:earnestine.bahe@elasticpath.com" guid="72801A53-90A3-B7E1-BE18-3219E791F0EA">
+	<customer_type>REGISTERED_USER</customer_type>
+    <status>1</status>
+    <first_time_buyer>false</first_time_buyer>
+    <creationDate>2010-06-16T00:00:00-07:00</creationDate>
+    <last_edited>2012-08-02T16:32:21-07:00</last_edited>
+	<username>earnestine.bahe@elasticpath.com</username>
+    <password>$2a$08$wzWbPTI70/uA9LB/qAa9Q.YTut3tWOfZU9BC68oECDQESOsEz0V.K</password>
+    <salt/>
+    <addresses>
+        <address guid="0E23F284-74D7-B9BC-3FAD-C6F305331351">
+            <last_name>Bahe</last_name>
+            <first_name>Earnestine</first_name>
+            <phone_number>8304328563</phone_number>
+            <street1>1020 Main Street</street1>
+            <street2></street2>
+            <city>Sunset Beach</city>
+            <subCountry>CA</subCountry>
+            <zip_postal_code>90181</zip_postal_code>
+            <country>US</country>
+            <commercial>false</commercial>
+        </address>
+    </addresses>
+    <groups>
+        <group>400</group>
+    </groups>
+    <preferred_shipping_address>0E23F284-74D7-B9BC-3FAD-C6F305331351</preferred_shipping_address>
+    <preferred_billing_address>0E23F284-74D7-B9BC-3FAD-C6F305331351</preferred_billing_address>
+    <customer_profile>
+        <profile_value type="AttributeType_ShortText" key="CP_PHONE">8304328563</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_FIRST_NAME">Earnestine</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PREF_LOCALE">en</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_EMAIL">earnestine.bahe@elasticpath.com</profile_value>
+        <profile_value type="AttributeType_Date" key="CP_DOB">Sun Aug 10 00:00:00 1941</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_LAST_NAME">Bahe</profile_value>
+    </customer_profile>
+</customer>
+
+<customer store_code="SNAPITUP" shared_id="SNAPITUP:edwina.baine@elasticpath.com" guid="A4C2B526-4428-0C2A-4001-F1112BFF4A29">
+	<customer_type>REGISTERED_USER</customer_type>
+    <status>1</status>
+    <first_time_buyer>false</first_time_buyer>
+    <creationDate>2010-06-16T00:00:00-07:00</creationDate>
+    <last_edited>2012-08-02T16:32:21-07:00</last_edited>
+	<username>edwina.baine@elasticpath.com</username>
+    <password>$2a$08$wzWbPTI70/uA9LB/qAa9Q.YTut3tWOfZU9BC68oECDQESOsEz0V.K</password>
+    <salt/>
+    <addresses>
+        <address guid="E08F78B8-E959-EA63-D99E-2AA35A2E979E">
+            <last_name>Baine</last_name>
+            <first_name>Edwina</first_name>
+            <phone_number>1769318791</phone_number>
+            <street1>1020 Main Street</street1>
+            <street2></street2>
+            <city>Bixby Creek</city>
+            <subCountry>CA</subCountry>
+            <zip_postal_code>59848</zip_postal_code>
+            <country>US</country>
+            <commercial>false</commercial>
+        </address>
+    </addresses>
+    <groups>
+        <group>400</group>
+    </groups>
+    <preferred_shipping_address>E08F78B8-E959-EA63-D99E-2AA35A2E979E</preferred_shipping_address>
+    <preferred_billing_address>E08F78B8-E959-EA63-D99E-2AA35A2E979E</preferred_billing_address>
+    <customer_profile>
+        <profile_value type="AttributeType_ShortText" key="CP_PREF_LOCALE">en</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_LAST_NAME">Baine</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PHONE">1769318791</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_FIRST_NAME">Edwina</profile_value>
+        <profile_value type="AttributeType_Date" key="CP_DOB">Sun Jul 02 00:00:00 1989</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_EMAIL">edwina.baine@elasticpath.com</profile_value>
+    </customer_profile>
+</customer>
+
+<customer store_code="SNAPITUP" shared_id="SNAPITUP:elinor.bainey@elasticpath.com" guid="26EF35AA-A97E-3DB6-0DAD-BF0D76C01D54">
+	<customer_type>REGISTERED_USER</customer_type>
+    <status>1</status>
+    <first_time_buyer>false</first_time_buyer>
+    <creationDate>2010-06-16T00:00:00-07:00</creationDate>
+    <last_edited>2012-08-02T16:32:21-07:00</last_edited>
+	<username>elinor.bainey@elasticpath.com</username>
+    <password>$2a$08$wzWbPTI70/uA9LB/qAa9Q.YTut3tWOfZU9BC68oECDQESOsEz0V.K</password>
+    <salt/>
+    <addresses>
+        <address guid="A2940A62-0746-78E4-644F-BD55B7F616BF">
+            <last_name>Bainey</last_name>
+            <first_name>Elinor</first_name>
+            <phone_number>1236037943</phone_number>
+            <street1>1020 Main Street</street1>
+            <street2></street2>
+            <city>NULL</city>
+            <subCountry>CA</subCountry>
+            <zip_postal_code>65235</zip_postal_code>
+            <country>US</country>
+            <commercial>false</commercial>
+        </address>
+    </addresses>
+    <groups>
+        <group>400</group>
+    </groups>
+    <preferred_shipping_address>A2940A62-0746-78E4-644F-BD55B7F616BF</preferred_shipping_address>
+    <preferred_billing_address>A2940A62-0746-78E4-644F-BD55B7F616BF</preferred_billing_address>
+    <customer_profile>
+        <profile_value type="AttributeType_ShortText" key="CP_EMAIL">elinor.bainey@elasticpath.com</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PREF_LOCALE">en</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_LAST_NAME">Bainey</profile_value>
+        <profile_value type="AttributeType_Date" key="CP_DOB">Sun Aug 11 00:00:00 1935</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_FIRST_NAME">Elinor</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PHONE">1236037943</profile_value>
+    </customer_profile>
+</customer>
+
+<customer store_code="SNAPITUP" shared_id="SNAPITUP:elnora.bajek@elasticpath.com" guid="494ABC7E-5AB6-CADE-46F2-5BB2D66B7AF4">
+	<customer_type>REGISTERED_USER</customer_type>
+    <status>1</status>
+    <first_time_buyer>false</first_time_buyer>
+    <creationDate>2010-06-16T00:00:00-07:00</creationDate>
+    <last_edited>2012-08-02T16:32:21-07:00</last_edited>
+	<username>elnora.bajek@elasticpath.com</username>
+    <password>$2a$08$wzWbPTI70/uA9LB/qAa9Q.YTut3tWOfZU9BC68oECDQESOsEz0V.K</password>
+    <salt/>
+    <addresses>
+        <address guid="8BF918D5-7F07-A1E4-FB15-7EB0B3ACECCA">
+            <last_name>Bajek</last_name>
+            <first_name>Elnora</first_name>
+            <phone_number>4566433727</phone_number>
+            <street1>1020 Main Street</street1>
+            <street2></street2>
+            <city>Venice Beach</city>
+            <subCountry>CA</subCountry>
+            <zip_postal_code>67661</zip_postal_code>
+            <country>US</country>
+            <commercial>false</commercial>
+        </address>
+    </addresses>
+    <groups>
+        <group>400</group>
+    </groups>
+    <preferred_shipping_address>8BF918D5-7F07-A1E4-FB15-7EB0B3ACECCA</preferred_shipping_address>
+    <preferred_billing_address>8BF918D5-7F07-A1E4-FB15-7EB0B3ACECCA</preferred_billing_address>
+    <customer_profile>
+        <profile_value type="AttributeType_ShortText" key="CP_PHONE">4566433727</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PREF_LOCALE">en</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_FIRST_NAME">Elnora</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_LAST_NAME">Bajek</profile_value>
+        <profile_value type="AttributeType_Date" key="CP_DOB">Mon Nov 01 00:00:00 1982</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_EMAIL">elnora.bajek@elasticpath.com</profile_value>
+    </customer_profile>
+</customer>
+
+<customer store_code="SNAPITUP" shared_id="SNAPITUP:ericka.bald@elasticpath.com" guid="07868617-9CAE-5A8F-667D-87A70FEBF329">
+	<customer_type>REGISTERED_USER</customer_type>
+    <status>1</status>
+    <first_time_buyer>false</first_time_buyer>
+    <creationDate>2010-06-16T00:00:00-07:00</creationDate>
+    <last_edited>2012-08-02T16:32:21-07:00</last_edited>
+	<username>ericka.bald@elasticpath.com</username>
+    <password>$2a$08$wzWbPTI70/uA9LB/qAa9Q.YTut3tWOfZU9BC68oECDQESOsEz0V.K</password>
+    <salt/>
+    <addresses>
+        <address guid="0F89C0DE-5939-DEEF-2301-0E40F4B33BB0">
+            <last_name>Bald</last_name>
+            <first_name>Ericka</first_name>
+            <phone_number>6910429183</phone_number>
+            <street1>1020 Main Street</street1>
+            <street2></street2>
+            <city>Solvang</city>
+            <subCountry>CA</subCountry>
+            <zip_postal_code>5014</zip_postal_code>
+            <country>US</country>
+            <commercial>false</commercial>
+        </address>
+    </addresses>
+    <groups>
+        <group>400</group>
+    </groups>
+    <preferred_shipping_address>0F89C0DE-5939-DEEF-2301-0E40F4B33BB0</preferred_shipping_address>
+    <preferred_billing_address>0F89C0DE-5939-DEEF-2301-0E40F4B33BB0</preferred_billing_address>
+    <customer_profile>
+        <profile_value type="AttributeType_ShortText" key="CP_EMAIL">ericka.bald@elasticpath.com</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_LAST_NAME">Bald</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PHONE">6910429183</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PREF_LOCALE">en</profile_value>
+        <profile_value type="AttributeType_Date" key="CP_DOB">Fri Oct 03 00:00:00 1986</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_FIRST_NAME">Ericka</profile_value>
+    </customer_profile>
+</customer>
+
+<customer store_code="SNAPITUP" shared_id="SNAPITUP:esmeralda.ballar@elasticpath.com" guid="E163B376-9D8D-DD4B-37A7-7C947D8D201D">
+	<customer_type>REGISTERED_USER</customer_type>
+    <status>1</status>
+    <first_time_buyer>false</first_time_buyer>
+    <creationDate>2010-06-16T00:00:00-07:00</creationDate>
+    <last_edited>2012-08-02T16:32:22-07:00</last_edited>
+	<username>esmeralda.ballar@elasticpath.com</username>
+    <password>$2a$08$wzWbPTI70/uA9LB/qAa9Q.YTut3tWOfZU9BC68oECDQESOsEz0V.K</password>
+    <salt/>
+    <addresses>
+        <address guid="8308FE6D-9E42-E97A-4593-E07E8AF32CC5">
+            <last_name>Ballar</last_name>
+            <first_name>Esmeralda</first_name>
+            <phone_number>4077800937</phone_number>
+            <street1>1020 Main Street</street1>
+            <street2></street2>
+            <city>Carson</city>
+            <subCountry>CA</subCountry>
+            <zip_postal_code>63661</zip_postal_code>
+            <country>US</country>
+            <commercial>false</commercial>
+        </address>
+    </addresses>
+    <groups>
+        <group>400</group>
+    </groups>
+    <preferred_shipping_address>8308FE6D-9E42-E97A-4593-E07E8AF32CC5</preferred_shipping_address>
+    <preferred_billing_address>8308FE6D-9E42-E97A-4593-E07E8AF32CC5</preferred_billing_address>
+    <customer_profile>
+        <profile_value type="AttributeType_ShortText" key="CP_LAST_NAME">Ballar</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PREF_LOCALE">en</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_EMAIL">esmeralda.ballar@elasticpath.com</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_FIRST_NAME">Esmeralda</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PHONE">4077800937</profile_value>
+        <profile_value type="AttributeType_Date" key="CP_DOB">Mon Feb 27 00:00:00 1933</profile_value>
+    </customer_profile>
+</customer>
+
+<customer store_code="SNAPITUP" shared_id="SNAPITUP:eve.ballesterous@elasticpath.com" guid="28AE1F5E-7192-A5A5-0D29-BFE381B7A0C2">
+	<customer_type>REGISTERED_USER</customer_type>
+    <status>1</status>
+    <first_time_buyer>false</first_time_buyer>
+    <creationDate>2010-06-16T00:00:00-07:00</creationDate>
+    <last_edited>2012-08-02T16:32:22-07:00</last_edited>
+	<username>eve.ballesterous@elasticpath.com</username>
+    <password>$2a$08$wzWbPTI70/uA9LB/qAa9Q.YTut3tWOfZU9BC68oECDQESOsEz0V.K</password>
+    <salt/>
+    <addresses>
+        <address guid="2A2F16D3-8BD6-6377-772A-FE063B5A99FA">
+            <last_name>Ballesterous</last_name>
+            <first_name>Eve</first_name>
+            <phone_number>1086028473</phone_number>
+            <street1>1020 Main Street</street1>
+            <street2></street2>
+            <city>Arroyo Grande</city>
+            <subCountry>CA</subCountry>
+            <zip_postal_code>78708</zip_postal_code>
+            <country>US</country>
+            <commercial>false</commercial>
+        </address>
+    </addresses>
+    <groups>
+        <group>400</group>
+    </groups>
+    <preferred_shipping_address>2A2F16D3-8BD6-6377-772A-FE063B5A99FA</preferred_shipping_address>
+    <preferred_billing_address>2A2F16D3-8BD6-6377-772A-FE063B5A99FA</preferred_billing_address>
+    <customer_profile>
+        <profile_value type="AttributeType_ShortText" key="CP_EMAIL">eve.ballesterous@elasticpath.com</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PREF_LOCALE">en</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PHONE">1086028473</profile_value>
+        <profile_value type="AttributeType_Date" key="CP_DOB">Thu May 17 00:00:00 1962</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_FIRST_NAME">Eve</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_LAST_NAME">Ballesterous</profile_value>
+    </customer_profile>
+</customer>
+
+<customer store_code="SNAPITUP" shared_id="SNAPITUP:harriett.balzarine@elasticpath.com" guid="1B2C0107-B31F-DA99-E357-0F75F17EA21B">
+	<customer_type>REGISTERED_USER</customer_type>
+    <status>1</status>
+    <first_time_buyer>false</first_time_buyer>
+    <creationDate>2010-06-16T00:00:00-07:00</creationDate>
+    <last_edited>2012-08-02T16:32:22-07:00</last_edited>
+	<username>harriett.balzarine@elasticpath.com</username>
+    <password>$2a$08$wzWbPTI70/uA9LB/qAa9Q.YTut3tWOfZU9BC68oECDQESOsEz0V.K</password>
+    <salt/>
+    <addresses>
+        <address guid="D269921F-65AB-84D1-6952-9E786B3F8B02">
+            <last_name>Balzarine</last_name>
+            <first_name>Harriett</first_name>
+            <phone_number>2369625734</phone_number>
+            <street1>1020 Main Street</street1>
+            <street2></street2>
+            <city>Costa Mesa</city>
+            <subCountry>CA</subCountry>
+            <zip_postal_code>47757</zip_postal_code>
+            <country>US</country>
+            <commercial>false</commercial>
+        </address>
+    </addresses>
+    <groups>
+        <group>400</group>
+    </groups>
+    <preferred_shipping_address>D269921F-65AB-84D1-6952-9E786B3F8B02</preferred_shipping_address>
+    <preferred_billing_address>D269921F-65AB-84D1-6952-9E786B3F8B02</preferred_billing_address>
+    <customer_profile>
+        <profile_value type="AttributeType_ShortText" key="CP_PREF_LOCALE">en</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_LAST_NAME">Balzarine</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PHONE">2369625734</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_EMAIL">harriett.balzarine@elasticpath.com</profile_value>
+        <profile_value type="AttributeType_Date" key="CP_DOB">Wed Sep 21 00:00:00 1955</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_FIRST_NAME">Harriett</profile_value>
+    </customer_profile>
+</customer>
+
+<customer store_code="SNAPITUP" shared_id="SNAPITUP:hillary.barlak@elasticpath.com" guid="3745D305-C4DF-5870-D208-1BC3DDD03559">
+	<customer_type>REGISTERED_USER</customer_type>
+    <status>1</status>
+    <first_time_buyer>false</first_time_buyer>
+    <creationDate>2010-06-16T00:00:00-07:00</creationDate>
+    <last_edited>2012-08-02T16:32:22-07:00</last_edited>
+	<username>hillary.barlak@elasticpath.com</username>
+    <password>$2a$08$wzWbPTI70/uA9LB/qAa9Q.YTut3tWOfZU9BC68oECDQESOsEz0V.K</password>
+    <salt/>
+    <addresses>
+        <address guid="D241FB99-C959-35B9-4B8B-E15D3802127E">
+            <last_name>Barlak</last_name>
+            <first_name>Hillary</first_name>
+            <phone_number>7089733936</phone_number>
+            <street1>1020 Main Street</street1>
+            <street2></street2>
+            <city>Pacific Beach</city>
+            <subCountry>CA</subCountry>
+            <zip_postal_code>35029</zip_postal_code>
+            <country>US</country>
+            <commercial>false</commercial>
+        </address>
+    </addresses>
+    <groups>
+        <group>400</group>
+    </groups>
+    <preferred_shipping_address>D241FB99-C959-35B9-4B8B-E15D3802127E</preferred_shipping_address>
+    <preferred_billing_address>D241FB99-C959-35B9-4B8B-E15D3802127E</preferred_billing_address>
+    <customer_profile>
+        <profile_value type="AttributeType_ShortText" key="CP_FIRST_NAME">Hillary</profile_value>
+        <profile_value type="AttributeType_Date" key="CP_DOB">Tue Jun 30 00:00:00 1964</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_EMAIL">hillary.barlak@elasticpath.com</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PREF_LOCALE">en</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PHONE">7089733936</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_LAST_NAME">Barlak</profile_value>
+    </customer_profile>
+</customer>
+
+<customer store_code="SNAPITUP" shared_id="SNAPITUP:jami.baronne@elasticpath.com" guid="74B9F46F-57D0-7115-D1B2-98FA3A5A1F7D">
+	<customer_type>REGISTERED_USER</customer_type>
+    <status>1</status>
+    <first_time_buyer>false</first_time_buyer>
+    <creationDate>2010-06-16T00:00:00-07:00</creationDate>
+    <last_edited>2012-08-02T16:32:22-07:00</last_edited>
+	<username>jami.baronne@elasticpath.com</username>
+    <password>$2a$08$wzWbPTI70/uA9LB/qAa9Q.YTut3tWOfZU9BC68oECDQESOsEz0V.K</password>
+    <salt/>
+    <addresses>
+        <address guid="4EF14F88-8F69-C041-8C2F-C75A5191A2FF">
+            <last_name>Baronne</last_name>
+            <first_name>Jami</first_name>
+            <phone_number>6043563764</phone_number>
+            <street1>1020 Main Street</street1>
+            <street2></street2>
+            <city>Palm Springs</city>
+            <subCountry>CA</subCountry>
+            <zip_postal_code>6537</zip_postal_code>
+            <country>US</country>
+            <commercial>false</commercial>
+        </address>
+    </addresses>
+    <groups>
+        <group>400</group>
+    </groups>
+    <preferred_shipping_address>4EF14F88-8F69-C041-8C2F-C75A5191A2FF</preferred_shipping_address>
+    <preferred_billing_address>4EF14F88-8F69-C041-8C2F-C75A5191A2FF</preferred_billing_address>
+    <customer_profile>
+        <profile_value type="AttributeType_ShortText" key="CP_LAST_NAME">Baronne</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PREF_LOCALE">en</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_EMAIL">jami.baronne@elasticpath.com</profile_value>
+        <profile_value type="AttributeType_Date" key="CP_DOB">Thu Oct 07 00:00:00 1948</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_FIRST_NAME">Jami</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PHONE">6043563764</profile_value>
+    </customer_profile>
+</customer>
+
+<customer store_code="SNAPITUP" shared_id="SNAPITUP:jeanie.baseley@elasticpath.com" guid="EACD36BC-4954-EBBB-F526-5D31B619D049">
+	<customer_type>REGISTERED_USER</customer_type>
+    <status>1</status>
+    <first_time_buyer>false</first_time_buyer>
+    <creationDate>2010-06-16T00:00:00-07:00</creationDate>
+    <last_edited>2012-08-02T16:32:22-07:00</last_edited>
+	<username>jeanie.baseley@elasticpath.com</username>
+    <password>$2a$08$wzWbPTI70/uA9LB/qAa9Q.YTut3tWOfZU9BC68oECDQESOsEz0V.K</password>
+    <salt/>
+    <addresses>
+        <address guid="E3FFC124-1F3D-342D-5D88-00C4E24F30B9">
+            <last_name>Baseley</last_name>
+            <first_name>Jeanie</first_name>
+            <phone_number>3735919477</phone_number>
+            <street1>1020 Main Street</street1>
+            <street2></street2>
+            <city>Sacramento</city>
+            <subCountry>CA</subCountry>
+            <zip_postal_code>64553</zip_postal_code>
+            <country>US</country>
+            <commercial>false</commercial>
+        </address>
+    </addresses>
+    <groups>
+        <group>400</group>
+    </groups>
+    <preferred_shipping_address>E3FFC124-1F3D-342D-5D88-00C4E24F30B9</preferred_shipping_address>
+    <preferred_billing_address>E3FFC124-1F3D-342D-5D88-00C4E24F30B9</preferred_billing_address>
+    <customer_profile>
+        <profile_value type="AttributeType_Date" key="CP_DOB">Wed Jan 02 00:00:00 1991</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_FIRST_NAME">Jeanie</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PREF_LOCALE">en</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PHONE">3735919477</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_LAST_NAME">Baseley</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_EMAIL">jeanie.baseley@elasticpath.com</profile_value>
+    </customer_profile>
+</customer>
+
+<customer store_code="SNAPITUP" shared_id="SNAPITUP:jerri.baumkirchner@elasticpath.com" guid="C688910D-1B9A-B853-AEC9-865FB109189E">
+	<customer_type>REGISTERED_USER</customer_type>
+    <status>1</status>
+    <first_time_buyer>false</first_time_buyer>
+    <creationDate>2010-06-16T00:00:00-07:00</creationDate>
+    <last_edited>2012-08-02T16:32:22-07:00</last_edited>
+	<username>jerri.baumkirchner@elasticpath.com</username>
+    <password>$2a$08$wzWbPTI70/uA9LB/qAa9Q.YTut3tWOfZU9BC68oECDQESOsEz0V.K</password>
+    <salt/>
+    <addresses>
+        <address guid="3BF079ED-D626-693E-119F-39683448AC64">
+            <last_name>Baumkirchner</last_name>
+            <first_name>Jerri</first_name>
+            <phone_number>4822189633</phone_number>
+            <street1>1020 Main Street</street1>
+            <street2></street2>
+            <city>Monterey</city>
+            <subCountry>CA</subCountry>
+            <zip_postal_code>7626</zip_postal_code>
+            <country>US</country>
+            <commercial>false</commercial>
+        </address>
+    </addresses>
+    <groups>
+        <group>400</group>
+    </groups>
+    <preferred_shipping_address>3BF079ED-D626-693E-119F-39683448AC64</preferred_shipping_address>
+    <preferred_billing_address>3BF079ED-D626-693E-119F-39683448AC64</preferred_billing_address>
+    <customer_profile>
+        <profile_value type="AttributeType_ShortText" key="CP_PHONE">4822189633</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_FIRST_NAME">Jerri</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_EMAIL">jerri.baumkirchner@elasticpath.com</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PREF_LOCALE">en</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_LAST_NAME">Baumkirchner</profile_value>
+        <profile_value type="AttributeType_Date" key="CP_DOB">Mon Jun 09 00:00:00 1952</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PUNCHOUT_CUSTOMER_KEY">jbaumkirchner</profile_value>
+    </customer_profile>
+</customer>
+
+<customer store_code="SNAPITUP" shared_id="SNAPITUP:julianne.bax@elasticpath.com" guid="CF77CC42-F1AA-731D-7E0A-D055E26406BE">
+	<customer_type>REGISTERED_USER</customer_type>
+    <status>1</status>
+    <first_time_buyer>false</first_time_buyer>
+    <creationDate>2010-06-16T00:00:00-07:00</creationDate>
+    <last_edited>2012-08-02T16:32:22-07:00</last_edited>
+	<username>julianne.bax@elasticpath.com</username>
+    <password>$2a$08$wzWbPTI70/uA9LB/qAa9Q.YTut3tWOfZU9BC68oECDQESOsEz0V.K</password>
+    <salt/>
+    <addresses>
+        <address guid="A01DDA15-B8E0-D6C2-4DC4-E7F3375B3697">
+            <last_name>Bax</last_name>
+            <first_name>Julianne</first_name>
+            <phone_number>4395509200</phone_number>
+            <street1>1020 Main Street</street1>
+            <street2></street2>
+            <city>Buena Park</city>
+            <subCountry>CA</subCountry>
+            <zip_postal_code>16291</zip_postal_code>
+            <country>US</country>
+            <commercial>false</commercial>
+        </address>
+    </addresses>
+    <groups>
+        <group>400</group>
+    </groups>
+    <preferred_shipping_address>A01DDA15-B8E0-D6C2-4DC4-E7F3375B3697</preferred_shipping_address>
+    <preferred_billing_address>A01DDA15-B8E0-D6C2-4DC4-E7F3375B3697</preferred_billing_address>
+    <customer_profile>
+        <profile_value type="AttributeType_ShortText" key="CP_EMAIL">julianne.bax@elasticpath.com</profile_value>
+        <profile_value type="AttributeType_Date" key="CP_DOB">Thu Apr 05 00:00:00 1945</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PREF_LOCALE">en</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_FIRST_NAME">Julianne</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PHONE">4395509200</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_LAST_NAME">Bax</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PUNCHOUT_CUSTOMER_KEY">jbax</profile_value>
+    </customer_profile>
+</customer>
+
+<customer store_code="SNAPITUP" shared_id="SNAPITUP:kathrine.bedenfield@elasticpath.com" guid="F6B3DFEB-4EBF-ACD6-C8E7-09DD1E8A8525">
+	<customer_type>REGISTERED_USER</customer_type>
+    <status>1</status>
+    <first_time_buyer>false</first_time_buyer>
+    <creationDate>2010-06-16T00:00:00-07:00</creationDate>
+    <last_edited>2012-08-02T16:32:22-07:00</last_edited>
+	<username>kathrine.bedenfield@elasticpath.com</username>
+    <password>$2a$08$wzWbPTI70/uA9LB/qAa9Q.YTut3tWOfZU9BC68oECDQESOsEz0V.K</password>
+    <salt/>
+    <addresses>
+        <address guid="4D206B7C-61BF-E829-4323-7DE0EBF03891">
+            <last_name>Bedenfield</last_name>
+            <first_name>Kathrine</first_name>
+            <phone_number>1166127850</phone_number>
+            <street1>1020 Main Street</street1>
+            <street2></street2>
+            <city>Seal Beach</city>
+            <subCountry>CA</subCountry>
+            <zip_postal_code>7450</zip_postal_code>
+            <country>US</country>
+            <commercial>false</commercial>
+        </address>
+    </addresses>
+    <groups>
+        <group>400</group>
+    </groups>
+    <preferred_shipping_address>4D206B7C-61BF-E829-4323-7DE0EBF03891</preferred_shipping_address>
+    <preferred_billing_address>4D206B7C-61BF-E829-4323-7DE0EBF03891</preferred_billing_address>
+    <customer_profile>
+        <profile_value type="AttributeType_ShortText" key="CP_LAST_NAME">Bedenfield</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PHONE">1166127850</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PREF_LOCALE">en</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_EMAIL">kathrine.bedenfield@elasticpath.com</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_FIRST_NAME">Kathrine</profile_value>
+        <profile_value type="AttributeType_Date" key="CP_DOB">Mon Nov 01 00:00:00 1965</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PUNCHOUT_CUSTOMER_KEY">kbedenfield</profile_value>
+    </customer_profile>
+</customer>
+
+<customer store_code="SNAPITUP" shared_id="SNAPITUP:katy.bedolla@elasticpath.com" guid="6BF01E74-3450-2876-A1F9-AE3E197BFACC">
+	<customer_type>REGISTERED_USER</customer_type>
+    <status>1</status>
+    <first_time_buyer>false</first_time_buyer>
+    <creationDate>2010-06-16T00:00:00-07:00</creationDate>
+    <last_edited>2012-08-02T16:32:22-07:00</last_edited>
+	<username>katy.bedolla@elasticpath.com</username>
+    <password>$2a$08$wzWbPTI70/uA9LB/qAa9Q.YTut3tWOfZU9BC68oECDQESOsEz0V.K</password>
+    <salt/>
+    <addresses>
+        <address guid="207BC041-1E69-4E10-CE4F-BADDC21E8856">
+            <last_name>Bedolla</last_name>
+            <first_name>Katy</first_name>
+            <phone_number>8831599544</phone_number>
+            <street1>1020 Main Street</street1>
+            <street2></street2>
+            <city>Playa del Rey</city>
+            <subCountry>CA</subCountry>
+            <zip_postal_code>92627</zip_postal_code>
+            <country>US</country>
+            <commercial>false</commercial>
+        </address>
+    </addresses>
+    <groups>
+        <group>400</group>
+    </groups>
+    <preferred_shipping_address>207BC041-1E69-4E10-CE4F-BADDC21E8856</preferred_shipping_address>
+    <preferred_billing_address>207BC041-1E69-4E10-CE4F-BADDC21E8856</preferred_billing_address>
+    <customer_profile>
+        <profile_value type="AttributeType_ShortText" key="CP_EMAIL">katy.bedolla@elasticpath.com</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PREF_LOCALE">en</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_LAST_NAME">Bedolla</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PHONE">8831599544</profile_value>
+        <profile_value type="AttributeType_Date" key="CP_DOB">Mon Oct 15 00:00:00 1962</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_FIRST_NAME">Katy</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PUNCHOUT_CUSTOMER_KEY">kbedolla</profile_value>
+    </customer_profile>
+</customer>
+
+<customer store_code="SNAPITUP" shared_id="SNAPITUP:lenore.behanan@elasticpath.com" guid="EAD58EDA-8F07-91C6-1F11-8B6496EFD771">
+	<customer_type>REGISTERED_USER</customer_type>
+    <status>1</status>
+    <first_time_buyer>false</first_time_buyer>
+    <creationDate>2010-06-16T00:00:00-07:00</creationDate>
+    <last_edited>2012-08-02T16:32:22-07:00</last_edited>
+	<username>lenore.behanan@elasticpath.com</username>
+    <password>$2a$08$wzWbPTI70/uA9LB/qAa9Q.YTut3tWOfZU9BC68oECDQESOsEz0V.K</password>
+    <salt/>
+    <addresses>
+        <address guid="5DEDBFE9-50C9-083A-D613-E4B1171A1E82">
+            <last_name>Behanan</last_name>
+            <first_name>Lenore</first_name>
+            <phone_number>7172044845</phone_number>
+            <street1>1020 Main Street</street1>
+            <street2></street2>
+            <city>Laguna Beach</city>
+            <subCountry>CA</subCountry>
+            <zip_postal_code>68022</zip_postal_code>
+            <country>US</country>
+            <commercial>false</commercial>
+        </address>
+    </addresses>
+    <groups>
+        <group>400</group>
+    </groups>
+    <preferred_shipping_address>5DEDBFE9-50C9-083A-D613-E4B1171A1E82</preferred_shipping_address>
+    <preferred_billing_address>5DEDBFE9-50C9-083A-D613-E4B1171A1E82</preferred_billing_address>
+    <customer_profile>
+        <profile_value type="AttributeType_ShortText" key="CP_PHONE">7172044845</profile_value>
+        <profile_value type="AttributeType_Date" key="CP_DOB">Mon Sep 15 00:00:00 1980</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_EMAIL">lenore.behanan@elasticpath.com</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_FIRST_NAME">Lenore</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PREF_LOCALE">en</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_LAST_NAME">Behanan</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PUNCHOUT_CUSTOMER_KEY">lbehanan</profile_value>
+    </customer_profile>
+</customer>
+
+<customer store_code="SNAPITUP" shared_id="SNAPITUP:lilia.bening@elasticpath.com" guid="CA56C973-F936-8580-AF3F-0CC9B4288A28">
+	<customer_type>REGISTERED_USER</customer_type>
+    <status>1</status>
+    <first_time_buyer>false</first_time_buyer>
+    <creationDate>2010-06-16T00:00:00-07:00</creationDate>
+    <last_edited>2012-08-02T16:32:22-07:00</last_edited>
+	<username>lilia.bening@elasticpath.com</username>
+    <password>$2a$08$wzWbPTI70/uA9LB/qAa9Q.YTut3tWOfZU9BC68oECDQESOsEz0V.K</password>
+    <salt/>
+    <addresses>
+        <address guid="A77314A7-1D02-8932-575B-1D3843297F5C">
+            <last_name>Bening</last_name>
+            <first_name>Lilia</first_name>
+            <phone_number>7959754421</phone_number>
+            <street1>1020 Main Street</street1>
+            <street2></street2>
+            <city>Arroyo Grande</city>
+            <subCountry>CA</subCountry>
+            <zip_postal_code>15966</zip_postal_code>
+            <country>US</country>
+            <commercial>false</commercial>
+        </address>
+    </addresses>
+    <groups>
+        <group>400</group>
+    </groups>
+    <preferred_shipping_address>A77314A7-1D02-8932-575B-1D3843297F5C</preferred_shipping_address>
+    <preferred_billing_address>A77314A7-1D02-8932-575B-1D3843297F5C</preferred_billing_address>
+    <customer_profile>
+        <profile_value type="AttributeType_ShortText" key="CP_EMAIL">lilia.bening@elasticpath.com</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_LAST_NAME">Bening</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PREF_LOCALE">en</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_FIRST_NAME">Lilia</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PHONE">7959754421</profile_value>
+        <profile_value type="AttributeType_Date" key="CP_DOB">Sat Jan 09 00:00:00 1993</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PUNCHOUT_CUSTOMER_KEY">lbening</profile_value>
+    </customer_profile>
+</customer>
+
+<customer store_code="SNAPITUP" shared_id="SNAPITUP:liza.bernatchez@elasticpath.com" guid="EFE43385-5C19-BFFD-6A2D-06432AA357FF">
+	<customer_type>REGISTERED_USER</customer_type>
+    <status>1</status>
+    <first_time_buyer>false</first_time_buyer>
+    <creationDate>2010-06-16T00:00:00-07:00</creationDate>
+    <last_edited>2012-08-02T16:32:22-07:00</last_edited>
+	<username>liza.bernatchez@elasticpath.com</username>
+    <password>$2a$08$wzWbPTI70/uA9LB/qAa9Q.YTut3tWOfZU9BC68oECDQESOsEz0V.K</password>
+    <salt/>
+    <addresses>
+        <address guid="C16C25B9-263E-FD1A-E257-4D617E7C8DC3">
+            <last_name>Bernatchez</last_name>
+            <first_name>Liza</first_name>
+            <phone_number>722702911</phone_number>
+            <street1>1020 Main Street</street1>
+            <street2></street2>
+            <city>Garden Grove</city>
+            <subCountry>CA</subCountry>
+            <zip_postal_code>84032</zip_postal_code>
+            <country>US</country>
+            <commercial>false</commercial>
+        </address>
+    </addresses>
+    <groups>
+        <group>400</group>
+    </groups>
+    <preferred_shipping_address>C16C25B9-263E-FD1A-E257-4D617E7C8DC3</preferred_shipping_address>
+    <preferred_billing_address>C16C25B9-263E-FD1A-E257-4D617E7C8DC3</preferred_billing_address>
+    <customer_profile>
+        <profile_value type="AttributeType_ShortText" key="CP_EMAIL">liza.bernatchez@elasticpath.com</profile_value>
+        <profile_value type="AttributeType_Date" key="CP_DOB">Fri May 21 00:00:00 1976</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PREF_LOCALE">en</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_FIRST_NAME">Liza</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PHONE">722702911</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_LAST_NAME">Bernatchez</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PUNCHOUT_CUSTOMER_KEY">lbernatchez</profile_value>
+    </customer_profile>
+</customer>
+
+<customer store_code="SNAPITUP" shared_id="SNAPITUP:loraine.berrocal@elasticpath.com" guid="26127A00-553E-C8F5-F01B-0EE861E91E54">
+	<customer_type>REGISTERED_USER</customer_type>
+    <status>1</status>
+    <first_time_buyer>false</first_time_buyer>
+    <creationDate>2010-06-16T00:00:00-07:00</creationDate>
+    <last_edited>2012-08-02T16:32:22-07:00</last_edited>
+	<username>loraine.berrocal@elasticpath.com</username>
+    <password>$2a$08$wzWbPTI70/uA9LB/qAa9Q.YTut3tWOfZU9BC68oECDQESOsEz0V.K</password>
+    <salt/>
+    <addresses>
+        <address guid="EB336986-7F56-9C9B-F730-5C36587C2982">
+            <last_name>Berrocal</last_name>
+            <first_name>Loraine</first_name>
+            <phone_number>125221083</phone_number>
+            <street1>1020 Main Street</street1>
+            <street2></street2>
+            <city>Trabuco Canyon</city>
+            <subCountry>CA</subCountry>
+            <zip_postal_code>80523</zip_postal_code>
+            <country>US</country>
+            <commercial>false</commercial>
+        </address>
+    </addresses>
+    <groups>
+        <group>400</group>
+    </groups>
+    <preferred_shipping_address>EB336986-7F56-9C9B-F730-5C36587C2982</preferred_shipping_address>
+    <preferred_billing_address>EB336986-7F56-9C9B-F730-5C36587C2982</preferred_billing_address>
+    <customer_profile>
+        <profile_value type="AttributeType_ShortText" key="CP_PHONE">125221083</profile_value>
+        <profile_value type="AttributeType_Date" key="CP_DOB">Fri Jan 06 00:00:00 1978</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PREF_LOCALE">en</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_EMAIL">loraine.berrocal@elasticpath.com</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_FIRST_NAME">Loraine</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_LAST_NAME">Berrocal</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PUNCHOUT_CUSTOMER_KEY">lberrocal</profile_value>
+    </customer_profile>
+</customer>
+
+<customer store_code="SNAPITUP" shared_id="SNAPITUP:lorrie.bhaskar@elasticpath.com" guid="D9317CF2-BB69-6CFD-3CA2-2142A386155B">
+	<customer_type>REGISTERED_USER</customer_type>
+    <status>1</status>
+    <first_time_buyer>false</first_time_buyer>
+    <creationDate>2010-06-16T00:00:00-07:00</creationDate>
+    <last_edited>2012-08-02T16:32:22-07:00</last_edited>
+	<username>lorrie.bhaskar@elasticpath.com</username>
+    <password>$2a$08$wzWbPTI70/uA9LB/qAa9Q.YTut3tWOfZU9BC68oECDQESOsEz0V.K</password>
+    <salt/>
+    <addresses>
+        <address guid="E931CA83-948A-1C7B-9269-C4EB72AE2FCA">
+            <last_name>Bhaskar</last_name>
+            <first_name>Lorrie</first_name>
+            <phone_number>6376009577</phone_number>
+            <street1>1020 Main Street</street1>
+            <street2></street2>
+            <city>NULL</city>
+            <subCountry>CA</subCountry>
+            <zip_postal_code>40663</zip_postal_code>
+            <country>US</country>
+            <commercial>false</commercial>
+        </address>
+    </addresses>
+    <groups>
+        <group>400</group>
+    </groups>
+    <preferred_shipping_address>E931CA83-948A-1C7B-9269-C4EB72AE2FCA</preferred_shipping_address>
+    <preferred_billing_address>E931CA83-948A-1C7B-9269-C4EB72AE2FCA</preferred_billing_address>
+    <customer_profile>
+        <profile_value type="AttributeType_ShortText" key="CP_PHONE">6376009577</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PREF_LOCALE">en</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_FIRST_NAME">Lorrie</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_LAST_NAME">Bhaskar</profile_value>
+        <profile_value type="AttributeType_Date" key="CP_DOB">Thu Oct 12 00:00:00 1950</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_EMAIL">lorrie.bhaskar@elasticpath.com</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PUNCHOUT_CUSTOMER_KEY">lbhaskar</profile_value>
+    </customer_profile>
+</customer>
+
+<customer store_code="SNAPITUP" shared_id="SNAPITUP:louisa.biersack@elasticpath.com" guid="E64327EB-7D39-3A8E-4E3C-CD85F9A8D72A">
+	<customer_type>REGISTERED_USER</customer_type>
+    <status>1</status>
+    <first_time_buyer>false</first_time_buyer>
+    <creationDate>2010-06-16T00:00:00-07:00</creationDate>
+    <last_edited>2012-08-02T16:32:22-07:00</last_edited>
+	<username>louisa.biersack@elasticpath.com</username>
+    <password>$2a$08$wzWbPTI70/uA9LB/qAa9Q.YTut3tWOfZU9BC68oECDQESOsEz0V.K</password>
+    <salt/>
+    <addresses>
+        <address guid="7E412614-B03F-1119-93B5-0B6F80E2C184">
+            <last_name>Biersack</last_name>
+            <first_name>Louisa</first_name>
+            <phone_number>1106854349</phone_number>
+            <street1>1020 Main Street</street1>
+            <street2></street2>
+            <city>Mission Beach</city>
+            <subCountry>CA</subCountry>
+            <zip_postal_code>41784</zip_postal_code>
+            <country>US</country>
+            <commercial>false</commercial>
+        </address>
+    </addresses>
+    <groups>
+        <group>400</group>
+    </groups>
+    <preferred_shipping_address>7E412614-B03F-1119-93B5-0B6F80E2C184</preferred_shipping_address>
+    <preferred_billing_address>7E412614-B03F-1119-93B5-0B6F80E2C184</preferred_billing_address>
+    <customer_profile>
+        <profile_value type="AttributeType_ShortText" key="CP_PREF_LOCALE">en</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_LAST_NAME">Biersack</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PHONE">1106854349</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_FIRST_NAME">Louisa</profile_value>
+        <profile_value type="AttributeType_Date" key="CP_DOB">Wed Apr 11 00:00:00 1945</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_EMAIL">louisa.biersack@elasticpath.com</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PUNCHOUT_CUSTOMER_KEY">lbiersack</profile_value>
+    </customer_profile>
+</customer>
+
+<customer store_code="SNAPITUP" shared_id="SNAPITUP:malinda.bigusiak@elasticpath.com" guid="DA82875D-F9F3-0BA7-CD72-F165859BA76D">
+	<customer_type>REGISTERED_USER</customer_type>
+    <status>1</status>
+    <first_time_buyer>false</first_time_buyer>
+    <creationDate>2010-06-16T00:00:00-07:00</creationDate>
+    <last_edited>2012-08-02T16:32:22-07:00</last_edited>
+	<username>malinda.bigusiak@elasticpath.com</username>
+    <password>$2a$08$wzWbPTI70/uA9LB/qAa9Q.YTut3tWOfZU9BC68oECDQESOsEz0V.K</password>
+    <salt/>
+    <addresses>
+        <address guid="9C076879-E782-97F0-44BE-9EFFF54ECE1A">
+            <last_name>Bigusiak</last_name>
+            <first_name>Malinda</first_name>
+            <phone_number>30379536</phone_number>
+            <street1>1020 Main Street</street1>
+            <street2></street2>
+            <city>NULL</city>
+            <subCountry>CA</subCountry>
+            <zip_postal_code>22392</zip_postal_code>
+            <country>US</country>
+            <commercial>false</commercial>
+        </address>
+    </addresses>
+    <groups>
+        <group>400</group>
+    </groups>
+    <preferred_shipping_address>9C076879-E782-97F0-44BE-9EFFF54ECE1A</preferred_shipping_address>
+    <preferred_billing_address>9C076879-E782-97F0-44BE-9EFFF54ECE1A</preferred_billing_address>
+    <customer_profile>
+        <profile_value type="AttributeType_ShortText" key="CP_FIRST_NAME">Malinda</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PHONE">30379536</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PREF_LOCALE">en</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_EMAIL">malinda.bigusiak@elasticpath.com</profile_value>
+        <profile_value type="AttributeType_Date" key="CP_DOB">Fri Jul 05 00:00:00 1991</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_LAST_NAME">Bigusiak</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PUNCHOUT_CUSTOMER_KEY">mbigusiak</profile_value>
+    </customer_profile>
+</customer>
+
+<customer store_code="SNAPITUP" shared_id="SNAPITUP:mallory.bjerknes@elasticpath.com" guid="075C52E5-00EF-8AB0-AAC3-5D11672700E2">
+	<customer_type>REGISTERED_USER</customer_type>
+    <status>1</status>
+    <first_time_buyer>false</first_time_buyer>
+    <creationDate>2010-06-16T00:00:00-07:00</creationDate>
+    <last_edited>2012-08-02T16:32:22-07:00</last_edited>
+	<username>mallory.bjerknes@elasticpath.com</username>
+    <password>$2a$08$wzWbPTI70/uA9LB/qAa9Q.YTut3tWOfZU9BC68oECDQESOsEz0V.K</password>
+    <salt/>
+    <addresses>
+        <address guid="786C0F2B-E84D-887E-94B8-9913906E3D89">
+            <last_name>Bjerknes</last_name>
+            <first_name>Mallory</first_name>
+            <phone_number>4191432099</phone_number>
+            <street1>1020 Main Street</street1>
+            <street2></street2>
+            <city>Guadalupe</city>
+            <subCountry>CA</subCountry>
+            <zip_postal_code>65060</zip_postal_code>
+            <country>US</country>
+            <commercial>false</commercial>
+        </address>
+    </addresses>
+    <groups>
+        <group>400</group>
+    </groups>
+    <preferred_shipping_address>786C0F2B-E84D-887E-94B8-9913906E3D89</preferred_shipping_address>
+    <preferred_billing_address>786C0F2B-E84D-887E-94B8-9913906E3D89</preferred_billing_address>
+    <customer_profile>
+        <profile_value type="AttributeType_ShortText" key="CP_PHONE">4191432099</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_EMAIL">mallory.bjerknes@elasticpath.com</profile_value>
+        <profile_value type="AttributeType_Date" key="CP_DOB">Thu May 30 00:00:00 1946</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PREF_LOCALE">en</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_LAST_NAME">Bjerknes</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_FIRST_NAME">Mallory</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PUNCHOUT_CUSTOMER_KEY">mbjerknes</profile_value>
+    </customer_profile>
+</customer>
+
+<customer store_code="SNAPITUP" shared_id="SNAPITUP:marcie.blanko@elasticpath.com" guid="AB2BED36-C411-A4C0-0A02-62ED151B03BC">
+	<customer_type>REGISTERED_USER</customer_type>
+    <status>1</status>
+    <first_time_buyer>false</first_time_buyer>
+    <creationDate>2010-06-16T00:00:00-07:00</creationDate>
+    <last_edited>2012-08-02T16:32:22-07:00</last_edited>
+	<username>marcie.blanko@elasticpath.com</username>
+    <password>$2a$08$wzWbPTI70/uA9LB/qAa9Q.YTut3tWOfZU9BC68oECDQESOsEz0V.K</password>
+    <salt/>
+    <addresses>
+        <address guid="6EB33CC1-8899-602D-C197-BB4A6F33C75E">
+            <last_name>Blanko</last_name>
+            <first_name>Marcie</first_name>
+            <phone_number>2081300360</phone_number>
+            <street1>1020 Main Street</street1>
+            <street2></street2>
+            <city>Cayucos</city>
+            <subCountry>CA</subCountry>
+            <zip_postal_code>60222</zip_postal_code>
+            <country>US</country>
+            <commercial>false</commercial>
+        </address>
+    </addresses>
+    <groups>
+        <group>400</group>
+    </groups>
+    <preferred_shipping_address>6EB33CC1-8899-602D-C197-BB4A6F33C75E</preferred_shipping_address>
+    <preferred_billing_address>6EB33CC1-8899-602D-C197-BB4A6F33C75E</preferred_billing_address>
+    <customer_profile>
+        <profile_value type="AttributeType_ShortText" key="CP_FIRST_NAME">Marcie</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_LAST_NAME">Blanko</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PREF_LOCALE">en</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PHONE">2081300360</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_EMAIL">marcie.blanko@elasticpath.com</profile_value>
+        <profile_value type="AttributeType_Date" key="CP_DOB">Thu Dec 19 00:00:00 1968</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PUNCHOUT_CUSTOMER_KEY">mblanko</profile_value>
+    </customer_profile>
+</customer>
+
+<customer store_code="SNAPITUP" shared_id="SNAPITUP:margery.blanquart@elasticpath.com" guid="B84B5699-34B4-169D-CB64-C06B527C24AB">
+	<customer_type>REGISTERED_USER</customer_type>
+    <status>1</status>
+    <first_time_buyer>false</first_time_buyer>
+    <creationDate>2010-06-16T00:00:00-07:00</creationDate>
+    <last_edited>2012-08-02T16:32:22-07:00</last_edited>
+	<username>margery.blanquart@elasticpath.com</username>
+    <password>$2a$08$wzWbPTI70/uA9LB/qAa9Q.YTut3tWOfZU9BC68oECDQESOsEz0V.K</password>
+    <salt/>
+    <addresses>
+        <address guid="1D37EF9E-7180-AEC4-F6A7-563982F53D54">
+            <last_name>Blanquart</last_name>
+            <first_name>Margery</first_name>
+            <phone_number>927192454</phone_number>
+            <street1>1020 Main Street</street1>
+            <street2></street2>
+            <city>Ragged Point</city>
+            <subCountry>CA</subCountry>
+            <zip_postal_code>69401</zip_postal_code>
+            <country>US</country>
+            <commercial>false</commercial>
+        </address>
+    </addresses>
+    <groups>
+        <group>400</group>
+    </groups>
+    <preferred_shipping_address>1D37EF9E-7180-AEC4-F6A7-563982F53D54</preferred_shipping_address>
+    <preferred_billing_address>1D37EF9E-7180-AEC4-F6A7-563982F53D54</preferred_billing_address>
+    <customer_profile>
+        <profile_value type="AttributeType_ShortText" key="CP_EMAIL">margery.blanquart@elasticpath.com</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_FIRST_NAME">Margery</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PREF_LOCALE">en</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_LAST_NAME">Blanquart</profile_value>
+        <profile_value type="AttributeType_Date" key="CP_DOB">Wed Jul 14 00:00:00 1926</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PHONE">927192454</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PUNCHOUT_CUSTOMER_KEY">mblanquart</profile_value>
+    </customer_profile>
+</customer>
+
+<customer store_code="SNAPITUP" shared_id="SNAPITUP:maricela.blessett@elasticpath.com" guid="07F8BF5C-BFD7-0D62-DD11-3E0BD80FB524">
+	<customer_type>REGISTERED_USER</customer_type>
+    <status>1</status>
+    <first_time_buyer>false</first_time_buyer>
+    <creationDate>2010-06-16T00:00:00-07:00</creationDate>
+    <last_edited>2012-08-02T16:32:22-07:00</last_edited>
+	<username>maricela.blessett@elasticpath.com</username>
+    <password>$2a$08$wzWbPTI70/uA9LB/qAa9Q.YTut3tWOfZU9BC68oECDQESOsEz0V.K</password>
+    <salt/>
+    <addresses>
+        <address guid="1FF6DC4E-2BD7-70F0-5F79-A7774C4B0E36">
+            <last_name>Blessett</last_name>
+            <first_name>Maricela</first_name>
+            <phone_number>208002382</phone_number>
+            <street1>1020 Main Street</street1>
+            <street2></street2>
+            <city>Venice Beach</city>
+            <subCountry>CA</subCountry>
+            <zip_postal_code>33553</zip_postal_code>
+            <country>US</country>
+            <commercial>false</commercial>
+        </address>
+    </addresses>
+    <groups>
+        <group>400</group>
+    </groups>
+    <preferred_shipping_address>1FF6DC4E-2BD7-70F0-5F79-A7774C4B0E36</preferred_shipping_address>
+    <preferred_billing_address>1FF6DC4E-2BD7-70F0-5F79-A7774C4B0E36</preferred_billing_address>
+    <customer_profile>
+        <profile_value type="AttributeType_ShortText" key="CP_LAST_NAME">Blessett</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PHONE">208002382</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PREF_LOCALE">en</profile_value>
+        <profile_value type="AttributeType_Date" key="CP_DOB">Wed Apr 17 00:00:00 1935</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_EMAIL">maricela.blessett@elasticpath.com</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_FIRST_NAME">Maricela</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PUNCHOUT_CUSTOMER_KEY">mblessett</profile_value>
+    </customer_profile>
+</customer>
+
+    <customer store_code="SNAPITUP" shared_id="SNAPITUP:darth.vader@elasticpath.com" guid="69337D14-F366-039F-DEE8-456737EDD6C4">
+		<customer_type>REGISTERED_USER</customer_type>
+        <status>1</status>
+        <first_time_buyer>false</first_time_buyer>
+        <creationDate>2010-06-16T00:00:00-07:00</creationDate>
+        <last_edited>2012-08-02T16:32:21-07:00</last_edited>
+		<username>darth.vader@elasticpath.com</username>
+        <password>$2a$08$wzWbPTI70/uA9LB/qAa9Q.YTut3tWOfZU9BC68oECDQESOsEz0V.K</password>
+        <salt/>
+        <addresses>
+            <address guid="C49B4ED6-F146-AAFF-111F-134E8576F959">
+                <last_name>Vader</last_name>
+                <first_name>Darth</first_name>
+                <phone_number>7847772361</phone_number>
+                <street1>1 Fortress Vader</street1>
+                <street2></street2>
+                <city>Mustafar</city>
+                <subCountry>CA</subCountry>
+                <zip_postal_code>70051</zip_postal_code>
+                <country>US</country>
+                <commercial>false</commercial>
+            </address>
+        </addresses>
+        <groups>
+            <group>400</group>
+        </groups>
+        <preferred_shipping_address>C49B4ED6-F146-AAFF-111F-134E8576F959</preferred_shipping_address>
+        <preferred_billing_address>C49B4ED6-F146-AAFF-111F-134E8576F959</preferred_billing_address>
+        <customer_profile>
+            <profile_value type="AttributeType_ShortText" key="CP_EMAIL">darth.vader@elasticpath.com</profile_value>
+            <profile_value type="AttributeType_ShortText" key="CP_LAST_NAME">Vader</profile_value>
+            <profile_value type="AttributeType_Date" key="CP_DOB">Wed Nov 21 00:00:00 1956</profile_value>
+            <profile_value type="AttributeType_ShortText" key="CP_PREF_LOCALE">en</profile_value>
+            <profile_value type="AttributeType_ShortText" key="CP_FIRST_NAME">Darth</profile_value>
+            <profile_value type="AttributeType_ShortText" key="CP_PHONE">7847772361</profile_value>
+            <profile_value type="AttributeType_ShortText" key="CP_PUNCHOUT_CUSTOMER_KEY">dvader</profile_value>
+        </customer_profile>
+    </customer>
+
+<customer store_code="SNAPITUPUK" shared_id="SNAPITUPUK:melisa.blide@elasticpath.com" guid="0BD54D20-1CE5-0042-64E9-8862DC304985">
+	<customer_type>REGISTERED_USER</customer_type>
+    <status>1</status>
+    <first_time_buyer>false</first_time_buyer>
+    <creationDate>2010-06-16T00:00:00-07:00</creationDate>
+    <last_edited>2012-08-02T16:32:22-07:00</last_edited>
+	<username>melisa.blide@elasticpath.com</username>
+    <password>$2a$08$wzWbPTI70/uA9LB/qAa9Q.YTut3tWOfZU9BC68oECDQESOsEz0V.K</password>
+    <salt/>
+    <addresses>
+        <address guid="20589CA4-C6E7-8A52-F35C-AD760DDE7085">
+            <last_name>Blide</last_name>
+            <first_name>Melisa</first_name>
+            <phone_number>208921501</phone_number>
+            <street1>1020 Main Street</street1>
+            <street2></street2>
+            <city>Nottingham,KT0 8WX</city>
+            <subCountry></subCountry>
+            <zip_postal_code>KT0 8WX</zip_postal_code>
+            <country>GB</country>
+            <commercial>false</commercial>
+        </address>
+    </addresses>
+    <groups>
+        <group>400</group>
+    </groups>
+    <preferred_shipping_address>20589CA4-C6E7-8A52-F35C-AD760DDE7085</preferred_shipping_address>
+    <preferred_billing_address>20589CA4-C6E7-8A52-F35C-AD760DDE7085</preferred_billing_address>
+    <customer_profile>
+        <profile_value type="AttributeType_Date" key="CP_DOB">Sun Mar 26 00:00:00 1989</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_EMAIL">melisa.blide@elasticpath.com</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PHONE">208921501</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PREF_LOCALE">en</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_LAST_NAME">Blide</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_FIRST_NAME">Melisa</profile_value>
+    </customer_profile>
+</customer>
+
+<customer store_code="SNAPITUPUK" shared_id="SNAPITUPUK:noemi.bloes@elasticpath.com" guid="1C27EA57-4C11-6AE5-5785-0E15DFE5EC3A">
+	<customer_type>REGISTERED_USER</customer_type>
+    <status>1</status>
+    <first_time_buyer>false</first_time_buyer>
+    <creationDate>2010-06-16T00:00:00-07:00</creationDate>
+    <last_edited>2012-08-02T16:32:22-07:00</last_edited>
+	<username>noemi.bloes@elasticpath.com</username>
+    <password>$2a$08$wzWbPTI70/uA9LB/qAa9Q.YTut3tWOfZU9BC68oECDQESOsEz0V.K</password>
+    <salt/>
+    <addresses>
+        <address guid="77CC1147-1F39-A0B1-410A-B2DC1DC58DD0">
+            <last_name>Bloes</last_name>
+            <first_name>Noemi</first_name>
+            <phone_number>208272069</phone_number>
+            <street1>1020 Main Street</street1>
+            <street2></street2>
+            <city>Stoke-On-Trent,VU7 9ZL</city>
+            <subCountry></subCountry>
+            <zip_postal_code>VU7 9ZL</zip_postal_code>
+            <country>GB</country>
+            <commercial>false</commercial>
+        </address>
+    </addresses>
+    <groups>
+        <group>400</group>
+    </groups>
+    <preferred_shipping_address>77CC1147-1F39-A0B1-410A-B2DC1DC58DD0</preferred_shipping_address>
+    <preferred_billing_address>77CC1147-1F39-A0B1-410A-B2DC1DC58DD0</preferred_billing_address>
+    <customer_profile>
+        <profile_value type="AttributeType_ShortText" key="CP_LAST_NAME">Bloes</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_FIRST_NAME">Noemi</profile_value>
+        <profile_value type="AttributeType_Date" key="CP_DOB">Thu Aug 10 00:00:00 1978</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PREF_LOCALE">en</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_EMAIL">noemi.bloes@elasticpath.com</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PHONE">208272069</profile_value>
+    </customer_profile>
+</customer>
+
+<customer store_code="SNAPITUPUK" shared_id="SNAPITUPUK:noreen.borell@elasticpath.com" guid="17074054-6785-2E7E-C7F4-61268B7C120A">
+	<customer_type>REGISTERED_USER</customer_type>
+    <status>1</status>
+    <first_time_buyer>false</first_time_buyer>
+    <creationDate>2010-06-16T00:00:00-07:00</creationDate>
+    <last_edited>2012-08-02T16:32:23-07:00</last_edited>
+	<username>noreen.borell@elasticpath.com</username>
+    <password>$2a$08$wzWbPTI70/uA9LB/qAa9Q.YTut3tWOfZU9BC68oECDQESOsEz0V.K</password>
+    <salt/>
+    <addresses>
+        <address guid="9B9CEDD5-3117-FCBD-ED9E-0BDCB815CA00">
+            <last_name>Borell</last_name>
+            <first_name>Noreen</first_name>
+            <phone_number>207100875</phone_number>
+            <street1>1020 Main Street</street1>
+            <street2></street2>
+            <city>Motherwell,UR7 1LJ</city>
+            <subCountry></subCountry>
+            <zip_postal_code>URL 1LJ</zip_postal_code>
+            <country>GB</country>
+            <commercial>false</commercial>
+        </address>
+    </addresses>
+    <groups>
+        <group>400</group>
+    </groups>
+    <preferred_shipping_address>9B9CEDD5-3117-FCBD-ED9E-0BDCB815CA00</preferred_shipping_address>
+    <preferred_billing_address>9B9CEDD5-3117-FCBD-ED9E-0BDCB815CA00</preferred_billing_address>
+    <customer_profile>
+        <profile_value type="AttributeType_ShortText" key="CP_FIRST_NAME">Noreen</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_EMAIL">noreen.borell@elasticpath.com</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PHONE">207100875</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PREF_LOCALE">en</profile_value>
+        <profile_value type="AttributeType_Date" key="CP_DOB">Tue Feb 08 00:00:00 1927</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_LAST_NAME">Borell</profile_value>
+    </customer_profile>
+</customer>
+
+<customer store_code="SNAPITUPUK" shared_id="SNAPITUPUK:pearlie.bosse@elasticpath.com" guid="3E6DBBCF-3FD4-4DD6-594C-8E79AF7DFF82">
+	<customer_type>REGISTERED_USER</customer_type>
+    <status>1</status>
+    <first_time_buyer>false</first_time_buyer>
+    <creationDate>2010-06-16T00:00:00-07:00</creationDate>
+    <last_edited>2012-08-02T16:32:23-07:00</last_edited>
+	<username>pearlie.bosse@elasticpath.com</username>
+    <password>$2a$08$wzWbPTI70/uA9LB/qAa9Q.YTut3tWOfZU9BC68oECDQESOsEz0V.K</password>
+    <salt/>
+    <addresses>
+        <address guid="FF9B4307-C3CA-8C20-5439-084838261DAC">
+            <last_name>Bosse</last_name>
+            <first_name>Pearlie</first_name>
+            <phone_number>208464726</phone_number>
+            <street1>1020 Main Street</street1>
+            <street2></street2>
+            <city>Coventry,GU2 2JU</city>
+            <subCountry></subCountry>
+            <zip_postal_code>GU2 2JU</zip_postal_code>
+            <country>GB</country>
+            <commercial>false</commercial>
+        </address>
+    </addresses>
+    <groups>
+        <group>400</group>
+    </groups>
+    <preferred_shipping_address>FF9B4307-C3CA-8C20-5439-084838261DAC</preferred_shipping_address>
+    <preferred_billing_address>FF9B4307-C3CA-8C20-5439-084838261DAC</preferred_billing_address>
+    <customer_profile>
+        <profile_value type="AttributeType_ShortText" key="CP_PHONE">208464726</profile_value>
+        <profile_value type="AttributeType_Date" key="CP_DOB">Sun Oct 09 00:00:00 1994</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_LAST_NAME">Bosse</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PREF_LOCALE">en</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_FIRST_NAME">Pearlie</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_EMAIL">pearlie.bosse@elasticpath.com</profile_value>
+    </customer_profile>
+</customer>
+
+<customer store_code="SNAPITUPUK" shared_id="SNAPITUPUK:rae.bourn@elasticpath.com" guid="858E3DCA-5DD0-2918-D3AC-DFC9684093FE">
+	<customer_type>REGISTERED_USER</customer_type>
+	<status>1</status>
+	<first_time_buyer>false</first_time_buyer>
+	<creationDate>2010-06-16T00:00:00-07:00</creationDate>
+	<last_edited>2012-08-02T16:32:23-07:00</last_edited>
+	<username>rae.bourn@elasticpath.com</username>
+	<password>$2a$08$wzWbPTI70/uA9LB/qAa9Q.YTut3tWOfZU9BC68oECDQESOsEz0V.K</password>
+	<salt/>
+	<addresses>
+		<address guid="C5E6A962-2C09-F55C-DC25-3C60BD40C79A">
+			<last_name>Bourns</last_name>
+			<first_name>Rae</first_name>
+			<phone_number>207437289</phone_number>
+			<street1>1020 Main Street</street1>
+			<street2></street2>
+			<city>Leicester,OH1 1HQ</city>
+			<subCountry></subCountry>
+			<zip_postal_code>OH1 1HQ</zip_postal_code>
+			<country>GB</country>
+			<commercial>false</commercial>
+		</address>
+	</addresses>
+	<groups>
+		<group>400</group>
+	</groups>
+	<preferred_shipping_address>C5E6A962-2C09-F55C-DC25-3C60BD40C79A</preferred_shipping_address>
+	<preferred_billing_address>C5E6A962-2C09-F55C-DC25-3C60BD40C79A</preferred_billing_address>
+	<customer_profile>
+		<profile_value type="AttributeType_ShortText" key="CP_EMAIL">rae.bourns@elasticpath.com</profile_value>
+		<profile_value type="AttributeType_ShortText" key="CP_LAST_NAME">Bourns</profile_value>
+		<profile_value type="AttributeType_ShortText" key="CP_PREF_LOCALE">en</profile_value>
+		<profile_value type="AttributeType_ShortText" key="CP_PHONE">207437289</profile_value>
+		<profile_value type="AttributeType_Date" key="CP_DOB">Thu Jul 29 00:00:00 1976</profile_value>
+		<profile_value type="AttributeType_ShortText" key="CP_FIRST_NAME">Rae</profile_value>
+	</customer_profile>
+</customer>
+
+<customer store_code="SNAPITUPUK" shared_id="SNAPITUPUK:rosalinda.brenes@elasticpath.com" guid="0D45B1AE-AE66-3144-7F74-41D3C9ED044A">
+	<customer_type>REGISTERED_USER</customer_type>
+    <status>1</status>
+    <first_time_buyer>false</first_time_buyer>
+    <creationDate>2010-06-16T00:00:00-07:00</creationDate>
+    <last_edited>2012-08-02T16:32:23-07:00</last_edited>
+	<username>rosalinda.brenes@elasticpath.com</username>
+    <password>$2a$08$wzWbPTI70/uA9LB/qAa9Q.YTut3tWOfZU9BC68oECDQESOsEz0V.K</password>
+    <salt/>
+    <addresses>
+        <address guid="08636EEE-DCD7-AD0C-59C8-07F0C7F70FCF">
+            <last_name>Brenes</last_name>
+            <first_name>Rosalinda</first_name>
+            <phone_number>208872210</phone_number>
+            <street1>1020 Main Street</street1>
+            <street2></street2>
+            <city>Sumburgh,UW6 0KI</city>
+            <subCountry></subCountry>
+            <zip_postal_code>UW6 OK1</zip_postal_code>
+            <country>GB</country>
+            <commercial>false</commercial>
+        </address>
+    </addresses>
+    <groups>
+        <group>400</group>
+    </groups>
+    <preferred_shipping_address>08636EEE-DCD7-AD0C-59C8-07F0C7F70FCF</preferred_shipping_address>
+    <preferred_billing_address>08636EEE-DCD7-AD0C-59C8-07F0C7F70FCF</preferred_billing_address>
+    <customer_profile>
+        <profile_value type="AttributeType_ShortText" key="CP_PHONE">208872210</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PREF_LOCALE">en</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_EMAIL">rosalinda.brenes@elasticpath.com</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_LAST_NAME">Brenes</profile_value>
+        <profile_value type="AttributeType_Date" key="CP_DOB">Thu Jun 30 00:00:00 1960</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_FIRST_NAME">Rosalinda</profile_value>
+    </customer_profile>
+</customer>
+
+<customer store_code="SNAPITUPUK" shared_id="SNAPITUPUK:roxie.briddick@elasticpath.com" guid="1D640B69-F0C1-AD3B-F8BA-2C3B67364828">
+	<customer_type>REGISTERED_USER</customer_type>
+    <status>1</status>
+    <first_time_buyer>false</first_time_buyer>
+    <creationDate>2010-06-16T00:00:00-07:00</creationDate>
+    <last_edited>2012-08-02T16:32:23-07:00</last_edited>
+	<username>roxie.briddick@elasticpath.com</username>
+    <password>$2a$08$wzWbPTI70/uA9LB/qAa9Q.YTut3tWOfZU9BC68oECDQESOsEz0V.K</password>
+    <salt/>
+    <addresses>
+        <address guid="5F3B1124-3B97-7A61-E913-C69E29B26145">
+            <last_name>Briddick</last_name>
+            <first_name>Roxie</first_name>
+            <phone_number>208050219</phone_number>
+            <street1>1020 Main Street</street1>
+            <street2></street2>
+            <city>Norwich,GG8 8CZ</city>
+            <subCountry></subCountry>
+            <zip_postal_code>GG8 8CZ</zip_postal_code>
+            <country>GB</country>
+            <commercial>false</commercial>
+        </address>
+    </addresses>
+    <groups>
+        <group>400</group>
+    </groups>
+    <preferred_shipping_address>5F3B1124-3B97-7A61-E913-C69E29B26145</preferred_shipping_address>
+    <preferred_billing_address>5F3B1124-3B97-7A61-E913-C69E29B26145</preferred_billing_address>
+    <customer_profile>
+        <profile_value type="AttributeType_ShortText" key="CP_PHONE">208050219</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PREF_LOCALE">en</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_EMAIL">roxie.briddick@elasticpath.com</profile_value>
+        <profile_value type="AttributeType_Date" key="CP_DOB">Thu Mar 01 00:00:00 1979</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_LAST_NAME">Briddick</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_FIRST_NAME">Roxie</profile_value>
+    </customer_profile>
+</customer>
+
+<customer store_code="SNAPITUPUK" shared_id="SNAPITUPUK:saundra.briles@elasticpath.com" guid="0CDBEACD-6DA9-741B-587C-5A0F96D7BFD7">
+	<customer_type>REGISTERED_USER</customer_type>
+    <status>1</status>
+    <first_time_buyer>false</first_time_buyer>
+    <creationDate>2010-06-16T00:00:00-07:00</creationDate>
+    <last_edited>2012-08-02T16:32:23-07:00</last_edited>
+	<username>saundra.briles@elasticpath.com</username>
+    <password>$2a$08$wzWbPTI70/uA9LB/qAa9Q.YTut3tWOfZU9BC68oECDQESOsEz0V.K</password>
+    <salt/>
+    <addresses>
+        <address guid="465B935F-ACBC-3101-BED3-1CD736BE083B">
+            <last_name>Briles</last_name>
+            <first_name>Saundra</first_name>
+            <phone_number>208713189</phone_number>
+            <street1>1020 Main Street</street1>
+            <street2></street2>
+            <city>Stornoway,SC3 9VT</city>
+            <subCountry></subCountry>
+            <zip_postal_code>SC3 9VT</zip_postal_code>
+            <country>GB</country>
+            <commercial>false</commercial>
+        </address>
+    </addresses>
+    <groups>
+        <group>400</group>
+    </groups>
+    <preferred_shipping_address>465B935F-ACBC-3101-BED3-1CD736BE083B</preferred_shipping_address>
+    <preferred_billing_address>465B935F-ACBC-3101-BED3-1CD736BE083B</preferred_billing_address>
+    <customer_profile>
+        <profile_value type="AttributeType_ShortText" key="CP_EMAIL">saundra.briles@elasticpath.com</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_FIRST_NAME">Saundra</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_LAST_NAME">Briles</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PREF_LOCALE">en</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PHONE">208713189</profile_value>
+        <profile_value type="AttributeType_Date" key="CP_DOB">Tue Jun 18 00:00:00 1929</profile_value>
+    </customer_profile>
+</customer>
+
+<customer store_code="SNAPITUPUK" shared_id="SNAPITUPUK:serena.brockmann@elasticpath.com" guid="DDA7662A-E79B-5496-0C94-47122371B193">
+	<customer_type>REGISTERED_USER</customer_type>
+    <status>1</status>
+    <first_time_buyer>false</first_time_buyer>
+    <creationDate>2010-06-16T00:00:00-07:00</creationDate>
+    <last_edited>2012-08-02T16:32:23-07:00</last_edited>
+	<username>serena.brockmann@elasticpath.com</username>
+    <password>$2a$08$wzWbPTI70/uA9LB/qAa9Q.YTut3tWOfZU9BC68oECDQESOsEz0V.K</password>
+    <salt/>
+    <addresses>
+        <address guid="5ED543BB-1EF6-7C3F-74E5-ED313A591D87">
+            <last_name>Brockmann</last_name>
+            <first_name>Serena</first_name>
+            <phone_number>208595910</phone_number>
+            <street1>1020 Main Street</street1>
+            <street2></street2>
+            <city>Manchester</city>
+            <subCountry></subCountry>
+            <zip_postal_code>GH7 9HU</zip_postal_code>
+            <country>GB</country>
+            <commercial>false</commercial>
+        </address>
+    </addresses>
+    <groups>
+        <group>400</group>
+    </groups>
+    <preferred_shipping_address>5ED543BB-1EF6-7C3F-74E5-ED313A591D87</preferred_shipping_address>
+    <preferred_billing_address>5ED543BB-1EF6-7C3F-74E5-ED313A591D87</preferred_billing_address>
+    <customer_profile>
+        <profile_value type="AttributeType_ShortText" key="CP_FIRST_NAME">Serena</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_EMAIL">serena.brockmann@elasticpath.com</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PREF_LOCALE">en</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PHONE">208595910</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_LAST_NAME">Brockmann</profile_value>
+    </customer_profile>
+</customer>
+
+<customer store_code="SNAPITUPUK" shared_id="SNAPITUPUK:sharron.bumbray@elasticpath.com" guid="CF59BF40-E8F6-1104-CB76-4FD947334B7F">
+	<customer_type>REGISTERED_USER</customer_type>
+    <status>1</status>
+    <first_time_buyer>false</first_time_buyer>
+    <creationDate>2010-06-16T00:00:00-07:00</creationDate>
+    <last_edited>2012-08-02T16:32:23-07:00</last_edited>
+	<username>sharron.bumbray@elasticpath.com</username>
+    <password>$2a$08$wzWbPTI70/uA9LB/qAa9Q.YTut3tWOfZU9BC68oECDQESOsEz0V.K</password>
+    <salt/>
+    <addresses>
+        <address guid="3AA6E353-107E-A290-E857-D687603CF610">
+            <last_name>Bumbray</last_name>
+            <first_name>Sharron</first_name>
+            <phone_number>2083062941</phone_number>
+            <street1>1020 Main Street</street1>
+            <street2></street2>
+            <city>London</city>
+            <subCountry></subCountry>
+            <zip_postal_code>WZ8 9GH</zip_postal_code>
+            <country>GB</country>
+            <commercial>false</commercial>
+        </address>
+    </addresses>
+    <groups>
+        <group>400</group>
+    </groups>
+    <preferred_shipping_address>3AA6E353-107E-A290-E857-D687603CF610</preferred_shipping_address>
+    <preferred_billing_address>3AA6E353-107E-A290-E857-D687603CF610</preferred_billing_address>
+    <customer_profile>
+        <profile_value type="AttributeType_ShortText" key="CP_EMAIL">sharron.bumbray@elasticpath.com</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PREF_LOCALE">en</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_PHONE">2083062941</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_LAST_NAME">Bumbray</profile_value>
+        <profile_value type="AttributeType_ShortText" key="CP_FIRST_NAME">Sharron</profile_value>
+    </customer_profile>
+</customer>
+</customers>

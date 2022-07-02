@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<beans
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:context="http://www.springframework.org/schema/context"
+		xmlns:batch="http://www.springframework.org/schema/batch"
+		xmlns="http://www.springframework.org/schema/beans"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+			http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+			http://www.springframework.org/schema/batch http://www.springframework.org/schema/batch/spring-batch.xsd">
+
+	<context:annotation-config/>
+
+	<import resource="classpath:integration-core-context.xml"/>
+	<import resource="classpath:ep-test-application.xml"/>
+	<import resource="classpath:integration-checkout-context.xml"/>
+	<import resource="classpath:META-INF/elasticpath/conf/spring/catalog-batch.xml"/>
+
+	<bean id="applicationInitialization" class="com.elasticpath.service.misc.impl.EmptyApplicationInitialization" init-method="init"
+		  depends-on="preEntityManagerInitializationList"/>
+
+	<bean id="simpleStoreScenario" class="com.elasticpath.commons.beanframework.NoOpProxyFactoryBean"/>
+
+	<batch:job id="BUILD_TEST_EXTENSION_FEED" job-repository="catalogJobRepository">
+		<batch:step id="cleanUpOptions" next="buildAllOptions">
+			<batch:tasklet ref="optionCleanUpTasklet"/>
+		</batch:step>
+		<batch:step id="buildAllOptions">
+			<batch:tasklet transaction-manager="transactionManager">
+				<batch:chunk reader="jpaPagingOptionReader" processor="skuOptionItemProcessor" writer="projectionWriter" commit-interval="100"/>
+			</batch:tasklet>
+		</batch:step>
+	</batch:job>
+
+	<bean id="catalogSyndicationBatchJobs" parent="catalogSyndicationBatchJobsParent" class="org.springframework.beans.factory.config.MapFactoryBean">
+		<property name="sourceMap">
+			<map merge="true">
+				<entry key="BUILD_TEST_EXTENSION_FEED" value-ref="BUILD_TEST_EXTENSION_FEED"/>
+			</map>
+		</property>
+	</bean>
+
+    <bean id="defaultCacheManager" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean"
+          destroy-method="destroy">
+        <property name="cacheManagerName" value="#{applicationName}--CacheManager"/>
+        <property name="shared" value="false"/>
+        <property name="configLocation" value="#{ehCacheConfigurationLoader.resource}"/>
+    </bean>
+
+    <bean id="ehCacheConfigurationLoader" class="com.elasticpath.commons.util.EhcacheConfigurationLoader">
+        <property name="pathname" value="${ep.external.ehcache.xml.path:null}"/>
+    </bean>
+</beans>
